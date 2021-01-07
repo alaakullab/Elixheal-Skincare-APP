@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionsTable extends Migration
+class CreateResultQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('result_questions', function (Blueprint $table) {
             $table->id();
-            $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');;
-            $table->string('question_value');
-            $table->string('question_type');
+            $table->integer('quiz_id');
+            $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');
+			$table->integer('question_id');
+            $table->integer('answer_value');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ class CreateQuestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('result_questions');
     }
 }
