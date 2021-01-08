@@ -21,8 +21,21 @@ class AnswersFactory extends Factory
      */
     public function definition()
     {
+        $word = $this->faker->word;
         return [
-            //
+            'answer_value' => $word,
+            'language_id' => function (){
+                return \App\Models\const_languages::all()->random();
+            },
+            'question_id' => function (){
+                return \App\Models\questions::all()->random();
+            },
+            'question_next_id' => function (){
+                return \App\Models\questions::all()->random();
+            },
+            'user_id' => function () {
+                return \App\Models\User::all()->random();
+            },
         ];
     }
 }

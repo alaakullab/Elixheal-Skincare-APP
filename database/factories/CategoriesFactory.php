@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\categories;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class CategoriesFactory extends Factory
 {
@@ -21,8 +22,13 @@ class CategoriesFactory extends Factory
      */
     public function definition()
     {
+        $word = $this->faker->name;
         return [
-            //
+            'name' => $word,
+            'slug' => Str::slug($word),
+            'language_id' => function(){
+                return \App\Models\const_languages::all()->random();
+            }
         ];
     }
 }

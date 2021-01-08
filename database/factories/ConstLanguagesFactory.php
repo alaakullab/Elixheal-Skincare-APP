@@ -21,8 +21,9 @@ class ConstLanguagesFactory extends Factory
      */
     public function definition()
     {
+        $word = $this->faker->name;
         return [
-            //
+            'name' => $word
         ];
     }
 }
