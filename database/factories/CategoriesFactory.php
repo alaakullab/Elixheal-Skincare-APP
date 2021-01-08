@@ -17,7 +17,7 @@ class CategoriesFactory extends Factory
 
     /**
      * Define the model's default state.
-     *
+     *---
      * @return array
      */
     public function definition()
@@ -28,7 +28,7 @@ class CategoriesFactory extends Factory
             'slug' => Str::slug($word),
             'language_id' => function(){
                 return \App\Models\const_languages::all()->random();
-            }
+            }//-
         ];
     }
 }
