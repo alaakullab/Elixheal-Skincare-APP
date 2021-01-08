@@ -19,7 +19,7 @@ class CreateContactsTable extends Migration
             $table->string('full_name')->comment('constant value');
             $table->string('email_contacts')->comment('constant value');
             $table->string('message')->comment('constant value');
-            $table->softDeletes();
+			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });
     }

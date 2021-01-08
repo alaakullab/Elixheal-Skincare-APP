@@ -15,11 +15,11 @@ class CreateResultQuestionsTable extends Migration
     {
         Schema::create('result_questions', function (Blueprint $table) {
             $table->id();
-            $table->integer('quiz_id');
+            $table->integer('quiz_id')->comment('To know each quiz by itself');
             $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');
-			$table->integer('question_id');
-            $table->integer('answer_value');
-            $table->softDeletes();
+			$table->integer('question_id')->comment('Add question Id from table questions');
+            $table->integer('answer_id')->comment('To add const answer value (not result) related to answers table');
+			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });
     }
