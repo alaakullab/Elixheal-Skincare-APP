@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTagsTable extends Migration
+class CreateFaqsAnswersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('faqs_answers', function (Blueprint $table) {
             $table->id();
-            $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
+            $table->string('answers_value')->comment('add answers value to faqs');
+            $table->integer('faqs_question_id')->comment('Add question Id from table questions');
+            $table->foreign('faqs_question_id')->references('id')->on('faqs_questions')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('value')->nullable()->comment('Tag value');
-			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('faqs_answers');
     }
 }

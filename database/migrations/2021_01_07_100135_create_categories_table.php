@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name')->comment('constant value');
             $table->string('slug')->comment('A slug is the part of a URL which identifies a particular page on a website in an easy to read form');;
-            $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');
+            $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });

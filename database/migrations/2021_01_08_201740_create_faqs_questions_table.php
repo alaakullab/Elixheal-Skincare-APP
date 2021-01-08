@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration
+class CreateFaqsQuestionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('faqs_questions', function (Blueprint $table) {
             $table->id();
+            $table->string('question_value')->comment('add question value to faqs');
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
-            $table->string('full_name')->comment('constant value');
-            $table->string('email_contacts')->comment('constant value');
-            $table->string('message')->comment('constant value');
-			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
+            $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('faqs_questions');
     }
 }

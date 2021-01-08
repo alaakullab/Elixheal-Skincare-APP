@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\contacts;
+use App\Models\faqs_questions;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ContactsFactory extends Factory
+class faqs_questionsFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = contacts::class;
+    protected $model = faqs_questions::class;
 
     /**
      * Define the model's default state.
@@ -21,14 +21,14 @@ class ContactsFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->name;
-        $text = $this->faker->text;
+        $title = $this->faker->sentence;
         return [
-            'full_name' => $name,
-            'email_contacts' =>  $this->faker->unique()->safeEmail,
-            'message' =>  $text,
-            'language_id' => function () {
+            'question_value' => $title,
+            'language_id' => function (){
                 return \App\Models\const_languages::all()->random();
+            },
+            'user_id' => function (){
+                return \App\Models\User::all()->random();
             },
         ];
     }

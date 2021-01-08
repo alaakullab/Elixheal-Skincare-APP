@@ -15,7 +15,7 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');
+            $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->string('question_value')->comment('To add const question value (not result) ');
             $table->string('question_type')->comment('To determine the type of question');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');

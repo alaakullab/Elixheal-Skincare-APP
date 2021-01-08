@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\const_languages;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ConstLanguagesFactory extends Factory
+class const_languagesFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -21,9 +21,10 @@ class ConstLanguagesFactory extends Factory
      */
     public function definition()
     {
-        $word = $this->faker->name;
+
         return [
-            'name' => $word
+            'name' => $this->faker->languageCode,
         ];
+
     }
 }

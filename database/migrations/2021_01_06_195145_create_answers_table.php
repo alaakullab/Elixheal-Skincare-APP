@@ -15,7 +15,7 @@ class CreateAnswersTable extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
-            $table->string('language_id')->nullable()->comment('Language Number To Choose a display language from table const_languages');;
+            $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->string('answer_value')->comment('To add const answer value (not result) ');
             $table->integer('question_id')->unsigned()->comment('Add question Id from table questions');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
