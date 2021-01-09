@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('product_title')->nullable()->comment('Add the title of the product');
-            $table->string('description')->nullable()->comment('Add the description of the product');
+            $table->text('description')->nullable()->comment('Add the description of the product');
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->double('price')->comment('Add the price of the product (USD) ');
             $table->string('image_product')->nullable()->comment('Add image or video to product');

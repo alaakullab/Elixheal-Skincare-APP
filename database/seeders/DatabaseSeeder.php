@@ -10,6 +10,7 @@ use App\Models\contacts;
 use App\Models\products;
 use App\Models\faqs_questions;
 use App\Models\faqs_answers;
+use App\Models\settings;
 
 use Illuminate\Database\Seeder;
 
@@ -31,5 +32,6 @@ class DatabaseSeeder extends Seeder
         answers::factory(30)->create();
         faqs_questions::factory(30)->create();
         faqs_answers::factory(90)->create();
+        settings::factory(4)->create();
     }
 }

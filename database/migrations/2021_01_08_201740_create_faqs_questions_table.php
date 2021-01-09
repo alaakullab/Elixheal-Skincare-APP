@@ -15,7 +15,7 @@ class CreateFaqsQuestionsTable extends Migration
     {
         Schema::create('faqs_questions', function (Blueprint $table) {
             $table->id();
-            $table->string('question_value')->comment('add question value to faqs');
+            $table->text('question_value')->comment('add question value to faqs');
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -15,7 +15,7 @@ class CreateFaqsAnswersTable extends Migration
     {
         Schema::create('faqs_answers', function (Blueprint $table) {
             $table->id();
-            $table->string('answers_value')->comment('add answers value to faqs');
+            $table->text('answers_value')->comment('add answers value to faqs');
             $table->integer('faqs_question_id')->comment('Add question Id from table questions');
             $table->foreign('faqs_question_id')->references('id')->on('faqs_questions')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
