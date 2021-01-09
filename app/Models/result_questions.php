@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class result_questions extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = [];
+
     public function const_languages()
     {
         return $this->hasMany(const_languages::class);

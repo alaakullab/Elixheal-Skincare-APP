@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class faqs_answers extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    public function faqs_questions()
+    {
+        return $this->belongsTo(faqs_questions::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
