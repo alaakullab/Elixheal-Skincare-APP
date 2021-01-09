@@ -30,6 +30,7 @@ class CreateSettingsTable extends Migration
             $table->string('facebook')->nullable()->comment('facebook link the company for contacts');
             $table->string('twitter')->nullable()->comment('twitter link the company for contacts');
             $table->string('instagram')->nullable()->comment('instagram link the company for contacts');
+            $table->string('whatsapp')->nullable()->comment('whatsapp nummber the company for contacts');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

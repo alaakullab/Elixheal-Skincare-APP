@@ -43,6 +43,7 @@ class SettingsFactory extends Factory
             'facebook' =>  $this->faker->url,
             'twitter' =>  $this->faker->url,
             'instagram' =>  $this->faker->url,
+            'whatsapp' =>  $this->faker->phoneNumber,
             'language_id' => function (){
                 return \App\Models\const_languages::all()->random();
             },
