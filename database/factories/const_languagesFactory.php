@@ -24,6 +24,7 @@ class const_languagesFactory extends Factory
 
         return [
             'name' => 'English-'. $this->faker->unique()->numberBetween(1,4),
+            'code' => $this->faker->languageCode,
         ];
 
     }

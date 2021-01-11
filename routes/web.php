@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', 'en', 301);
+
+Route::group(['prefix' => '{language}'], function () {
+    // if (! in_array($locale, ['en', 'es', 'fr'])) {
+    //     abort(404);
+    // }
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
 });
+
+
+
+// Route::get('/greeting/{locale}', function ($locale) {
+//     if (! in_array($locale, ['en', 'es', 'fr'])) {
+//         abort(404);
+//     }
+//     App::setLocale($locale);
+//     dd(App::getLocale($locale));
+// });

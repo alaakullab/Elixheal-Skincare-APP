@@ -16,6 +16,7 @@ class CreateConstLanguagesTable extends Migration
         Schema::create('const_languages', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('constant value');
+            $table->string('code')->comment('language code');
             $table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });
