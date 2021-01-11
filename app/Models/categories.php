@@ -15,4 +15,6 @@ class categories extends Model
     {
         return 'slug';
     }
+
+
 }
