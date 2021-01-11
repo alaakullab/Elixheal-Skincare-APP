@@ -28,7 +28,10 @@ class CategoriesFactory extends Factory
             'slug' => Str::slug($word),
             'language_id' => function(){
                 return \App\Models\const_languages::all()->random();
-            }
+            },
+            'user_id' => function () {
+                return \App\Models\User::all()->random();
+            },
         ];
     }
 }

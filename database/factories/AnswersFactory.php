@@ -33,6 +33,9 @@ class AnswersFactory extends Factory
             'question_next_id' => function (){
                 return \App\Models\questions::all()->random();
             },
+            'user_id' => function () {
+                return \App\Models\User::all()->random();
+            },
 
         ];
     }

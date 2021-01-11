@@ -20,6 +20,8 @@ class CreateAnswersTable extends Migration
             $table->integer('question_id')->unsigned()->comment('Add question Id from table questions');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('question_next_id')->unsigned()->comment('Add question Id from table questions to display the next question');
+            $table->integer('user_id')->unsigned()->nullable()->comment('User Id from table users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
         });

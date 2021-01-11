@@ -25,4 +25,9 @@ class questions extends Model
     {
         return $this->belongsTo(const_languages::class);
     }
+
+    public function getPathAttribute()
+    {
+        return asset("api/question/$this->slug");
+    }
 }

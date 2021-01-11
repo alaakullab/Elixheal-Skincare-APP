@@ -26,4 +26,9 @@ class products extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getPathAttribute()
+    {
+        return asset("api/product/$this->slug");
+    }
+
 }

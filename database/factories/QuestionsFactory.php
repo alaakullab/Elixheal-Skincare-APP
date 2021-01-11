@@ -29,6 +29,9 @@ class QuestionsFactory extends Factory
             'language_id' => function (){
                 return \App\Models\const_languages::all()->random();
             },
+            'user_id' => function () {
+                return \App\Models\User::all()->random();
+            },
 
         ];
     }
