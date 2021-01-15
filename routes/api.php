@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\QuestionsController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\AnswerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::apiResource('qustions',QuestionsController::class);
-Route::apiResource('category',CategoriesController::class);
+Route::apiResource('category',CategoryController::class);
+Route::apiResource('question',QuestionController::class);
+Route::apiResource('question/{question}/answer',AnswerController::class);
+
+

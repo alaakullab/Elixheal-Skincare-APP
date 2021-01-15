@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\answers;
+use App\Models\Answer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class AnswersFactory extends Factory
+class AnswerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = answers::class;
+    protected $model = Answer::class;
 
     /**
      * Define the model's default state.
@@ -28,10 +28,7 @@ class AnswersFactory extends Factory
                 return \App\Models\const_languages::all()->random();
             },
             'question_id' => function (){
-                return \App\Models\questions::all()->random();
-            },
-            'question_next_id' => function (){
-                return \App\Models\questions::all()->random();
+                return \App\Models\question::all()->random();
             },
             'user_id' => function () {
                 return \App\Models\User::all()->random();

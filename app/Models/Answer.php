@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class answers extends Model
+class Answer extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
 
     public function questions()
@@ -20,5 +19,4 @@ class answers extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }

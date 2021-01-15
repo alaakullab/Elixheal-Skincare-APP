@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\answers;
+use App\Http\Resources\AnswerResource;
+use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
-class AnswersController extends Controller
+class AnswerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Question $question)
     {
-        //
+        return AnswerResource::collection($question->answer);
     }
 
     /**
@@ -33,29 +35,30 @@ class AnswersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Question $question,Request $request)
     {
-        //
+        $answer = $question->answer()->create($request->all());
+        return response(['answer'=> new AnswerResource($answer),201]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\answers  $answers
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function show(answers $answers)
+    public function show(Question $question,Answer $answer)
     {
-        //
+        return new AnswerResource($answer);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\answers  $answers
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function edit(answers $answers)
+    public function edit(Answer $answer)
     {
         //
     }
@@ -64,22 +67,24 @@ class AnswersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\answers  $answers
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, answers $answers)
+    public function update(Question $question,Request $request, Answer $answer)
     {
-        //
+        $answer->update($request->all());
+        return response('updated', 202);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\answers  $answers
+     * @param  \App\Models\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(answers $answers)
+    public function destroy(Question $question,Answer $answer)
     {
-        //
+        $answer->delete();
+        return response(null, 204);
     }
 }

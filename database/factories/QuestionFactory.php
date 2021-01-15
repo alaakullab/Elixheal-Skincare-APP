@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\questions;
+use App\Models\Question;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class QuestionsFactory extends Factory
+class QuestionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = questions::class;
+    protected $model = Question::class;
 
     /**
      * Define the model's default state.

@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class questions extends Model
+class Question extends Model
 {
     use HasFactory;
-
     protected $guarded = [];
 
     public function user()
@@ -16,9 +15,9 @@ class questions extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function answers()
+    public function answer()
     {
-        return $this->hasMany(answers::class);
+        return $this->hasMany(Answer::class);
     }
 
     public function const_languages()
