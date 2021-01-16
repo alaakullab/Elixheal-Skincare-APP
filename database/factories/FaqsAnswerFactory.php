@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\faqs_questions;
+use App\Models\faqs_answer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class faqs_questionsFactory extends Factory
+class FaqsAnswerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = faqs_questions::class;
+    protected $model = faqs_answer::class;
 
     /**
      * Define the model's default state.
@@ -21,11 +21,11 @@ class faqs_questionsFactory extends Factory
      */
     public function definition()
     {
-        $title = $this->faker->sentence;
+        $word = $this->faker->word;
         return [
-            'question_value' => $title,
-            'language_id' => function (){
-                return \App\Models\const_languages::all()->random();
+            'answers_value' => $word,
+            'faqs_question_id' => function (){
+                return \App\Models\faqs_question::all()->random();
             },
             'user_id' => function (){
                 return \App\Models\User::all()->random();

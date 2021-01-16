@@ -5,18 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class faqs_answers extends Model
+class faqs_answer extends Model
 {
     use HasFactory;
     protected $guarded = [];
 
-    public function faqs_questions()
+    public function faqs_question()
     {
-        return $this->belongsTo(faqs_questions::class);
+        return $this->belongsTo(faqs_question::class);
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getPathAttribute()
+    {
+        return asset("api/faqs_answer/$this->id");
     }
 }

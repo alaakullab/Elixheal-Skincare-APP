@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\contacts;
+use App\Http\Resources\Faqs_questionResource;
+use App\Models\faqs_question;
 use Illuminate\Http\Request;
 
-class ContactsController extends Controller
+class FaqsQuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        //
+        return Faqs_questionResource::collection(faqs_question::latest()->get());
     }
 
     /**
@@ -35,27 +36,28 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        faqs_question::create($request->all());
+        return response('Created', 201);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\contacts  $contacts
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(contacts $contacts)
+    public function show(faqs_question $faqs_question)
     {
-        //
+        return new Faqs_questionResource($faqs_question);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\contacts  $contacts
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(contacts $contacts)
+    public function edit($id)
     {
         //
     }
@@ -64,22 +66,27 @@ class ContactsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\contacts  $contacts
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, contacts $contacts)
+    public function update(Request $request, faqs_question $faqs_question)
     {
-        //
+        $faqs_question->update([
+            'question_value' => $request->question_value,
+            'user_id' => $request->user_id,
+        ]);
+        return response('Updated', 202);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\contacts  $contacts
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contacts $contacts)
+    public function destroy(faqs_question $faqs_question)
     {
-        //
+        $faqs_question->delete();
+        return response(null, 204);
     }
 }
