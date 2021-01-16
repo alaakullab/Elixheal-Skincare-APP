@@ -6,6 +6,7 @@ use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FaqsAnswerController;
 use App\Http\Controllers\FaqsQuestionController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,5 +33,6 @@ Route::apiResource('faqs_questions',FaqsQuestionController::class);
 Route::apiResource('faqs_question/{faqs_question}/faqs_answer',FaqsAnswerController::class);
 Route::apiResource('contact',ContactController::class);
 Route::apiResource('setting',SettingController::class);
+Route::apiResource('product',ProductController::class);
 
 

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\products;
+use App\Models\product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProductsFactory extends Factory
+class ProductFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = products::class;
+    protected $model = product::class;
 
     /**
      * Define the model's default state.
@@ -35,7 +35,7 @@ class ProductsFactory extends Factory
             'image_product' => $image,
             'qyt' => $this->faker->numberBetween($min = 0, $max = 200),
             'category_id' => function (){
-                return \App\Models\categories::all()->random();
+                return \App\Models\Category::all()->random();
             },
             'user_id' => function () {
                 return \App\Models\User::all()->random();

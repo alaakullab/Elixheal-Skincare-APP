@@ -25,7 +25,7 @@ class faqs_answersFactory extends Factory
         return [
             'answers_value' => $word,
             'faqs_question_id' => function (){
-                return \App\Models\faqs_questions::all()->random();
+                return \App\Models\faqs_question::all()->random();
             },
             'user_id' => function (){
                 return \App\Models\User::all()->random();
