@@ -30,6 +30,9 @@ class AnswerFactory extends Factory
             'question_id' => function (){
                 return \App\Models\question::all()->random();
             },
+            'question_next_id' => function (){
+                return \App\Models\question::all()->random();
+            },
             'user_id' => function () {
                 return \App\Models\User::all()->random();
             },
