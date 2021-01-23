@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+// use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -14,7 +17,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('JWT', ['except' => ['login','signup']]);
     }
 
     /**
@@ -30,6 +33,12 @@ class AuthController extends Controller
         }
 
         return $this->respondWithToken($token);
+    }
+
+    public function signup(Request $request)
+    {
+        User::create($request->all());
+        return $this->login($request);
     }
 
     /**
