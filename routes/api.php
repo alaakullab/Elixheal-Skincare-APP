@@ -8,6 +8,7 @@ use App\Http\Controllers\FaqsAnswerController;
 use App\Http\Controllers\FaqsQuestionController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,4 +36,19 @@ Route::apiResource('contact',ContactController::class);
 Route::apiResource('setting',SettingController::class);
 Route::apiResource('product',ProductController::class);
 
+
+
+Route::group([
+
+    'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', [AuthController::CLass, 'login']);
+    Route::post('logout', [AuthController::CLass, 'logout']);
+    Route::post('refresh', [AuthController::CLass, 'refresh']);
+    Route::post('me', [AuthController::CLass, 'me']);
+
+});
 
