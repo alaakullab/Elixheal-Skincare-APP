@@ -21,7 +21,7 @@ Route::group(['prefix' => '{language}'], function () {
     // }
 
     Route::get('admin', function () {
-        return view('admin.dashboard');
+        return view('admin.index');
     })->name('admin');
 
     Route::get('welcome', function () {

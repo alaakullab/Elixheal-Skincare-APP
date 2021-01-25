@@ -10,20 +10,38 @@
             <h4 class="m-menu__section-text">Components</h4>
             <i class="m-menu__section-icon flaticon-more-v2"></i>
         </li>
+
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-                    class="m-menu__link-text">Base</span><i class="m-menu__ver-arrow la la-angle-right"></i></a>
-            <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
+                    class="m-menu__link-text">Quiz</span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i></a>
+            <div class="m-menu__submenu ">
+                <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
-                    <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true"><span class="m-menu__link"><span class="m-menu__link-text">Base</span></span></li>
-                    <li class="m-menu__item  m-menu__item--active" aria-haspopup="true"><a href="../../components/base/state.html" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">State
-                                        Colors</span></a></li>
-                    <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span
-                                class="m-menu__link-text">Tabs</span><i class="m-menu__ver-arrow la la-angle-right"></i></a>
+                    <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
+                        <span class="m-menu__link">
+                            <span class="m-menu__link-text">quiz</span></span>
+                    </li>
+                    <li class="m-menu__item  m-menu__item--active" aria-haspopup="true">
+                        <a href="../../components/quiz/state.html" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                        <span></span></i><span class="m-menu__link-text">Add question</span></a>
+                    </li>
+                    <li class="m-menu__item" aria-haspopup="true">
+                        <a href="../../components/quiz/state.html" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                        <span></span></i><span class="m-menu__link-text">View questions</span></a>
+                    </li>
+                    <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
+                        <a href="javascript:;" class="m-menu__link m-menu__toggle">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span
+                                class="m-menu__link-text">Tabs</span>
+                                <i class="m-menu__ver-arrow la la-angle-right"></i></a>
                         <div class="m-menu__submenu "><span class="m-menu__arrow"></span>
                             <ul class="m-menu__subnav">
-                                <li class="m-menu__item " aria-haspopup="true"><a href="../../components/base/tabs/bootstrap.html" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Bootstrap
+                                <li class="m-menu__item " aria-haspopup="true"><a href="../../components/quiz/tabs/bootstrap.html" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Bootstrap
                                                     Tabs</span></a></li>
-                                <li class="m-menu__item " aria-haspopup="true"><a href="../../components/base/tabs/line.html" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Line Tabs</span></a></li>
+                                <li class="m-menu__item " aria-haspopup="true"><a href="../../components/quiz/tabs/line.html" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i><span class="m-menu__link-text">Line Tabs</span></a></li>
                             </ul>
                         </div>
                     </li>
@@ -62,7 +80,8 @@
                 </ul>
             </div>
             <div>
-                <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
+
+                {{-- <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
                     <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
                         <i class="la la-plus m--hide"></i>
                         <i class="la la-ellipsis-h"></i>
@@ -111,6 +130,8 @@
                         </div>
                     </div>
                 </div>
+                 --}}
+
             </div>
         </div>
     </div>
