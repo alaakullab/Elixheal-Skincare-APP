@@ -1,6 +1,6 @@
 @extends('admin.layouts.index')
 
-@section('title', 'Page Title')
+@section('title', 'View Orders')
 
 @section('sidebar')
     @parent
