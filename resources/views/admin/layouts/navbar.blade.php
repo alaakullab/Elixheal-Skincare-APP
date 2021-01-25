@@ -79,19 +79,19 @@
         </li>
 
         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-            class="m-menu__link-text">Orders</span>
+            class="m-menu__link-text">Setting</span>
             <i class="m-menu__ver-arrow la la-angle-right"></i></a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
                         <span class="m-menu__link">
-                            <span class="m-menu__link-text">Orders</span></span>
+                            <span class="m-menu__link-text">Setting</span></span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">View Orders</span></a>
+                        <span></span></i><span class="m-menu__link-text">View Setting</span></a>
                     </li>
                 </ul>
             </div>
@@ -106,7 +106,9 @@
     <div class="m-subheader ">
         <div class="d-flex align-items-center">
             <div class="mr-auto">
-                <h3 class="m-subheader__title m-subheader__title--separator">State Colors</h3>
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    @yield('title')
+                </h3>
                 <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
                     <li class="m-nav__item m-nav__item--home">
                         <a href="#" class="m-nav__link m-nav__link--icon">
@@ -122,7 +124,9 @@
                     <li class="m-nav__separator">-</li>
                     <li class="m-nav__item">
                         <a href="" class="m-nav__link">
-                            <span class="m-nav__link-text">State Colors</span>
+                            <span class="m-nav__link-text">
+                                @yield('title')
+                            </span>
                         </a>
                     </li>
                 </ul>
