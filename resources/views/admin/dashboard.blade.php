@@ -10,4 +10,9 @@
 
 @section('content')
     <p>This is my body content in dashboard.</p>
+    <div id="app">
+      <v-app>
+          <AppDashboard></AppDashboard>
+      </v-app>
+    </div>
 @endsection

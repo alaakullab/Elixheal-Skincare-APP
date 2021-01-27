@@ -24,6 +24,9 @@ Route::group(['prefix' => '{language}'], function () {
         return view('admin.dashboard');
     })->name('admin');
 
+    Route::get('createQuestion', [\App\Http\Controllers\QuestionController::class,'create'])->name('createQuestion');
+
+
     Route::get('welcome', function () {
         return view('welcome');
     })->name('welcome');
