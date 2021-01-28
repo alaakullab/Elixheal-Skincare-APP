@@ -7,7 +7,7 @@ import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('admin-appdashboard', require('./components/admin/AppDasboard.vue').default);
 const app = new Vue({
   el: '#app',
 });
