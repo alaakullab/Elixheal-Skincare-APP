@@ -22,7 +22,7 @@
                             <span class="m-menu__link-text">quiz</span></span>
                     </li>
                     <li class="m-menu__item  m-menu__item--active" aria-haspopup="true">
-                        <a href="../../components/quiz/state.html" class="m-menu__link ">
+                        <a href="{{ route('createQuestion',app()->getLocale()) }}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                         <span></span></i><span class="m-menu__link-text">Add question</span></a>
                     </li>

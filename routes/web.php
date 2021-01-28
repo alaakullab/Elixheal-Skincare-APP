@@ -28,6 +28,8 @@ Route::group(['prefix' => '{language}'], function () {
         return view('admin.setting.index');
     })->name('admin.setting');
 
+    Route::get('createQuestion', [\App\Http\Controllers\QuestionController::class,'create'])->name('createQuestion');
+
 
     Route::get('welcome', function () {
         return view('welcome');
