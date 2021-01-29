@@ -24,11 +24,10 @@ Route::group(['prefix' => '{language}'], function () {
         return view('admin.dashboard');
     })->name('admin');
 
-    Route::get('admin/setting', function () {
-        return view('admin.setting.index');
-    })->name('admin.setting');
-
+    Route::get('admin/setting/edit',[\App\Http\Controllers\SettingController::class, 'edit'])->name('admin.setting.edit');
     Route::get('createQuestion', [\App\Http\Controllers\QuestionController::class,'create'])->name('createQuestion');
+
+
 
 
     Route::get('welcome', function () {

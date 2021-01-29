@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\faqs_answerResource;
+use App\Models\const_languages;
 use App\Models\faqs_answer;
 use App\Models\faqs_question;
 use Database\Factories\FaqsAnswerFactory;

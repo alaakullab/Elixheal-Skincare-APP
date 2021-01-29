@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\SettingResource;
+use App\Models\const_languages;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class SettingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+        $this->middleware('JWT', ['except' => ['index', 'edit', 'show']]);
     }
 
     /**
@@ -63,7 +64,12 @@ class SettingController extends Controller
      */
     public function edit(Setting $setting)
     {
-        //
+        $lang = app()->getLocale();
+        $constLang = const_languages::where('code', $lang)->first();
+        $data = new SettingResource($setting->where('language_id', $constLang['id'])->first());
+        print_r($data);die();
+
+        return view('admin.setting.index', $data);
     }
 
     /**

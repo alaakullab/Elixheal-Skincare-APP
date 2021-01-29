@@ -1,7 +1,7 @@
 <?php
 
 return [
-    // sadasd
+    'settings'=> 'Settings',
     'site_name'=> 'Site name',
     'site_desc'=> 'Site description',
     'logo'=> 'Logo',
