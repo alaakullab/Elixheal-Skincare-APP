@@ -25,7 +25,7 @@
         </div>
 
         <!--begin::Form-->
-        <form  method="POST" action="{{ route('admin.setting.update',app()->getLocale()) }}" class="m-form m-form--fit m-form--label-align-right"  >
+        <form  method="POST" action="{{ route('admin.setting.update',[app()->getLocale(),$data->id]) }}" class="m-form m-form--fit m-form--label-align-right"  >
             @csrf
             @method('PUT')
             <div class="m-portlet__body">

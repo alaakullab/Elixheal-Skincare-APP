@@ -46,11 +46,12 @@ class SettingController extends Controller
     {
         $constLang = const_languages::where('code', $lang)->first();
         $language = isset($constLang['id']) ? $constLang['id'] : 1;
-        return new SettingResource(Setting::where([['language_id', $language],['id', $id]])->first());
+        return new SettingResource(Setting::where('language_id', $language)->first());
     }
 
     public function viewEdit($lang, $id){
         $data = $this->edit($lang, $id);
+
         return view('admin.setting.index', ['data' => $data]);
     }
 
@@ -61,7 +62,7 @@ class SettingController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(Request $request, Setting $setting, $lang, $id)
     {
         $data =  [
             'site_name' => $request->site_name,
@@ -82,16 +83,15 @@ class SettingController extends Controller
             'language_id' => $request->language_id,
             'user_id' => $request->user_id,
         ];
-           $result = $setting->update($data);
+           $result = $setting->where('id', $id)->update($data);
+
         return response('Updated', 202);
     }
 
-    public function viewUpdate(Request $request, Setting $setting){
+    public function viewUpdate(Request $request, Setting $setting, $lang, $id){
 
-        $result = $this->update( $request , $setting);
-
-        print_r($result);die();
-        return redirect()->route('admin.setting.edit', app()->getLocale())->with('status', $result);
+        $result = $this->update( $request , $setting, $lang, $id);
+        return redirect()->route('admin.setting.edit', [$lang, $id]);
 
         // return view('admin.setting.index', ['result' => $result, ]);
     }
