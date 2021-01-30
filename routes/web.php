@@ -24,8 +24,9 @@ Route::group(['prefix' => '{language}'], function () {
         return view('admin.dashboard');
     })->name('admin');
 
-    Route::get('admin/setting/edit',[\App\Http\Controllers\SettingController::class, 'edit'])->name('admin.setting.edit');
     Route::get('createQuestion', [\App\Http\Controllers\QuestionController::class,'create'])->name('createQuestion');
+    Route::get('admin/setting/edit/{id}',[\App\Http\Controllers\SettingController::class, 'viewEdit'])->name('admin.setting.edit');
+    Route::put('admin/setting/update',[\App\Http\Controllers\SettingController::class, 'viewUpdate'])->name('admin.setting.update');
 
 
 
