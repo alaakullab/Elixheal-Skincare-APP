@@ -42,16 +42,14 @@ class SettingController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function edit($lang, $id)
+    public function edit()
     {
-        $constLang = const_languages::where('code', $lang)->first();
-        $language = isset($constLang['id']) ? $constLang['id'] : 1;
-        return new SettingResource(Setting::where('language_id', $language)->first());
+
+        return new SettingResource(Setting::where('language_id', getLangId())->first());
     }
 
-    public function viewEdit($lang, $id){
-        $data = $this->edit($lang, $id);
-
+    public function viewEdit(){
+        $data = $this->edit();
         return view('admin.setting.index', ['data' => $data]);
     }
 
@@ -62,7 +60,7 @@ class SettingController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting, $lang, $id)
+    public function update(Request $request, Setting $setting)
     {
         $data =  [
             'site_name' => $request->site_name,
@@ -75,23 +73,22 @@ class SettingController extends Controller
             'meta_robots' => $request->meta_robots,
             'Maintenance_message' => $request->Maintenance_message,
             'phone' => $request->phone,
-            'maintenance_status' => $request->maintenance_status,
+            'maintenance_status' => isset($request->maintenance_status) ? 'open' : 'close',
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,
             'whatsapp' => $request->whatsapp,
-            'language_id' => $request->language_id,
             'user_id' => $request->user_id,
         ];
-           $result = $setting->where('id', $id)->update($data);
+           $result = $setting->where('language_id', getLangId())->update($data);
 
         return response('Updated', 202);
     }
 
-    public function viewUpdate(Request $request, Setting $setting, $lang, $id){
+    public function viewUpdate(Request $request, Setting $setting){
 
-        $result = $this->update( $request , $setting, $lang, $id);
-        return redirect()->route('admin.setting.edit', [$lang, $id]);
+        $result = $this->update($request , $setting);
+        return redirect()->route('admin.setting.edit', app()->getLocale());
 
         // return view('admin.setting.index', ['result' => $result, ]);
     }

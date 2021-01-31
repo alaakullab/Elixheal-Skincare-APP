@@ -25,7 +25,7 @@
         </div>
 
         <!--begin::Form-->
-        <form  method="POST" action="{{ route('admin.setting.update',[app()->getLocale(),$data->id]) }}" class="m-form m-form--fit m-form--label-align-right"  >
+        <form  method="POST" action="{{ route('admin.setting.update',app()->getLocale()) }}" class="m-form m-form--fit m-form--label-align-right"  >
             @csrf
             @method('PUT')
             <div class="m-portlet__body">
@@ -63,7 +63,13 @@
                 </div>
                 <div class="form-group m-form__group">
                     <label for="maintenance_status">{{ __('admin.maintenance_status') }}</label>
-                    <input type="text" class="form-control m-input" id="maintenance_status" name="maintenance_status" value="{{ $data->maintenance_status ?? $data->maintenance_status }}" placeholder="{{ __('admin.maintenance_status') }}">
+                    <?php if($data->maintenance_status == 'open'){
+                           ?>
+                        <input type="checkbox" checked class="make-switch" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
+                                <?php }else{ ?>
+                        <input type="checkbox"  class="make-switch" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
+                    <?php } ?>
+
                 </div>
                 <div class="form-group m-form__group">
                     <label for="facebook">{{ __('admin.facebook') }}</label>
