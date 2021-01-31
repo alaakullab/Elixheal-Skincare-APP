@@ -62,14 +62,15 @@
                     <input type="text" class="form-control m-input" id="phone" name="phone" value="{{ $data->phone ?? $data->phone }}" placeholder="{{ __('admin.phone') }}">
                 </div>
                 <div class="form-group m-form__group">
-                    <label for="maintenance_status">{{ __('admin.maintenance_status') }}</label>
+                    <div class="m-checkbox-inline">
+                    <label for="maintenance_status" class="m-checkbox">{{ __('admin.maintenance_status') }}</label>
                     <?php if($data->maintenance_status == 'open'){
                            ?>
-                        <input type="checkbox" checked class="make-switch" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
+                        <input type="checkbox" checked class="checkbox" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
                                 <?php }else{ ?>
-                        <input type="checkbox"  class="make-switch" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
+                        <input type="checkbox"  class="checkbox" name="maintenance_status" data-size="small" placeholder ="{{trans('admin.maintenance_status')}}">
                     <?php } ?>
-
+                        </div>
                 </div>
                 <div class="form-group m-form__group">
                     <label for="facebook">{{ __('admin.facebook') }}</label>
