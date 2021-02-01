@@ -37,10 +37,10 @@
             @endif
             <div class=" fixed top-0 right-0 px-6 py-4 sm:block">
                 {{-- @guest --}}
-                    <a href="{{ route(Route::currentRouteName(),'en') }}" class="text-sm text-gray-700 underline">EN</a>
-                    <a href="{{ route(Route::currentRouteName(),'es') }}" class="text-sm text-gray-700 underline">ES</a>
-                    <a href="{{ route(Route::currentRouteName(),'fr') }}" class="text-sm text-gray-700 underline">FR</a>
-                    <a href="{{ route(Route::currentRouteName(),'it') }}" class="text-sm text-gray-700 underline">IT</a>
+                    <a href="{{  LaravelLocalization::getLocalizedURL('en')  }}" class="text-sm text-gray-700 underline">EN</a>
+                    <a href="{{  LaravelLocalization::getLocalizedURL('es')  }}" class="text-sm text-gray-700 underline">ES</a>
+                    <a href="{{  LaravelLocalization::getLocalizedURL('fr')  }}" class="text-sm text-gray-700 underline">FR</a>
+                    <a href="{{  LaravelLocalization::getLocalizedURL('it')  }}" class="text-sm text-gray-700 underline">IT</a>
                     {{-- @endguest --}}
                 </div>
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
