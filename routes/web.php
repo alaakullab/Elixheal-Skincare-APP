@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 // Route::redirect('/', 'en', 301);
 
-Route::group(['prefix' => '{language}'], function () {
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ], function () {
     // if (! in_array($locale, ['en', 'es', 'fr'])) {
     //     abort(404);
     // }
