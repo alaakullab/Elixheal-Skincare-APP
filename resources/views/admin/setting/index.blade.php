@@ -25,7 +25,7 @@
         </div>
 
         <!--begin::Form-->
-        <form  method="POST" action="{{ route('admin.setting.update',app()->getLocale()) }}" class="m-form m-form--fit m-form--label-align-right"  >
+        <form  method="POST" action="{{ route('admin.setting.update',app()->getLocale()) }}" enctype="multipart/form-data" class="m-form m-form--fit m-form--label-align-right"  >
             @csrf
             @method('PUT')
             <div class="m-portlet__body">
@@ -39,11 +39,11 @@
                 </div>
                 <div class="form-group m-form__group">
                     <label for="logo">{{ __('admin.logo') }}</label>
-                    <input type="text" class="form-control m-input" id="logo" name="logo" value="{{ $data->logo ?? $data->logo }}" placeholder="{{ __('admin.logo') }}">
+                    <input type="file" class="form-control m-input" id="logo" name="logo" value="{{ $data->logo ?? $data->logo }}" placeholder="{{ __('admin.logo') }}">
                 </div>
                 <div class="form-group m-form__group">
                     <label for="icon">{{ __('admin.icon') }}</label>
-                    <input type="text" class="form-control m-input" id="icon" name="icon" value="{{ $data->icon ?? $data->icon }}" placeholder="{{ __('admin.icon') }}">
+                    <input type="file" class="form-control m-input" id="icon" name="icon" value="{{ $data->icon ?? $data->icon }}" placeholder="{{ __('admin.icon') }}">
                 </div>
                 <div class="form-group m-form__group">
                     <label for="email">{{ __('admin.email') }}</label>
