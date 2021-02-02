@@ -12,90 +12,115 @@
         </li>
 
         <li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-                    class="m-menu__link-text">Quiz</span>
+                    class="m-menu__link-text">{{  __('admin.quiz') }}</span>
                     <i class="m-menu__ver-arrow la la-angle-right"></i></a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
                         <span class="m-menu__link">
-                            <span class="m-menu__link-text">quiz</span></span>
+                            <span class="m-menu__link-text">{{  __('admin.quiz') }}</span></span>
                     </li>
                     <li class="m-menu__item  m-menu__item--active" aria-haspopup="true">
                         <a href="{{ route('createQuestion',app()->getLocale()) }}" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">Add question</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{  __('admin.add_question') }}</span></a>
                     </li>
                     <li class="m-menu__item" aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">View questions</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{   __('admin.view_question')  }}</span></a>
                     </li>
                 </ul>
             </div>
         </li>
 
         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-            class="m-menu__link-text">Products</span>
+            class="m-menu__link-text">{{   __('admin.products')  }}</span>
             <i class="m-menu__ver-arrow la la-angle-right"></i></a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
                         <span class="m-menu__link">
-                            <span class="m-menu__link-text">Products</span></span>
+                            <span class="m-menu__link-text">{{   __('admin.products')  }}</span></span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">View Products</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{   __('admin.view_broducts')  }}</span></a>
                     </li>
                     <li class="m-menu__item" aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">Add Product</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{   __('admin.add_broducts')  }}</span></a>
                     </li>
                 </ul>
             </div>
         </li>
 
         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-            class="m-menu__link-text">Orders</span>
+            class="m-menu__link-text">{{   __('admin.orders')  }}</span>
             <i class="m-menu__ver-arrow la la-angle-right"></i></a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
                         <span class="m-menu__link">
-                            <span class="m-menu__link-text">Orders</span></span>
+                            <span class="m-menu__link-text">{{   __('admin.orders')  }}</span></span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">View Orders</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{   __('admin.view_orders')  }}</span></a>
                     </li>
                 </ul>
             </div>
         </li>
 
         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
-            class="m-menu__link-text">Setting</span>
+            class="m-menu__link-text">{{   __('admin.setting')  }}</span>
             <i class="m-menu__ver-arrow la la-angle-right"></i></a>
             <div class="m-menu__submenu ">
                 <span class="m-menu__arrow"></span>
                 <ul class="m-menu__subnav">
                     <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
                         <span class="m-menu__link">
-                            <span class="m-menu__link-text">Setting</span></span>
+                            <span class="m-menu__link-text">{{   __('admin.setting')  }}</span></span>
                     </li>
                     <li class="m-menu__item " aria-haspopup="true">
                         <a href="../../components/quiz/state.html" class="m-menu__link ">
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
-                        <span></span></i><span class="m-menu__link-text">View Setting</span></a>
+                        <span></span></i><span class="m-menu__link-text">{{  __('view_setting') }}</span></a>
                     </li>
                 </ul>
             </div>
         </li>
+
+        <li class="m-menu__item  m-menu__item--submenu m-menu__item--expanded" aria-haspopup="true" m-menu-submenu-toggle="hover"><a href="javascript:;" class="m-menu__link m-menu__toggle"><i class="m-menu__link-icon flaticon-layers"></i><span
+            class="m-menu__link-text">{{ __('faqs') }}</span>
+            <i class="m-menu__ver-arrow la la-angle-right"></i></a>
+    <div class="m-menu__submenu ">
+        <span class="m-menu__arrow"></span>
+        <ul class="m-menu__subnav">
+            <li class="m-menu__item  m-menu__item--parent" aria-haspopup="true">
+                <span class="m-menu__link">
+                    <span class="m-menu__link-text">{{ __('faqs') }}</span></span>
+            </li>
+            <li class="m-menu__item" aria-haspopup="true">
+                <a href="{{ route('createQuestion',app()->getLocale()) }}" class="m-menu__link ">
+                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                <span></span></i><span class="m-menu__link-text">Add faqs question</span></a>
+            </li>
+            <li class="m-menu__item" aria-haspopup="true">
+                <a href="../../components/quiz/state.html" class="m-menu__link ">
+                    <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                <span></span></i><span class="m-menu__link-text">View faqs questions</span></a>
+            </li>
+        </ul>
+    </div>
+</li>
+
     </ul>
 </div>
 <!-- END: Aside Menu -->

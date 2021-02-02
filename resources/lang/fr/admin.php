@@ -1,6 +1,18 @@
 <?php
 
 return [
+    // navbar-valikko
+    'quiz' => 'tietokilpailu',
+    'add_question' => 'Lisää kysymys',
+    'view_question' => 'Näytä kysymykset',
+    'products' => 'Tuotteet',
+    'view_broducts' => 'Näytä tuotteet',
+    'add_broducts' => 'Lisää tuote',
+    'orders' => 'tilaukset',
+    'view_orders' => 'Näytä tilaukset',
+    'setting' => 'Asetus',
+    'view_setting' => 'Configuración de vista',
+
     "settings"=> "asetukset",
     "site_name"=> "Sivuston otsikko",
     "site_desc"=> "Sivun Kuvaus",

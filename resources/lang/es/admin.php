@@ -1,6 +1,18 @@
 <?php
 
 return [
+    // menú de la barra de navegación
+    'quiz' => 'Prueba',
+    'add_question' => 'Agregar pregunta',
+    'view_question' => 'Ver preguntas',
+    'productos' => 'Productos',
+    'view_broducts' => 'Ver productos',
+    'add_broducts' => 'Agregar producto',
+    'orders' => 'Pedidos',
+    'view_orders' => 'Ver pedidos',
+    'setting' => 'Configuración',
+    'view_setting' => 'Configuración de vista',
+
     'settings'=> 'Configuraciones',
     'site_name'=> 'Título del sitio',
     'site_desc'=> 'Descripción del lugar',
