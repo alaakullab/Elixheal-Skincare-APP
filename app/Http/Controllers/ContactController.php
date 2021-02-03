@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ContactResource;
 use App\Models\contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ContactController extends Controller
 {
@@ -18,11 +19,45 @@ class ContactController extends Controller
         return ContactResource::collection(contact::latest()->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function indexView(Request $request)
+    {        $items = contact::latest();
+
+        if ($request->filled('search'))
+            $items->where('name', 'like', "$request->search");
+        $items = $items->get();
+        return view('admin.contact.home')->with(['items'=>$items]);
+    }
+    public function editView($local,$id)
+    {
+        $item = contact::where('id',$id)->first();
+        return view('admin.contact.edit')->with(['item'=>$item]);
+    }
+    public function createView()
+    {
+        return view('admin.contact.create');
+    }
+    public function storeView(Request $request)
+{
+    $contact = new contact;
+    $contact->full_name = $request->full_name;
+    $contact->email_contacts = $request->email_contacts;
+    $contact->message = $request->message;
+    $contact->language_id = getLangId();
+    $contact->save();
+    return back();
+}
+    public function updateView(Request $request,$local,$id  )
+    {
+        $contact = contact::find($id);
+        $contact->update(
+            [
+                'full_name' => $request->full_name,
+                'email_contacts' => $request->email_contacts,
+                'message' => $request->message,
+            ]
+        );
+        return back();
+    }
     public function create()
     {
         //
