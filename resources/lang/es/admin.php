@@ -10,9 +10,10 @@ return [
     'add_broducts' => 'Agregar producto',
     'orders' => 'Pedidos',
     'view_orders' => 'Ver pedidos',
-    'setting' => 'Configuración',
+    'category' => 'Categoría',
     'view_setting' => 'Configuración de vista',
 
+    //settings
     'settings'=> 'Configuraciones',
     'site_name'=> 'Título del sitio',
     'site_desc'=> 'Descripción del lugar',

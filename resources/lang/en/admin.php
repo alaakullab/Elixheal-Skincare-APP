@@ -10,10 +10,33 @@ return [
     'add_broducts' => 'Add Product',
     'orders' => 'Orders',
     'view_orders' => 'View Orders',
-    'setting' => 'Setting',
+    'category' => 'Category',
     'view_setting' => 'View Setting',
-    `add faqs question' => 'Add faqs question',
+    'add faqs question' => 'Add faqs question',
 
+    //form and inputs name - label
+    'save' => 'Save',
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'cancel' => 'Cancel',
+    'name' => 'Name',
+    'delete' => 'Delete',
+    'close' => 'Close',
+    'action' => 'Action',
+
+    //contacts
+    'contact' => 'Contact',
+    'full_name' => 'Full name',
+    'email_contacts' => 'Email contacts',
+    'message' => 'Message',
+
+    //questions
+    'question' => 'Question',
+    'question_value' => 'Question value',
+    'question_type' => 'Question type',
+
+
+    //settings
     'settings'=> 'Settings',
     'site_name'=> 'Site name',
     'site_desc'=> 'Site description',

@@ -10,9 +10,20 @@ return [
     'add_broducts' => 'Aggiungi prodotto',
     'orders' => 'Orders',
     'view_orders' => 'Visualizza ordini',
-    'setting' => 'Configuración',
+    'category' => 'Categoria',
     'view_setting' => 'Configuración de vista',
 
+    // nome della forma e degli input - etichetta
+    'save' => 'Save',
+    'add' => 'Aggiungi',
+    'edit' => 'Modifica',
+    'cancel' => 'Annulla',
+    'name' => 'Name',
+    'delete' => 'Elimina',
+    'close' => 'Chiudi',
+    'action' => 'Action',
+
+    //settings
     "settings"=> "Configuraciones",
     "site_name"=> "Título del sitio",
     "site_desc"=> "Descrizione del sito",
