@@ -44,7 +44,7 @@ class SettingController extends Controller
 
     public function edit()
     {
-
+        print_r(app()->getLocale());die();
         return new SettingResource(Setting::where('language_id', getLangId())->first());
     }
 

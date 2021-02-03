@@ -28,9 +28,9 @@ class FaqsQuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function viewAdd()
     {
-        //
+        return view('admin.faqs.faqs_questions.form');
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\Faqs_questionResource;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,7 @@ Route::group(
     Route::get('createQuestion', [\App\Http\Controllers\QuestionController::class,'create'])->name('createQuestion');
     Route::get('admin/setting/edit',[\App\Http\Controllers\SettingController::class, 'viewEdit'])->name('admin.setting.edit');
     Route::put('admin/setting/update',[\App\Http\Controllers\SettingController::class, 'viewUpdate'])->name('admin.setting.update');
+    Route::get('admin/faqs_questions/add',[\App\Http\Controllers\FaqsQuestionController::class, 'viewAdd'])->name('admin.faqs_questions.add');
 
 
 
