@@ -11,12 +11,49 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+//        $this->middleware('JWT', ['except' => ['index','show']]);
     }
 
     public function index()
     {
         return CategoryResource::collection(Category::latest()->get());
+    }
+    public function indexView(Request $request)
+    {        $items = Category::latest();
+
+    if ($request->filled('search'))
+            $items->where('name', 'like', "$request->search");
+        $items = $items->get();
+        return view('admin.category.home')->with(['items'=>$items]);
+    }
+    public function editView($local,$id )
+    {
+        $item = Category::where('id',$id)->first();
+        return view('admin.category.edit')->with(['item'=>$item]);
+    }
+    public function createView()
+    {
+        return view('admin.category.create');
+    } public function storeView(Request $request)
+    {
+        $category = new Category;
+        $category->name = $request->name;
+        $category->language_id =  getLangId();
+        $category->user_id = auth()->id();
+        $category->slug = Str::slug($request->name);
+        $category->save();
+        return back();
+    }
+    public function updateView(Request $request,$local,$id  )
+    {
+        $category= Category::find($id);
+        $category->update(
+            [
+                'name'=> $request->name,
+                'slug'=> Str::slug($request->name)
+            ]
+        );
+        return back();
     }
 
     public function store(Request $request)

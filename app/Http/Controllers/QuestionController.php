@@ -10,14 +10,50 @@ class QuestionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+//        $this->middleware('JWT', ['except' => ['index','show']]);
     }
 
     public function index()
     {
         return QuestionResource::collection(Question::latest()->get());
     }
+    public function indexView(Request $request)
+    {        $items = Question::latest();
 
+        if ($request->filled('search'))
+            $items->where('name', 'like', "$request->search");
+        $items = $items->get();
+        return view('admin.question.home')->with(['items'=>$items]);
+    }
+    public function editView($local,$id)
+    {
+        $item = Question::where('id',$id)->first();
+        return view('admin.question.edit')->with(['item'=>$item]);
+    }
+    public function createView()
+    {
+        return view('admin.question.create');
+    }
+    public function storeView(Request $request)
+    {
+        $data = $request->all();
+        $data['user_id']=auth()->id();
+        $data['language_id']=getLangId();
+        Question::create($data);
+
+        return back();
+    }
+    public function updateView(Request $request,$local,$id  )
+    {
+        $question = Question::find($id);
+        $question->update(
+            [
+                'question_value' => $request->question_value,
+                'question_type' => $request->question_type
+            ]
+        );
+        return back();
+    }
     public function create()
     {
         //
