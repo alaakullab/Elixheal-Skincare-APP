@@ -25,29 +25,29 @@
                 @csrf
                 <div class="m-portlet__body">
                     <div class="form-group m-form__group">
-                        <label>{{__('admin.question_value')}}<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control form-control-solid" name="question_value"
-                               value="{{ old('question_value')}}" required/>
-                    </div>
-                    <div class="form-group m-form__group">
-                        <label>{{__('admin.question_type')}}<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control form-control-solid" name="question_type"
-                               value="{{ old('question_type')}}" required/>
+                        <label for="question_value">{{ __('admin.question_value') }}</label>
+
+                        <input type="text" class="form-control m-input" required id="question_value" name="question_value"
+                               value="{{old('question_value',@$item->question_value)}}" placeholder="{{ __('admin.question_value') }}">
+                    </div>        <div class="form-group m-form__group">
+                        <label for="question_type">{{ __('admin.question_type') }}</label>
+
+                        <input type="text" class="form-control m-input" required id="question_type" name="question_type"
+                               value="{{old('question_type',@$item->question_type)}}" placeholder="{{ __('admin.question_type') }}">
                     </div>
                 </div>
                 <div class="m-portlet__foot m-portlet__foot--fit">
                     <div class="m-form__actions">
-                        <button id="submitButton" class="btn btn-success ">{{__('admin.save')}}</button>
+                        <button type="submit" class="btn btn-success">{{ __('admin.save') }}</button>
                         <a href="{{route('admin.question.indexView',app()->getLocale())}}"
                            class="btn btn-secondary  mr-2">{{__('admin.cancel')}}</a>
                     </div>
                 </div>
             </form>
+
             <!--end::Form-->
         </div>
     </div>
 @endsection
 
-@section('script')
 
-@endsection
