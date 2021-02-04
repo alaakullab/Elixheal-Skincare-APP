@@ -54,6 +54,12 @@ class QuestionController extends Controller
         );
         return back();
     }
+    public function deleteView(Request $request,$local,$id  )
+    {
+        $question = Question::find($id);
+        $question->delete();
+        return back();
+    }
     public function create()
     {
         //

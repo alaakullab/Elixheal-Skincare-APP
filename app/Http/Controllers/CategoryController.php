@@ -55,6 +55,12 @@ class CategoryController extends Controller
         );
         return back();
     }
+    public function deleteView(Request $request,$local,$id  )
+    {
+        $category= Category::find($id);
+        $category->delete();
+        return back();
+    }
 
     public function store(Request $request)
     {

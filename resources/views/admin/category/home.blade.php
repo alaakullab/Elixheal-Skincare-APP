@@ -88,7 +88,9 @@
                                                 <a href="{{url(app()->getLocale().'/admin/category/'. $item->id.'/edit')}}"
                                                    class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                                    data-original-title="{{__('admin.edit')}}"><i class="fa fa-edit"></i></a>
-
+                                                <a href="{{url(app()->getLocale().'/admin/category/'. $item->id.'/delete')}}"
+                                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                                   data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
                                             </div>
 
                                         </td>

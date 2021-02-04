@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.contact'))}}
+@section('title') {{ucwords(__('admin.answers'))}}
 @endsection
 @section('css')
 @endsection
@@ -13,7 +13,7 @@
                 <!--begin::Info-->
                 <div class="d-flex align-items-center flex-wrap mr-1">
                     <div class="d-flex align-items-baseline mr-5">
-                        <h3>{{ucwords(__('admin.contact'))}}</h3>
+                        <h3>{{ucwords(__('admin.answers'))}}</h3>
                     </div>
                 </div>
                 <!--end::Info-->
@@ -22,8 +22,7 @@
 
 
                 <div class="btn-group mb-2 m-md-3 mt-md-0 ml-2 ">
-
-                    <a href="{{route('admin.contact.createView',app()->getLocale())}}" style="margin-right: 5px"
+                    <a href="{{url(app()->getLocale().'/admin/answer/'.$question->id.'/add')}}" style="margin-right: 5px"
                        class="btn btn-success"><i class="fa fa-plus"></i>{{__('admin.add')}}
                     </a>
 
@@ -73,9 +72,8 @@
                                 <thead>
                                 <tr>
 
-                                    <th> {{ucwords(__('admin.full_name'))}}</th>
-                                    <th> {{ucwords(__('admin.email_contacts'))}}</th>
-                                    <th> {{ucwords(__('admin.message'))}}</th>
+                                    <th> {{ucwords(__('admin.answer_value'))}}</th>
+
                                     <th> {{ucwords(__('admin.action'))}}</th>
                                 </tr>
                                 </thead>
@@ -83,19 +81,17 @@
                                 @forelse($items as $item)
                                     <tr class="odd gradeX" id="tr-{{$item->id}}">
 
-                                        <td> {{@$item->full_name?? 'محذوف'}}</td>
-                                        <td> {{@$item->email_contacts?? 'محذوف'}}</td>
-                                        <td> {{@$item->message?? 'محذوف'}}</td>
 
+                                        <td> {{$item->answer_value}}</td>
                                         <td>
                                             <div class="btn-group btn-action">
-                                                <a href="{{url(app()->getLocale().'/admin/contact/'. $item->id.'/edit')}}"
+                                                <a href="{{url(app()->getLocale().'/admin/answer/'. $item->id.'/edit')}}"
                                                    class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                                    data-original-title="{{__('admin.edit')}}"><i class="fa fa-edit"></i></a>
-                                                               </div>
-                                            <a href="{{url(app()->getLocale().'/admin/contact/'. $item->id.'/delete')}}"
-                                               class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
-                                               data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
+                                                <a href="{{url(app()->getLocale().'/admin/answer/'. $item->id.'/delete')}}"
+                                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                                   data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
+                                                   </div>
 
                                         </td>
                                     </tr>

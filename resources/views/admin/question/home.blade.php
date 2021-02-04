@@ -84,13 +84,21 @@
                                     <tr class="odd gradeX" id="tr-{{$item->id}}">
 
 
-                                        <td> {{$item->question_type}}</td>
+                                        <td> {{$item->question_value}}</td>
                                         <td> {{$item->question_type}}</td>
                                         <td>
                                             <div class="btn-group btn-action">
                                                 <a href="{{url(app()->getLocale().'/admin/question/'. $item->id.'/edit')}}"
                                                    class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                                    data-original-title="{{__('admin.edit')}}"><i class="fa fa-edit"></i></a>
+                                                <a href="{{url(app()->getLocale().'/admin/question/'. $item->id.'/delete')}}"
+                                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                                   data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
+
+
+                                                <a href="{{url(app()->getLocale().'/admin/answer/'. $item->id)}}"
+                                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                                   data-original-title="{{__('admin.answers')}}"><i class="fa fa-question-circle"></i></a>
                                                    </div>
 
                                         </td>

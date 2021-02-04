@@ -57,6 +57,11 @@ class ContactController extends Controller
             ]
         );
         return back();
+    }    public function deleteView(Request $request,$local,$id  )
+    {
+        $contact = contact::find($id);
+        $contact->delete();
+        return back();
     }
     public function create()
     {
