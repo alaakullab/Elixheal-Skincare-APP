@@ -10,7 +10,7 @@ class FaqsQuestionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+        $this->middleware('JWT', ['except' => ['index','show','indexView','createView','storeView']]);
     }
 
     /**
@@ -23,14 +23,23 @@ class FaqsQuestionController extends Controller
         return Faqs_questionResource::collection(faqs_question::latest()->get());
     }
 
+    public function indexView(Request $request)
+    {
+        $items = faqs_question::latest();
+        if ($request->filled('search'))
+            $items->where('name', 'like', "$request->search");
+        $items = $items->get();
+        return view('admin.faqs.faqs_questions.home')->with(['items'=>$items]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewAdd()
+    public function createView()
     {
-        return view('admin.faqs.faqs_questions.form');
+        return view('admin.faqs.faqs_questions.create');
     }
 
     /**
@@ -41,8 +50,20 @@ class FaqsQuestionController extends Controller
      */
     public function store(Request $request)
     {
-        faqs_question::create($request->all());
+        $data = $request->all();
+        $data['language_id'] = getLangId();
+        $data['user_id'] = 1;
+        faqs_question::create($data);
         return response('Created', 201);
+    }
+
+    public function storeView(Request $request)
+    {
+        $this->store($request);
+
+        return redirect()->route('admin.faqs_questions.add', app()->getLocale())->with('success', 'Created');
+
+
     }
 
     /**

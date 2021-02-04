@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.questions'))}}
+@section('title') {{ucwords(__('admin.view_faqs_question'))}}
 @endsection
 @section('css')
 @endsection
@@ -13,7 +13,7 @@
                 <!--begin::Info-->
                 <div class="d-flex align-items-center flex-wrap mr-1">
                     <div class="d-flex align-items-baseline mr-5">
-                        <h3>{{ucwords(__('admin.questions'))}}</h3>
+                        <h3>{{ucwords(__('admin.faqs_question'))}}</h3>
                     </div>
                 </div>
                 <!--end::Info-->
@@ -23,7 +23,7 @@
 
                 <div class="btn-group mb-2 m-md-3 mt-md-0 ml-2 ">
 
-                    <a href="{{route('admin.question.createView',app()->getLocale())}}" style="margin-right: 5px"
+                    <a href="{{route('admin.faqs_questions.add',app()->getLocale())}}" style="margin-right: 5px"
                        class="btn btn-success"><i class="fa fa-plus"></i>{{__('admin.add')}}
                     </a>
 
@@ -59,7 +59,7 @@
                             </div>
                             <div class="btn-group ">
                                 <form class="input-group">
-                                    <input type="text" class="form-control" name="search" placeholder="بحث">
+                                    <input type="text" class="form-control" name="search" placeholder="{{ucwords(__('search'))}}">
                                     <div class="input-group-append">
                                         <button class="btn btn-secondary" >
                                             <i class="fas fa-search"></i>
@@ -72,33 +72,29 @@
                             <table class="table table-hover tableWithSearch" id="tableWithSearch">
                                 <thead>
                                 <tr>
-
+                                    <th>#</th>
                                     <th> {{ucwords(__('admin.question_value'))}}</th>
-                                    <th> {{ucwords(__('admin.question_type'))}}</th>
-
                                     <th> {{ucwords(__('admin.action'))}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @php($count = 1)
                                 @forelse($items as $item)
                                     <tr class="odd gradeX" id="tr-{{$item->id}}">
-
-
-                                        <td> {{$item->question_type}}</td>
-                                        <td> {{$item->question_type}}</td>
+                                        <td> {{$count++}}</td>
+                                        <td> {{$item->question_value}}</td>
                                         <td>
                                             <div class="btn-group btn-action">
-                                                <a href="{{url(app()->getLocale().'/admin/question/'. $item->id.'/edit')}}"
+                                                <a href="{{url(app()->getLocale().'/admin/faqs_questions/'. $item->id.'/edit')}}"
                                                    class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
-                                                   data-original-title="{{__('admin.edit')}}"><i class="fa fa-edit"></i></a>
+                                                   data-original-title="{{ucwords(__('admin.edit'))}}"><i class="fa fa-edit"></i></a>
                                                    </div>
-
                                         </td>
                                     </tr>
                                 @empty
                                     <tr >
                                         <td class="text-center lead  " colspan="8">
-                                        {{__('admin.no')}} </td></tr>
+                                        {{ucwords(__('admin.no'))}} </td></tr>
                                 @endforelse
                                 </tbody>
                             </table>

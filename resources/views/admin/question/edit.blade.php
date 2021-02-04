@@ -72,8 +72,6 @@
         <!--end::Entry-->
     </div>
     </div>
-
-
 @endsection
 
 

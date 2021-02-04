@@ -23,6 +23,7 @@ return [
     'delete' => 'Delete',
     'close' => 'Close',
     'action' => 'Action',
+    'search' => 'Search',
 
     //contacts
     'contact' => 'Contact',
@@ -30,11 +31,17 @@ return [
     'email_contacts' => 'Email contacts',
     'message' => 'Message',
 
-    //questions
+    //quiz
     'question' => 'Question',
+    'questions' => 'Questions',
     'question_value' => 'Question value',
     'question_type' => 'Question type',
 
+    //faqs
+    'faqs_question' => 'FAQS Question',
+    'add_faqs_question' => 'Add FAQS Question',
+    'edit_faqs_question' => 'Edit FAQS Question',
+    'view_faqs_question' => 'View FAQS Question',
 
     //settings
     'settings'=> 'Settings',
