@@ -26,6 +26,7 @@ class QuestionController extends Controller
         }
         $items = $items->paginate(10);
         return view('admin.question.home')->with(['items'=>$items]);
+
     }
     public function editView($local,$id)
     {
@@ -41,7 +42,13 @@ class QuestionController extends Controller
         $data = $request->all();
         $data['user_id']=auth()->id();
         $data['language_id']=getLangId();
-        Question::create($data);
+        $status = Question::create($data);
+       if($status){
+        toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+       }else
+       {
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+       }
 
         return back();
     }

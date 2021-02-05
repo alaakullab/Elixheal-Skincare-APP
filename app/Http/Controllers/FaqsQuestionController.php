@@ -54,18 +54,22 @@ class FaqsQuestionController extends Controller
     {
         $data = $request->all();
         $data['language_id'] = getLangId();
-        $data['user_id'] = 1;
+        $data['user_id'] = auth()->id();
         faqs_question::create($data);
         return response('Created', 201);
     }
 
     public function storeView(Request $request)
     {
-        $this->store($request);
+        $status = $this->store($request);
+       if($status){
+        toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+       }else
+       {
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+       }
 
-        return redirect()->route('admin.faqs_questions.add', app()->getLocale())->with('success', 'Created');
-
-
+        return redirect()->route('admin.faqs_questions.add', app()->getLocale());
     }
 
     /**

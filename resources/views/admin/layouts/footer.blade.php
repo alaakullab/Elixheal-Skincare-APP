@@ -604,7 +604,9 @@
 		<!--begin::Global Theme Bundle -->
 		<script src="{{url('admin_panel')}}/assets/demo/base/scripts.bundle.js" type="text/javascript"></script>
 		<!--end::Global Theme Bundle -->
-
+        {{-- @jquery --}}
+        @toastr_js
+        @toastr_render
         @yield('script')
 
 	</body>

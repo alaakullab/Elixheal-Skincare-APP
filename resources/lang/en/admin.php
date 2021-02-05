@@ -25,6 +25,10 @@ return [
     'action' => 'Action',
     'search' => 'Search',
     'no_data_to_viwe' => 'No data to viwe',
+    'success' => 'Success',
+    'save_successful_msg' => 'Save successful!',
+    'error' => 'Error',
+    'save_error_msg' => 'Error saving data! Please try again.!',
 
     //contacts
     'contact' => 'Contact',

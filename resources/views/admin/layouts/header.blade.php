@@ -67,6 +67,7 @@
 		<!--end::Global Theme Styles -->
 		<!--begin::Page Vendors Styles -->
         @yield('css')
+        @toastr_css
 		<!--RTL version:<link href="{{url('admin_panel')}}/assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
 		<!--end::Page Vendors Styles -->
 		<link rel="shortcut icon" href="{{url('admin_panel')}}/assets/demo/media/img/logo/favicon.ico" />
