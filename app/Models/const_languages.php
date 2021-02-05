@@ -13,6 +13,6 @@ class const_languages extends Model
 
     public function questions()
     {
-        return $this->hasMany(questions::class);
+        return $this->hasMany(question::class);
     }
 }
