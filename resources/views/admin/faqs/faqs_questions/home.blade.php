@@ -53,10 +53,6 @@
                 <div class="gutter-b example example-compact">
                     <div class="contentTabel">
                         <div class="card-header d-flex flex-column flex-sm-row align-items-sm-start justify-content-sm-between">
-                            <div>
-
-
-                            </div>
                             <div class="btn-group ">
                                 <form class="input-group">
                                     <input type="text" class="form-control" name="search" placeholder="{{ucwords(__('search'))}}">

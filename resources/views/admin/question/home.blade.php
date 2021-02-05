@@ -29,13 +29,25 @@
                 <div class="m-portlet__head-tools">
                     <ul class="m-portlet__nav">
                         <li class="m-portlet__nav-item">
+                            <div class="btn-group ">
+                                <form class="input-group">
+                                    <input type="text" class="form-control" name="search" placeholder="{{ucwords(__('search'))}}">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-secondary" >
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                          </div>
+                        </li>
+                        <li class="m-portlet__nav-item">
                             <a href="{{route('admin.question.createView',app()->getLocale())}}"
                                class="btn btn-primary"><i class="fa fa-plus"></i>
                                 <span>{{__('admin.add')}}</span>
                             </a>
                         </li>
                         <li class="m-portlet__nav-item"></li>
-                       <li class="m-portlet__nav-item">
+                       {{-- <li class="m-portlet__nav-item">
                            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
                                <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
                                    <i class="la la-ellipsis-h m--font-brand"></i>
@@ -93,7 +105,7 @@
                                    </div>
                                </div>
                            </div>
-                       </li>
+                       </li> --}}
                     </ul>
                 </div>
             </div>
