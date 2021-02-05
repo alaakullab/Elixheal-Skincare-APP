@@ -27,8 +27,10 @@ class FaqsQuestionController extends Controller
     {
         $items = faqs_question::latest();
         if ($request->filled('search'))
-            $items->where('name', 'like', "$request->search");
-        $items = $items->get();
+        {
+            $items->where('question_value', 'like', "%$request->search%");
+        }
+        $items = $items->paginate(10);
         return view('admin.faqs.faqs_questions.home')->with(['items'=>$items]);
     }
 

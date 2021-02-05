@@ -18,10 +18,12 @@ class QuestionController extends Controller
         return QuestionResource::collection(Question::latest()->get());
     }
     public function indexView(Request $request)
-    {        $items = Question::latest();
-
+    {
+         $items = Question::latest();
         if ($request->filled('search'))
+        {
             $items->where('question_value', 'like', "%$request->search%");
+        }
         $items = $items->paginate(10);
         return view('admin.question.home')->with(['items'=>$items]);
     }
