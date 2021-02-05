@@ -65,10 +65,8 @@
 		<!--RTL version:<link href="{{url('admin_panel')}}/assets/demo/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
 
 		<!--end::Global Theme Styles -->
-
-        @yield('css')
-
 		<!--begin::Page Vendors Styles -->
+        @yield('css')
 		<!--RTL version:<link href="{{url('admin_panel')}}/assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
 		<!--end::Page Vendors Styles -->
 		<link rel="shortcut icon" href="{{url('admin_panel')}}/assets/demo/media/img/logo/favicon.ico" />

@@ -603,23 +603,10 @@
 
 		<!--begin::Global Theme Bundle -->
 		<script src="{{url('admin_panel')}}/assets/demo/base/scripts.bundle.js" type="text/javascript"></script>
-
 		<!--end::Global Theme Bundle -->
 
         @yield('script')
 
-		<!--begin::Page Scripts -->
-		<script src="{{url('admin_panel')}}/assets/app/js/dashboard.js" type="text/javascript"></script>
-        {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-<script>
-    $(document).on('click', '#submitButton', function () {
-        // $('#submitButton').addClass('spinner spinner-white spinner-left');
-        $('#submitForm').click();
-    });
-
-
-</script>
-		<!--end::Page Scripts -->
 	</body>
 
 	<!-- end::Body -->

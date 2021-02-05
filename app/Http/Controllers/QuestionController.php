@@ -21,8 +21,8 @@ class QuestionController extends Controller
     {        $items = Question::latest();
 
         if ($request->filled('search'))
-            $items->where('name', 'like', "$request->search");
-        $items = $items->get();
+            $items->where('question_value', 'like', "$request->search");
+        $items = $items->paginate(2);
         return view('admin.question.home')->with(['items'=>$items]);
     }
     public function editView($local,$id)

@@ -24,6 +24,7 @@ return [
     'close' => 'Close',
     'action' => 'Action',
     'search' => 'Search',
+    'no_data_to_viwe' => 'No data to viwe',
 
     //contacts
     'contact' => 'Contact',

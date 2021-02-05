@@ -2,27 +2,21 @@
 @section('title') {{ucwords(__('admin.questions'))}}
 @endsection
 @section('css')
-    <!--begin::Page Vendors -->
-    <script src={{url('admin_panel')}}/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-    <!--end::Page Vendors -->
-
-    <!--begin::Page Scripts -->
-    <script src="{{url('admin_panel')}}/assets/demo/custom/crud/datatables/data-sources/html.js" type="text/javascript"></script>
-    <!--end::Page Scripts -->
+<link href="{{url('admin_panel')}}/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 
     <div class="col-md-12">
-{{--        <div class="m-alert m-alert--icon m-alert--air m-alert--square alert alert-dismissible m--margin-bottom-30" role="alert">--}}
-{{--            <div class="m-alert__icon">--}}
-{{--                <i class="flaticon-exclamation m--font-brand"></i>--}}
-{{--            </div>--}}
-{{--            <div class="m-alert__text">--}}
-{{--                The foundation for DataTables is progressive enhancement, so it is very adept at reading table information directly from the DOM. This example shows how easy it is to add searching, ordering and paging to your HTML table by simply running--}}
-{{--                DataTables on it.--}}
-{{--                See official documentation <a href="https://datatables.net/examples/data_sources/dom.html" target="_blank">here</a>.--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        {{-- <div class="m-alert m-alert--icon m-alert--air m-alert--square alert alert-dismissible m--margin-bottom-30" role="alert">
+							<div class="m-alert__icon">
+								<i class="flaticon-exclamation m--font-brand"></i>
+							</div>
+							<div class="m-alert__text">
+								The foundation for DataTables is progressive enhancement, so it is very adept at reading table information directly from the DOM. This example shows how easy it is to add searching, ordering and paging to your HTML table by simply running
+								DataTables on it.
+								See official documentation <a href="https://datatables.net/examples/data_sources/dom.html" target="_blank">here</a>.
+							</div>
+            </div> --}}
         <div class="m-portlet m-portlet--mobile">
             <div class="m-portlet__head">
                 <div class="m-portlet__head-caption">
@@ -41,71 +35,72 @@
                             </a>
                         </li>
                         <li class="m-portlet__nav-item"></li>
-{{--                        <li class="m-portlet__nav-item">--}}
-{{--                            <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">--}}
-{{--                                <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">--}}
-{{--                                    <i class="la la-ellipsis-h m--font-brand"></i>--}}
-{{--                                </a>--}}
-{{--                                <div class="m-dropdown__wrapper">--}}
-{{--                                    <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>--}}
-{{--                                    <div class="m-dropdown__inner">--}}
-{{--                                        <div class="m-dropdown__body">--}}
-{{--                                            <div class="m-dropdown__content">--}}
-{{--                                                <ul class="m-nav">--}}
-{{--                                                    <li class="m-nav__section m-nav__section--first">--}}
-{{--                                                        <span class="m-nav__section-text">Quick Actions</span>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-share"></i>--}}
-{{--                                                            <span class="m-nav__link-text">Create Post</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-chat-1"></i>--}}
-{{--                                                            <span class="m-nav__link-text">Send Messages</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-multimedia-2"></i>--}}
-{{--                                                            <span class="m-nav__link-text">Upload File</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__section">--}}
-{{--                                                        <span class="m-nav__section-text">Useful Links</span>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-info"></i>--}}
-{{--                                                            <span class="m-nav__link-text">FAQ</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-lifebuoy"></i>--}}
-{{--                                                            <span class="m-nav__link-text">Support</span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__separator m-nav__separator--fit m--hide">--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item m--hide">--}}
-{{--                                                        <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">Submit</a>--}}
-{{--                                                    </li>--}}
-{{--                                                </ul>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </li>--}}
+                       <li class="m-portlet__nav-item">
+                           <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
+                               <a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+                                   <i class="la la-ellipsis-h m--font-brand"></i>
+                               </a>
+                               <div class="m-dropdown__wrapper">
+                                   <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                   <div class="m-dropdown__inner">
+                                       <div class="m-dropdown__body">
+                                           <div class="m-dropdown__content">
+                                               <ul class="m-nav">
+                                                   <li class="m-nav__section m-nav__section--first">
+                                                       <span class="m-nav__section-text">Quick Actions</span>
+                                                   </li>
+                                                   <li class="m-nav__item">
+                                                       <a href="" class="m-nav__link">
+                                                           <i class="m-nav__link-icon flaticon-share"></i>
+                                                           <span class="m-nav__link-text">Create Post</span>
+                                                       </a>
+                                                   </li>
+                                                   <li class="m-nav__item">
+                                                       <a href="" class="m-nav__link">
+                                                           <i class="m-nav__link-icon flaticon-chat-1"></i>
+                                                           <span class="m-nav__link-text">Send Messages</span>
+                                                       </a>
+                                                   </li>
+                                                   <li class="m-nav__item">
+                                                       <a href="" class="m-nav__link">
+                                                           <i class="m-nav__link-icon flaticon-multimedia-2"></i>
+                                                           <span class="m-nav__link-text">Upload File</span>
+                                                       </a>
+                                                   </li>
+                                                   <li class="m-nav__section">
+                                                       <span class="m-nav__section-text">Useful Links</span>
+                                                   </li>
+                                                   <li class="m-nav__item">
+                                                       <a href="" class="m-nav__link">
+                                                           <i class="m-nav__link-icon flaticon-info"></i>
+                                                           <span class="m-nav__link-text">FAQ</span>
+                                                       </a>
+                                                   </li>
+                                                   <li class="m-nav__item">
+                                                       <a href="" class="m-nav__link">
+                                                           <i class="m-nav__link-icon flaticon-lifebuoy"></i>
+                                                           <span class="m-nav__link-text">Support</span>
+                                                       </a>
+                                                   </li>
+                                                   <li class="m-nav__separator m-nav__separator--fit m--hide">
+                                                   </li>
+                                                   <li class="m-nav__item m--hide">
+                                                       <a href="#" class="btn btn-outline-danger m-btn m-btn--pill m-btn--wide btn-sm">Submit</a>
+                                                   </li>
+                                               </ul>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </li>
                     </ul>
                 </div>
             </div>
             <div class="m-portlet__body">
                 <!--begin: Datatable -->
-                <table class="table table-striped- table-bordered table-hover table-checkable" id="m_table_1">
+                <div class="portlet-body table-responsive " style="overflow-x: visible;">
+                <table class="table table-striped- table-bordered table-hover table-checkable no-footer">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -138,25 +133,18 @@
                     @empty
                         <tr>
                             <td class="text-center lead  " colspan="8">
-                                {{__('admin.no')}} </td>
+                                {{__('admin.no_data_to_viwe')}} </td>
                         </tr>
                     @endforelse
                     </tbody>
                 </table>
+                        {{ $items->links("pagination::bootstrap-4") }}
+                </div>
             </div>
+
         </div>
     </div>
 @endsection
 
 @section('script')
-{{--<script src="{{url('admin_panel')}}/assets/demo/custom/crud/metronic-datatable/base/html-table.js" type="text/javascript"></script>--}}
-<!--begin::Page Vendors -->
-<script src="{{url('admin_panel')}}/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-
-<!--end::Page Vendors -->
-
-<!--begin::Page Scripts -->
-<script src="{{url('admin_panel')}}/assets/demo/custom/crud/datatables/data-sources/html.js" type="text/javascript"></script>
-
-<!--end::Page Scripts -->
 @endsection
