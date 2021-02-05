@@ -22,8 +22,8 @@ class CreateFaqsAnswersTable extends Migration
         });
 
         Schema::table('faqs_answers', function($table) {
-            $table->foreign('faqs_question_id')->references('id')->on('faqs_questions')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('faqs_question_id')->constrained('faqs_questions')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
         });
     }
 
