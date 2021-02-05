@@ -24,10 +24,10 @@ class CreateAnswersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('answers', function($table) {
-            $table->foreignId('question_id')->constrained('questions')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('answers', function($table) {
+        //     $table->foreignId('question_id')->constrained('questions')->onDelete('cascade');
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

@@ -21,9 +21,9 @@ class CreateFaqsQuestionsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('faqs_questions', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('faqs_questions', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

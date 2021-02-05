@@ -35,9 +35,9 @@ class CreateSettingsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('settings', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('settings', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

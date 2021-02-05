@@ -23,9 +23,9 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('orders', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('orders', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

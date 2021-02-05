@@ -23,9 +23,9 @@ class CreateQuestionsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('questions', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('questions', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

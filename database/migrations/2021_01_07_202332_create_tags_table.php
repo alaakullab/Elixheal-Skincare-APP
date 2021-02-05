@@ -22,9 +22,9 @@ class CreateTagsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('tags', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('tags', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

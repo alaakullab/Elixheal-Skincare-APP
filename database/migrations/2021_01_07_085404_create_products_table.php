@@ -28,10 +28,10 @@ class CreateProductsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('products', function($table) {
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('products', function($table) {
+        //     $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

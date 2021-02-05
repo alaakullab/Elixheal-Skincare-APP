@@ -23,9 +23,9 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('categories', function($table) {
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('categories', function($table) {
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**

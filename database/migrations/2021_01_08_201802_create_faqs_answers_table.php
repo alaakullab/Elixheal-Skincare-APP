@@ -21,10 +21,10 @@ class CreateFaqsAnswersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('faqs_answers', function($table) {
-            $table->foreignId('faqs_question_id')->constrained('faqs_questions')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-        });
+        // Schema::table('faqs_answers', function($table) {
+        //     $table->foreignId('faqs_question_id')->constrained('faqs_questions')->onDelete('cascade');
+        //     $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+        // });
     }
 
     /**
