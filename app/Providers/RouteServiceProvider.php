@@ -47,6 +47,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        if(env('FORCE_HTTPS',false)) { // Default value should be false for local server
+            resolve(\Illuminate\Routing\UrlGenerator::class)->forceScheme('https');
+        }
     }
 
     /**
