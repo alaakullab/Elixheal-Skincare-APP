@@ -606,10 +606,7 @@
 
 		<!--end::Global Theme Bundle -->
 
-		<!--begin::Page Vendors -->
-		<script src="{{url('admin_panel')}}/assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
-
-		<!--end::Page Vendors -->
+        @yield('script')
 
 		<!--begin::Page Scripts -->
 		<script src="{{url('admin_panel')}}/assets/app/js/dashboard.js" type="text/javascript"></script>
