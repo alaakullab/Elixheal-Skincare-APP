@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         question::factory(10)->create();
         answer::factory(30)->create();
         faqs_question::factory(30)->create();
-        // faqs_answer::factory(90)->create();
+        faqs_answer::factory(90)->create();
         setting::factory(4)->create();
     }
 }
