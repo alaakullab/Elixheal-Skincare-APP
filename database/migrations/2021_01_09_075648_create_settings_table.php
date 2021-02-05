@@ -32,8 +32,11 @@ class CreateSettingsTable extends Migration
             $table->string('instagram')->nullable()->comment('instagram link the company for contacts');
             $table->string('whatsapp')->nullable()->comment('whatsapp nummber the company for contacts');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+        });
+
+        Schema::table('settings', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

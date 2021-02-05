@@ -17,10 +17,13 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('value')->nullable()->comment('Tag value');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
+        });
+
+        Schema::table('tags', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

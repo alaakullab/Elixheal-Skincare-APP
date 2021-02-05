@@ -18,8 +18,11 @@ class CreateFaqsQuestionsTable extends Migration
             $table->text('question_value')->comment('add question value to faqs');
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+        });
+
+        Schema::table('faqs_questions', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

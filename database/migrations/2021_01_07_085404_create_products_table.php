@@ -23,11 +23,14 @@ class CreateProductsTable extends Migration
             $table->float('qyt')->comment('Add the Quantity of the product (USD) ');
             $table->tinyInteger('status')->default('1')->comment('Status of product to display the product or hide');
             $table->integer('category_id')->unsigned()->comment('To know the product classification and link it to the categories table');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable()->comment('User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
+        });
+
+        Schema::table('products', function($table) {
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

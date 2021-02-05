@@ -17,10 +17,13 @@ class CreateFaqsAnswersTable extends Migration
             $table->id();
             $table->text('answers_value')->comment('add answers value to faqs');
             $table->integer('faqs_question_id')->comment('Add question Id from table questions');
-            $table->foreign('faqs_question_id')->references('id')->on('faqs_questions')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
+        });
+
+        Schema::table('faqs_answers', function($table) {
+            $table->foreign('faqs_question_id')->references('id')->on('faqs_questions')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -18,12 +18,15 @@ class CreateAnswersTable extends Migration
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->string('answer_value')->comment('To add const answer value (not result) ');
             $table->integer('question_id')->unsigned()->comment('Add question Id from table questions');
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->integer('question_next_id')->unsigned()->comment('Add question Id from table questions to display the next question');
             $table->integer('user_id')->unsigned()->nullable()->comment('User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
+        });
+
+        Schema::table('answers', function($table) {
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

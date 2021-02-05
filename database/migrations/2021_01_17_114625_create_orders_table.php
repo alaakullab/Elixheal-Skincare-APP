@@ -18,10 +18,13 @@ class CreateOrdersTable extends Migration
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->integer('product_id')->unsigned()->nullable()->comment('product  Number To Choose a display language from table products');
             $table->integer('user_id')->unsigned()->nullable()->comment('Add User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('total');
             $table->tinyInteger('delivered');
             $table->timestamps();
+        });
+
+        Schema::table('orders', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

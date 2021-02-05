@@ -19,9 +19,12 @@ class CreateQuestionsTable extends Migration
             $table->string('question_value')->comment('To add const question value (not result) ');
             $table->string('question_type')->comment('To determine the type of question');
             $table->integer('user_id')->unsigned()->nullable()->comment('User Id from table users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();
+        });
+
+        Schema::table('questions', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
