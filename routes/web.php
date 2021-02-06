@@ -21,7 +21,7 @@ Route::group(['prefix' => '{language}'], function () {
     //     abort(404);
     // }
 
-    Auth::routes();
+    // Auth::routes();
 
     Route::get('admin/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('admin/dashboard',[\App\Http\Controllers\DashboardController::class, 'index'])->name('admin.dashboard');
@@ -61,7 +61,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('admin/setting/edit',[\App\Http\Controllers\SettingController::class, 'viewEdit'])->name('admin.setting.edit');
     Route::put('admin/setting/update',[\App\Http\Controllers\SettingController::class, 'viewUpdate'])->name('admin.setting.update');
 
-    // FAQS 
+    // FAQS
     Route::get('admin/faqs_questions/list', [\App\Http\Controllers\FaqsQuestionController::class,'indexView'])->name('admin.faqs_questions.indexView');
     Route::get('admin/faqs_questions/add',[\App\Http\Controllers\FaqsQuestionController::class, 'createView'])->name('admin.faqs_questions.add');
     Route::post('admin/faqs_questions/store',[\App\Http\Controllers\FaqsQuestionController::class, 'storeView'])->name('admin.faqs_questions.store');
