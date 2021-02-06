@@ -55,18 +55,30 @@ class QuestionController extends Controller
     public function updateView(Request $request,$local,$id  )
     {
         $question = Question::find($id);
-        $question->update(
+        $status =  $question->update(
             [
                 'question_value' => $request->question_value,
                 'question_type' => $request->question_type
             ]
         );
+        if($status){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+           }else
+           {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
         return back();
     }
     public function deleteView(Request $request,$local,$id  )
     {
         $question = Question::find($id);
-        $question->delete();
+        $status = $question->delete();
+        if($status){
+            toastr()->success(__('admin.delete_successful_msg'), __('admin.success'));
+           }else
+           {
+            toastr()->error(__('admin.delete_error_msg'), __('admin.error'));
+        }
         return back();
     }
     public function create()

@@ -21,9 +21,9 @@ Route::group(['prefix' => '{language}'], function () {
     //     abort(404);
     // }
 
-    Route::get('admin', function () {
+    Route::get('admin/dashboard', function () {
         return view('admin.dashboard');
-    })->name('admin');
+    })->name('admin.dashboard');
 
     Route::get('admin/category', [\App\Http\Controllers\CategoryController::class,'indexView'])->name('admin.category.indexView');
     Route::get('admin/category/add', [\App\Http\Controllers\CategoryController::class,'createView'])->name('admin.category.createView');

@@ -29,6 +29,10 @@ return [
     'save_successful_msg' => 'Save successful!',
     'error' => 'Error',
     'save_error_msg' => 'Error saving data! Please try again.!',
+    'update_successful_msg' => 'Update successful!',
+    'update_error_msg' => 'Error updating data! Please try again.!',
+    'delete_successful_msg' => 'Update successful!',
+    'delete_error_msg' => 'Error deleting data! Please try again.!',
 
     //contacts
     'contact' => 'Contact',
