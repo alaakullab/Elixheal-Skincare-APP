@@ -31,8 +31,9 @@ return [
     'save_error_msg' => 'Error saving data! Please try again.!',
     'update_successful_msg' => 'Update successful!',
     'update_error_msg' => 'Error updating data! Please try again.!',
-    'delete_successful_msg' => 'Update successful!',
+    'delete_successful_msg' => 'delete successful!',
     'delete_error_msg' => 'Error deleting data! Please try again.!',
+    'dashboard' => 'Dashboard',
 
     //contacts
     'contact' => 'Contact',
