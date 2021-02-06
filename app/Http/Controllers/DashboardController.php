@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function home() {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index() {
 //        $comment = \App\Comment::count();
 //        $user = \App\User::count();
 //        $ordersum = \App\Order::sum('total');
