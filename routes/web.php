@@ -24,7 +24,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::prefix('admin')->name('admin.')->group(function () {
 
         Auth::routes();
-//    Route::middleware('auth:web')->group(function () {
+    Route::middleware('auth:web')->group(function () {
 
         Route::get('home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::get('dashboard',[\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
@@ -84,7 +84,7 @@ Route::group(['prefix' => '{language}'], function () {
     });
 
 
-//});
+});
 });
 // Route::get('/greeting/{locale}', function ($locale) {
 //     if (! in_array($locale, ['en', 'es', 'fr'])) {
