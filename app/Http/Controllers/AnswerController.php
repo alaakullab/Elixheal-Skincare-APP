@@ -18,8 +18,7 @@ class AnswerController extends Controller
     public function indexView(Request $request, $lang, $id)
     {
         $question =Question::find($id);
-        $items = $question->answer;
-
+        $items = $question->answer()->paginate(10);
         if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items;

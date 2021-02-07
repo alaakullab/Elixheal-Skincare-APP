@@ -23,7 +23,7 @@ class CategoryController extends Controller
 
     if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
-        $items = $items->get();
+        $items = $items->paginate(10);
         return view('admin.category.home')->with(['items'=>$items]);
     }
     public function editView($local,$id )
