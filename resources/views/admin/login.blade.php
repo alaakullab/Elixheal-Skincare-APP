@@ -100,6 +100,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<h3 class="m-login__title">Sign In To Admin</h3>
 							</div>
 							<form class="m-login__form m-form" method="POST" action="{{ route('admin.login', app()->getLocale()) }}">
+                                @csrf
 								<div class="form-group m-form__group">
                                     <input class="form-control m-input @error('email') is-invalid @enderror" type="email" placeholder="Email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus >
                                     @error('email')

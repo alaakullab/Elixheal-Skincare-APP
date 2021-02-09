@@ -33,6 +33,21 @@ class AuthController extends Controller
 
         return $this->respondWithToken($token);
     }
+    public function Alogin()
+    {
+        $credentials = request(['email', 'password']);
+        if (! $token = auth()->guard('web')->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+//        $token = auth()->guard('web')->attempt($credentials);
+//        dd($token);
+        return redirect('/en/admin/dashboard');
+    }
+    public function AloginView()
+    {
+
+        return view('admin.login');
+    }
 
     public function signup(Request $request)
     {

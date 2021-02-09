@@ -11,3 +11,19 @@ if(!function_exists('getLangId')){
     }
 
 }
+function file_url($dir, $default = "")
+{
+    return $dir === $default ? url('/images/' . $dir) : url('/storage/' . $dir);
+}
+
+
+function storeFile($file, $folder_name, $old_file = null)
+{
+    if (is_file($file)) {
+        @Storage::delete($old_file);
+        $new_file = $file->store($folder_name);
+    } else {
+        $new_file = $file;
+    }
+    return $new_file;
+}
