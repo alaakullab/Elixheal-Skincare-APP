@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         const_languages::factory(4)->create();
         Category::factory(5)->create();
-        contact::factory(10)->create();
+        // contact::factory(10)->create();
         product::factory(6)->create();
         question::factory(10)->create();
         answer::factory(30)->create();
