@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "bumbummen99/shoppingcart": "^3.2",
+        "fakerphp/faker": "^1.9.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -18,9 +19,7 @@
         "laravel/ui": "^3.2",
         "mcamara/laravel-localization": "^1.6",
         "tymon/jwt-auth": "~1.0.0-rc.2",
-        "yoeunes/toastr": "^1.2",
-        "fakerphp/faker": "^1.9.1",
-        "fzaninotto/faker": "~1.4"
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -68,7 +67,7 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "@php artisan clear-compiled",
+            "php artisan clear-compiled",
             "chmod -R 777 public/"
         ]
     }
