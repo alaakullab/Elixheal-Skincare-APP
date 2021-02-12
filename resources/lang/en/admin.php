@@ -53,6 +53,16 @@ return [
     'edit_faqs_question' => 'Edit FAQS Question',
     'view_faqs_question' => 'View FAQS Question',
 
+    //Product
+    'product' => 'Product',
+    'product_title' => 'Product title',
+    'description' => 'Description',
+    'price' => 'Price',
+    'status' => 'Status',
+    'image_product' => 'Product image',
+    'add_product' => 'Add Product',
+    'edit_product' => 'Edit Product',
+
     //settings
     'settings'=> 'Settings',
     'site_name'=> 'Site name',

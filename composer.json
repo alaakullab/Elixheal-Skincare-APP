@@ -18,8 +18,7 @@
         "laravel/ui": "^3.2",
         "mcamara/laravel-localization": "^1.6",
         "tymon/jwt-auth": "~1.0.0-rc.2",
-        "yoeunes/toastr": "^1.2",
-        "fzaninotto/faker": "~1.4"
+        "yoeunes/toastr": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -27,7 +26,8 @@
         "laravel/sail": "^0.0.5",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "fzaninotto/faker": "~1.4"
     },
     "config": {
         "optimize-autoloader": true,

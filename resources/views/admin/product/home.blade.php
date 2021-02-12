@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.product'))}}
+@section('title') {{ucwords(__('admin.products'))}}
 @endsection
 @section('css')
 @endsection
@@ -20,7 +20,7 @@
                 <div class="m-portlet__head-caption">
                     <div class="m-portlet__head-title">
                         <h3 class="m-portlet__head-text">
-                            {{ucwords(__('admin.product'))}}
+                            {{ucwords(__('admin.products'))}}
                         </h3>
                     </div>
                 </div>
