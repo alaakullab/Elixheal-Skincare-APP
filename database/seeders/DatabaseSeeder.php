@@ -13,6 +13,7 @@ use App\Models\faqs_answer;
 use App\Models\setting;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factory;
 
 class DatabaseSeeder extends Seeder
 {
