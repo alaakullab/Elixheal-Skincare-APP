@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::redirect('/', 'en', 301);
+Route::redirect('/', 'en', 301);
 
 Route::group(['prefix' => '{language}'], function () {
     // if (! in_array($locale, ['en', 'es', 'fr'])) {
@@ -92,7 +92,12 @@ Route::group(['prefix' => '{language}'], function () {
     });
 
 
-});
+
+    });
+        Route::get('', function(){
+            return view('front.quiz.index');
+        });
+
 });
 // Route::get('/greeting/{locale}', function ($locale) {
 //     if (! in_array($locale, ['en', 'es', 'fr'])) {
