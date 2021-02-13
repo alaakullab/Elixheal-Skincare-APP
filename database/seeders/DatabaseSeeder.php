@@ -1,16 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-// use App\Models\User;
-// use App\Models\Category;
-// use App\Models\question;
-// use App\Models\answer;
-// use App\Models\const_languages;
-// use App\Models\contact;
-// use App\Models\product;
-// use App\Models\faqs_question;
-// use App\Models\faqs_answer;
-// use App\Models\setting;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
