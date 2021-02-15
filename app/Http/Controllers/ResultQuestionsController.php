@@ -17,6 +17,20 @@ class ResultQuestionsController extends Controller
         //
     }
 
+    public function indexView(Request $request)
+    {
+         $items = result_questions::latest();
+
+        if ($request->filled('search'))
+        {
+            $items->where('question_value', 'like', "%$request->search%");
+        }
+        $items = $items->paginate(10);
+        // print_r($items->qustiones->question_value);die();
+
+        return view('admin.quiz.results')->with(['items'=>$items]);
+
+    }
     /**
      * Show the form for creating a new resource.
      *

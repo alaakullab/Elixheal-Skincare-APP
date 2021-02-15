@@ -16,6 +16,7 @@ class CreateResultQuestionsTable extends Migration
         Schema::create('result_questions', function (Blueprint $table) {
             $table->id();
             $table->integer('quiz_id')->comment('To know each quiz by itself');
+            $table->integer('user_id')->unsigned()->nullable()->comment('User Id from table users');
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
 			$table->integer('question_id')->comment('Add question Id from table questions');
             $table->integer('answer_id')->comment('To add const answer value (not result) related to answers table');

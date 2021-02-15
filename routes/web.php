@@ -78,6 +78,7 @@ Route::group(['prefix' => '{language}'], function () {
         Route::post('faqs_questions/store',[\App\Http\Controllers\FaqsQuestionController::class, 'storeView'])->name('faqs_questions.store');
         Route::get('faqs_questions/{id}/edit',[\App\Http\Controllers\FaqsQuestionController::class, 'viewEdit'])->name('faqs_questions.edit');
 
+        Route::get('quiz/results', [\App\Http\Controllers\ResultQuestionsController::class,'indexView'])->name('quiz.results.indexView');
 
 
 

@@ -25,17 +25,17 @@ class QuestionController extends Controller
             $items->where('question_value', 'like', "%$request->search%");
         }
         $items = $items->paginate(10);
-        return view('admin.question.home')->with(['items'=>$items]);
+        return view('admin.quiz.question.home')->with(['items'=>$items]);
 
     }
     public function editView($local,$id)
     {
         $item = Question::where('id',$id)->first();
-        return view('admin.question.edit')->with(['item'=>$item]);
+        return view('admin.quiz.question.edit')->with(['item'=>$item]);
     }
     public function createView()
     {
-        return view('admin.question.create');
+        return view('admin.quiz.question.create');
     }
     public function storeView(Request $request)
     {

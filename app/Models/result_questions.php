@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class result_questions extends Model
 {
     use HasFactory;
-    
+
     protected $guarded = [];
 
     public function const_languages()
@@ -18,11 +18,11 @@ class result_questions extends Model
 
     public function answers()
     {
-        return $this->hasMany(answers::class);
+        return $this->hasMany(Answer::class);
     }
 
     public function qustiones()
     {
-        return $this->hasMany(qustiones::class);
+        return $this->hasMany(Question::class);
     }
 }

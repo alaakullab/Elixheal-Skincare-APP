@@ -26,6 +26,12 @@
                             <i class="m-menu__link-bullet m-menu__link-bullet--dot">
                         <span></span></i><span class="m-menu__link-text">@lang('admin.question')</span></a>
                     </li>
+
+                    <li class="m-menu__item  m-menu__item--active " aria-haspopup="true">
+                        <a href="{{route('admin.quiz.results.indexView',app()->getLocale())}}" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                        <span></span></i><span class="m-menu__link-text">@lang('admin.results_quiz')</span></a>
+                    </li>
                 </ul>
             </div>
         </li>
