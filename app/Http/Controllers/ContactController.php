@@ -20,11 +20,11 @@ class ContactController extends Controller
     }
 
     public function indexView(Request $request)
-    {        $items = contact::latest();
-
-        if ($request->filled('search'))
+{        $items = contact::latest();
+            $items->where('language_id', getLangId());
+            if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
-        $items = $items->paginate(10);
+            $items = $items->paginate(10);
         return view('admin.contact.home')->with(['items'=>$items]);
     }
     public function editView($local,$id)
@@ -43,26 +43,48 @@ class ContactController extends Controller
     $contact->email_contacts = $request->email_contacts;
     $contact->message = $request->message;
     $contact->language_id = getLangId();
-    $contact->save();
+    $status = $contact->save();
+    if($status){
+        toastr()->success(__('admin.store_successful_msg'), __('admin.success'));
+    }else
+    {
+    toastr()->error(__('admin.store_error_msg'), __('admin.error'));
+    }
     return back();
 }
     public function updateView(Request $request,$local,$id  )
     {
         $contact = contact::find($id);
-        $contact->update(
+        $status = $contact->update(
             [
                 'full_name' => $request->full_name,
                 'email_contacts' => $request->email_contacts,
                 'message' => $request->message,
             ]
         );
-        return back();
-    }    public function deleteView(Request $request,$local,$id  )
-    {
-        $contact = contact::find($id);
-        $contact->delete();
+
+        if($status){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+           }else
+           {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
         return back();
     }
+
+    public function deleteView(Request $request,$local,$id  )
+    {
+        $contact = contact::find($id);
+        $status = $contact->delete();
+        if($status){
+            toastr()->success(__('admin.delte_successful_msg'), __('admin.success'));
+           }else
+           {
+            toastr()->error(__('admin.delte_error_msg'), __('admin.error'));
+        }
+        return back();
+    }
+
     public function create()
     {
         //

@@ -26,6 +26,7 @@ class FaqsQuestionController extends Controller
     public function indexView(Request $request)
     {
         $items = faqs_question::latest();
+        $items->where('language_id', getLangId());
         if ($request->filled('search'))
         {
             $items->where('question_value', 'like', "%$request->search%");

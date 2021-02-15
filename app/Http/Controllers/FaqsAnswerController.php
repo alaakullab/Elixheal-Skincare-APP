@@ -26,6 +26,15 @@ class FaqsAnswerController extends Controller
         return faqs_answerResource::collection($faqs_question->faqs_answer);
     }
 
+    public function indexView(Request $request, $lang, $id)
+    {
+        $question =faqs_question::find($id);
+        $items = $question->answer()->paginate(10);
+        if ($request->filled('search'))
+            $items->where('name', 'like', "$request->search");
+        $items = $items;
+        return view('admin.faqs.faqs_answer.home')->with(['items' => $items, 'question' => $question]);
+    }
     /**
      * Show the form for creating a new resource.
      *

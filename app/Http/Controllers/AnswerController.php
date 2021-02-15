@@ -22,7 +22,7 @@ class AnswerController extends Controller
         if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items;
-        return view('admin.answer.home')->with(['items' => $items, 'question' => $question]);
+        return view('admin.quiz.answer.home')->with(['items' => $items, 'question' => $question]);
     }
 
     public function editView($local, $id)
@@ -30,7 +30,7 @@ class AnswerController extends Controller
         $questions = Question::all();
         $item = Answer::where('id', $id)->first();
         $question = Question::find($item->question_id);
-        return view('admin.answer.edit')->with(['item' => $item, 'questions' => $questions, 'question' => $question]);
+        return view('admin.quiz.answer.edit')->with(['item' => $item, 'questions' => $questions, 'question' => $question]);
     }
 
     public function createView($lang, $id)
@@ -38,7 +38,7 @@ class AnswerController extends Controller
         $question =Question::find($id);
 
         $questions = Question::all();
-        return view('admin.answer.create', compact('questions','question'));
+        return view('admin.quiz.answer.create', compact('questions','question'));
     }
 
     public function storeView(Request $request, $lang, $id)
@@ -47,7 +47,12 @@ class AnswerController extends Controller
         $data = $request->all();
         $data['user_id'] = auth()->id();
         $data['language_id'] = getLangId();
-        $question->answer()->create($data);
+        $status = $question->answer()->create($data);
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else{
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
 
         return back();
     }
@@ -56,13 +61,25 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($id);
         $data = $request->all();
-        $answer->update($data);
+        $status = $answer->update($data);
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else{
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
+
         return back();
     }
     public function deleteView(Request $request, $local, $id)
     {
         $answer = Answer::find($id);
-        $answer->delete();
+        $status = $answer->delete();
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else{
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
+
         return back();
     }
 

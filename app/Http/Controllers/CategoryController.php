@@ -20,7 +20,7 @@ class CategoryController extends Controller
     }
     public function indexView(Request $request)
     {        $items = Category::latest();
-
+        $items->where('language_id', getLangId());
     if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items->paginate(10);
@@ -53,6 +53,12 @@ class CategoryController extends Controller
                 'slug'=> Str::slug($request->name)
             ]
         );
+        if($status){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+           }else
+           {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
         return back();
     }
     public function deleteView(Request $request,$local,$id  )

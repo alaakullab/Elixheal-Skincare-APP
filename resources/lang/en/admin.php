@@ -71,6 +71,9 @@ return array(
     //Users
     'username' => 'Username',
 
+    //category
+    'edit_category' => 'Edit Category',
+
     //settings
     'settings'=> 'Settings',
     'site_name'=> 'Site name',
