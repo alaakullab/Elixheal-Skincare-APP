@@ -25,6 +25,12 @@ class Question extends Model
         return $this->belongsTo(const_languages::class);
     }
 
+    public function result_question()
+    {
+        return $this->hasMany(result_questions::class);
+    }
+
+
     public function getPathAttribute()
     {
         return asset("api/question/$this->id");

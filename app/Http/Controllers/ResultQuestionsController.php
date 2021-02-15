@@ -20,13 +20,14 @@ class ResultQuestionsController extends Controller
     public function indexView(Request $request)
     {
          $items = result_questions::latest();
+        $items->where('language_id', getLangId());
 
         if ($request->filled('search'))
         {
             $items->where('question_value', 'like', "%$request->search%");
         }
         $items = $items->paginate(10);
-        // print_r($items->qustiones->question_value);die();
+//         print_r($items[0]['question_id']);die();
 
         return view('admin.quiz.results')->with(['items'=>$items]);
 

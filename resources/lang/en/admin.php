@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
     //navbar_menu
     'quiz'=> 'Quiz',
     'add_question' => 'Add question',
@@ -46,6 +46,7 @@ return [
     'questions' => 'Questions',
     'question_value' => 'Question value',
     'question_type' => 'Question type',
+    'answer_value' => 'Answer Value',
 
     //faqs
     'faqs_question' => 'FAQS Question',
@@ -63,6 +64,13 @@ return [
     'add_product' => 'Add Product',
     'edit_product' => 'Edit Product',
 
+    //Results Quiz
+    'results_quiz' => 'Results Quiz',
+    'quiz_id' => 'Quiz ID',
+
+    //Users
+    'username' => 'Username',
+
     //settings
     'settings'=> 'Settings',
     'site_name'=> 'Site name',
@@ -79,6 +87,6 @@ return [
     'twitter'=> 'Twitter',
     'instagram'=> 'Instagram',
     'whatsapp'=> 'Whatsapp'
-]
+)
 
 ?>

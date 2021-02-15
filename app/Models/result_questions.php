@@ -11,18 +11,23 @@ class result_questions extends Model
 
     protected $guarded = [];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function const_languages()
     {
         return $this->hasMany(const_languages::class);
     }
 
-    public function answers()
+    public function answer()
     {
-        return $this->hasMany(Answer::class);
+        return $this->belongsTo(Answer::class);
     }
 
-    public function qustiones()
+    public function question()
     {
-        return $this->hasMany(Question::class);
+        return $this->belongsTo(Question::class);
     }
 }

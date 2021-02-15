@@ -10,13 +10,17 @@ class Answer extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function questions()
+    public function question()
     {
-        return $this->belongsTo(questions::class);
+        return $this->belongsTo(Question::class);
     }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function result_questions()
+    {
+        return $this->hasMany(result_questions::class);
     }
 }

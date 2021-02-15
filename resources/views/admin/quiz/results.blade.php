@@ -52,11 +52,11 @@
                     @forelse($items as $item)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td> {{$item->quiz_id}}</td>
-                            <td> {{$item->username}}</td>
-                            <td> {{$item->qustion->question_value}}</td>
-                            <td> {{$item->answer_value}}</td>
-                            <td> {{$item->created_at}}</td>
+                            <td> {{$item->quiz_id ?? ''}}</td>
+                            <td> {{$item->user->name ?? ''}}</td>
+                            <td> {{$item->question->question_value ?? ''}}</td>
+                            <td> {{$item->answer->answer_value ?? ''}}</td>
+                            <td> {{$item->created_at ?? ''}}</td>
 
                         </tr>
                     @empty

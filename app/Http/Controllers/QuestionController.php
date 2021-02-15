@@ -20,6 +20,7 @@ class QuestionController extends Controller
     public function indexView(Request $request)
     {
          $items = Question::latest();
+         $items->where('language_id', getLangId());
         if ($request->filled('search'))
         {
             $items->where('question_value', 'like', "%$request->search%");
