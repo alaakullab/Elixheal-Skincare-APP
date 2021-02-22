@@ -47,7 +47,7 @@ class CategoryController extends Controller
     public function updateView(Request $request,$local,$id  )
     {
         $category= Category::find($id);
-        $category->update(
+        $status = $category->update(
             [
                 'name'=> $request->name,
                 'slug'=> Str::slug($request->name)
