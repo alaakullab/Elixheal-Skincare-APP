@@ -36,7 +36,7 @@ Route::group(['prefix' => '{language}'], function () {
         Route::put('category/{id}/update', [\App\Http\Controllers\CategoryController::class,'updateView'])->name('category.updateView');
         Route::any('category/{id}/delete', [\App\Http\Controllers\CategoryController::class,'deleteView'])->name('category.deleteView');
 
-
+        //products
         Route::get('product', [\App\Http\Controllers\ProductController::class,'indexView'])->name('product.indexView');
         Route::get('product/add', [\App\Http\Controllers\ProductController::class,'createView'])->name('product.createView');
         Route::post('product/store', [\App\Http\Controllers\ProductController::class,'storeView'])->name('product.storeView');
@@ -44,6 +44,8 @@ Route::group(['prefix' => '{language}'], function () {
         Route::put('product/{id}/update', [\App\Http\Controllers\ProductController::class,'updateView'])->name('product.updateView');
         Route::any('product/{id}/delete', [\App\Http\Controllers\ProductController::class,'deleteView'])->name('product.deleteView');
 
+        //orders
+        Route::get('orders', [\App\Http\Controllers\ProductController::class,'indexView'])->name('orders.indexView');
 
         Route::get('contact', [\App\Http\Controllers\ContactController::class,'indexView'])->name('contact.indexView');
         Route::get('contact/add', [\App\Http\Controllers\ContactController::class,'createView'])->name('contact.createView');

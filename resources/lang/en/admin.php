@@ -10,8 +10,8 @@ return array(
     'add_broducts' => 'Add Product',
     'orders' => 'Orders',
     'view_orders' => 'View Orders',
-    'category' => 'Category',
     'view_setting' => 'View Setting',
+    'category' => 'Category',
     'add faqs question' => 'Add faqs question',
 
     //form and inputs name - label
@@ -54,6 +54,19 @@ return array(
     'edit_faqs_question' => 'Edit FAQS Question',
     'view_faqs_question' => 'View FAQS Question',
 
+    //Results Quiz
+    'results_quiz' => 'Results Quiz',
+    'quiz_id' => 'Quiz ID',
+
+    //Users
+    'username' => 'Username',
+
+    // Store
+    'store' => 'Store',
+
+    //category
+    'edit_category' => 'Edit Category',
+
     //Product
     'product' => 'Product',
     'product_title' => 'Product title',
@@ -63,16 +76,6 @@ return array(
     'image_product' => 'Product image',
     'add_product' => 'Add Product',
     'edit_product' => 'Edit Product',
-
-    //Results Quiz
-    'results_quiz' => 'Results Quiz',
-    'quiz_id' => 'Quiz ID',
-
-    //Users
-    'username' => 'Username',
-
-    //category
-    'edit_category' => 'Edit Category',
 
     //settings
     'settings'=> 'Settings',
