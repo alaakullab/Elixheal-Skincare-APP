@@ -34,12 +34,14 @@ return array(
     'delete_successful_msg' => 'delete successful!',
     'delete_error_msg' => 'Error deleting data! Please try again.!',
     'dashboard' => 'Dashboard',
+    'created_at' => 'Created at',
 
     //contacts
     'contact' => 'Contact',
     'full_name' => 'Full name',
     'email_contacts' => 'Email contacts',
     'message' => 'Message',
+    'add_contact' => 'Add Contact',
 
     //quiz
     'question' => 'Question',
@@ -47,12 +49,17 @@ return array(
     'question_value' => 'Question value',
     'question_type' => 'Question type',
     'answer_value' => 'Answer Value',
+    'answers' => 'Answers',
+    'add_answer' => 'Add answer',
+    'question_next_id' => 'Question Next ID',
+    'edit_question' => 'Edit Question',
 
     //faqs
     'faqs_question' => 'FAQS Question',
     'add_faqs_question' => 'Add FAQS Question',
     'edit_faqs_question' => 'Edit FAQS Question',
     'view_faqs_question' => 'View FAQS Question',
+    'faqs_question_list' => 'FAQS Question List',
 
     //Results Quiz
     'results_quiz' => 'Results Quiz',
