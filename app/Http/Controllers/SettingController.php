@@ -42,6 +42,17 @@ class SettingController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function store(Request $request)
+    {
+        Setting::create($request->all());
+        // $setting = new Setting;
+        // $setting->site_name = $request->name;
+        // $setting->language_id = $request->language_id;
+        // $setting->user_id = $request->user_id;
+        // $setting->save();
+        return response('created', 201);
+    }
+
     public function edit()
     {
         // print_r(app()->getLocale());die();
