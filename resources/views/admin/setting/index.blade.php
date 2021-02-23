@@ -31,7 +31,7 @@
             <div class="m-portlet__body">
                 <div class="form-group m-form__group">
                     <label for="site_name">{{ __('admin.site_name') }}</label>
-                    <input type="text" class="form-control m-input" id="site_name" name="site_name" value="{{ $data->site_name ?? $data->site_name }}"  placeholder="{{ __('admin.site_name') }}">
+                    <input type="text" class="form-control m-input" id="site_name" name="site_name" value="@isset($data->site_name){{ $data->site_name ?? $data->site_name }}@endisset"  placeholder="{{ __('admin.site_name') }}">
                 </div>
                 <div class="form-group m-form__group">
                     <label for="site_desc">{{ __('admin.site_desc') }}</label>
