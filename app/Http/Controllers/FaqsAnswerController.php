@@ -13,7 +13,7 @@ class FaqsAnswerController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show']]);
+        $this->middleware('JWT', ['except' => ['index','indexView','createView','storeView','editView','show']]);
     }
 
     /**
@@ -28,21 +28,19 @@ class FaqsAnswerController extends Controller
 
     public function indexView(Request $request, $lang, $id)
     {
-        $question =faqs_question::find($id);
-        $items = $question->answer()->paginate(10);
+        $faqs_question =faqs_question::find($id);
+        $items = $faqs_question->faqs_answer()->paginate(10);
         if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items;
-        return view('admin.faqs.faqs_answer.home')->with(['items' => $items, 'question' => $question]);
+        return view('admin.faqs.faqs_answer.home')->with(['items' => $items, 'faqs_question' => $faqs_question]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function createView($lang, $id)
     {
-        //
+        $faqs_question =faqs_question::find($id);
+        $faqs_questions = faqs_question::all();
+        return view('admin.faqs.faqs_answer.create', compact('faqs_questions','faqs_question'));
     }
 
     /**
@@ -55,6 +53,21 @@ class FaqsAnswerController extends Controller
     {
         $faqs_answer = $faqs_question->faqs_answer()->create($request->all());
         return response(['faqs_answer'=> new faqs_answerResource($faqs_answer),201]);
+    }
+
+    public function storeView(Request $request, $lang, $id)
+    {
+        $faqs_question = faqs_question::find($id);
+        $data = $request->all();
+        $data['user_id'] = auth()->id();
+        $status = $faqs_question->faqs_answer()->create($data);
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else{
+            toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
+
+        return back();
     }
 
     /**
@@ -74,9 +87,13 @@ class FaqsAnswerController extends Controller
      * @param  \App\Models\faqs_answer  $faqs_answer
      * @return \Illuminate\Http\Response
      */
-    public function edit(faqs_answer $faqs_answer)
+
+    public function editView($local, $id)
     {
-        //
+        $item = faqs_answer::where('id', $id)->first();
+        $faqs_question = faqs_question::find($item->faqs_question_id);
+        $faqs_questions = faqs_question::all();
+        return view('admin.faqs.faqs_answer.edit')->with(['item' => $item, 'faqs_questions' => $faqs_questions, 'faqs_question' => $faqs_question]);
     }
 
     /**

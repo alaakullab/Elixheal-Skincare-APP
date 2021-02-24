@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.answers'))}}
+@section('title') {{ucwords(__('admin.faqs_answers'))}}
 @endsection
 @section('css')
 @endsection
@@ -39,7 +39,7 @@
                             </div>
                         </li>
                         <li class="m-portlet__nav-item">
-                            <a href="{{url(app()->getLocale().'/admin/answer/'.$question->id.'/add')}}"
+                            <a href="{{url(app()->getLocale().'/admin/faqs_answers/'.$faqs_question->id.'/add')}}"
                                class="btn btn-primary"><i class="fa fa-plus"></i>
                                 <span>{{__('admin.add')}}</span>
                             </a>
@@ -123,13 +123,13 @@
                         @forelse($items as $item)
                             <tr>
                                 <td>{{ $count++ }}</td>
-                                <td> {{$item->answer_value}}</td>
+                                <td> {{$item->answers_value}}</td>
                                 <td>
                                     <div class="btn-group btn-action">
-                                        <a href="{{url(app()->getLocale().'/admin/answer/'. $item->id.'/edit')}}"
+                                        <a href="{{url(app()->getLocale().'/admin/faqs_answers/'. $item->id.'/edit')}}"
                                            class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                            data-original-title="{{ucwords(__('admin.edit'))}}"><i class="fa fa-edit"></i></a>
-                                        <a href="{{url(app()->getLocale().'/admin/answer/'. $item->id.'/delete')}}"
+                                        <a href="{{url(app()->getLocale().'/admin/faqs_answers/'. $item->id.'/delete')}}"
                                            class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                            data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
                                     </div>

@@ -15,6 +15,7 @@ return array(
     'add faqs question' => 'Add faqs question',
 
     //form and inputs name - label
+    'choose' => 'Choose',
     'save' => 'Save',
     'add' => 'Add',
     'edit' => 'Edit',
@@ -51,6 +52,7 @@ return array(
     'answer_value' => 'Answer Value',
     'answers' => 'Answers',
     'add_answer' => 'Add answer',
+    'edit_answer' => 'Edit answer',
     'question_next_id' => 'Question Next ID',
     'edit_question' => 'Edit Question',
 
@@ -60,6 +62,9 @@ return array(
     'edit_faqs_question' => 'Edit FAQS Question',
     'view_faqs_question' => 'View FAQS Question',
     'faqs_question_list' => 'FAQS Question List',
+    'faqs_answer' => 'FAQS Answer',
+    'add_faqs_answer' => 'Add FAQS Answer',
+    'edit_faqs_answers' => 'Edit FAQS Answer',
 
     //Results Quiz
     'results_quiz' => 'Results Quiz',

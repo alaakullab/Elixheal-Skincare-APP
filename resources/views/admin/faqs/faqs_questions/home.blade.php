@@ -130,7 +130,14 @@
                                 <a href="{{url(app()->getLocale().'/admin/faqs_questions/'. $item->id.'/edit')}}"
                                    class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
                                    data-original-title="{{ucwords(__('admin.edit'))}}"><i class="fa fa-edit"></i></a>
-                                   </div>
+                                <a href="{{url(app()->getLocale().'/admin/faqs_questions/'. $item->id.'/delete')}}"
+                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                   data-original-title="{{__('admin.delete')}}"><i class="fa fa-trash"></i></a>
+                                <a href="{{url(app()->getLocale().'/admin/faqs_answers/'. $item->id)}}"
+                                   class="btn btn-xs btn-icon btn-clean blue tooltips" data-container="body" data-placement="top"
+                                   data-original-title="{{__('admin.faqs_answers')}}"><i class="fa fa-question-circle"></i></a>
+
+                            </div>
                         </td>
                     </tr>
                 @empty

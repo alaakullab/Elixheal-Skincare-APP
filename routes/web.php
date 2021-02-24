@@ -62,7 +62,6 @@ Route::group(['prefix' => '{language}'], function () {
         Route::put('question/{id}/update', [\App\Http\Controllers\QuestionController::class,'updateView'])->name('question.updateView');
         Route::any('question/{id}/delete', [\App\Http\Controllers\QuestionController::class,'deleteView'])->name('question.deleteView');
 
-
         Route::get('answer/{id}', [\App\Http\Controllers\AnswerController::class,'indexView'])->name('answer.indexView');
         Route::get('answer/{id}/add', [\App\Http\Controllers\AnswerController::class,'createView'])->name('answer.createView');
         Route::post('answer/{id}/store', [\App\Http\Controllers\AnswerController::class,'storeView'])->name('answer.storeView');
@@ -79,6 +78,14 @@ Route::group(['prefix' => '{language}'], function () {
         Route::get('faqs_questions/add',[\App\Http\Controllers\FaqsQuestionController::class, 'createView'])->name('faqs_questions.add');
         Route::post('faqs_questions/store',[\App\Http\Controllers\FaqsQuestionController::class, 'storeView'])->name('faqs_questions.store');
         Route::get('faqs_questions/{id}/edit',[\App\Http\Controllers\FaqsQuestionController::class, 'viewEdit'])->name('faqs_questions.edit');
+        Route::put('faqs_questions/{id}/update', [\App\Http\Controllers\FaqsQuestionController::class,'updateView'])->name('faqs_questions.updateView');
+        Route::any('faqs_questions/{id}/delete', [\App\Http\Controllers\FaqsQuestionController::class,'deleteView'])->name('faqs_questions.deleteView');
+
+        Route::get('faqs_answers/{id}', [\App\Http\Controllers\FaqsAnswerController::class,'indexView'])->name('answer.indexView');
+        Route::get('faqs_answers/{id}/add',[\App\Http\Controllers\FaqsAnswerController::class, 'createView'])->name('faqs_answers.add');
+        Route::post('faqs_answers/{id}/store',[\App\Http\Controllers\FaqsAnswerController::class, 'storeView'])->name('faqs_answers.store');
+        Route::get('faqs_answers/{id}/edit',[\App\Http\Controllers\FaqsAnswerController::class, 'editView'])->name('faqs_answers.edit');
+        Route::put('faqs_answers/{id}/update', [\App\Http\Controllers\FaqsAnswerController::class,'updateView'])->name('faqs_answers.updateView');
 
         Route::get('quiz/results', [\App\Http\Controllers\ResultQuestionsController::class,'indexView'])->name('quiz.results.indexView');
 

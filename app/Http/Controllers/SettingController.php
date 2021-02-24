@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('JWT', ['except' => ['index', 'viewEdit', 'viewUpdate', 'show']]);
-//    }
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index', 'viewEdit', 'viewUpdate', 'show']]);
+    }
 
     /**
      * Display a listing of the resource.
@@ -82,7 +82,7 @@ class SettingController extends Controller
             $icon = $request->file('icon');
             $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
             $logo->move(public_path("images"), $newLogoName);
-            print_r($newLogoName);die();
+//            print_r($newLogoName);die();
         $data =  [
             'site_name' => $request->site_name,
             'site_desc' => $request->site_desc,
