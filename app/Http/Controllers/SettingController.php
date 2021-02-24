@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('JWT', ['except' => ['index', 'viewEdit', 'viewUpdate', 'show']]);
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('JWT', ['except' => ['index', 'viewEdit', 'viewUpdate', 'show']]);
+//    }
 
     /**
      * Display a listing of the resource.
