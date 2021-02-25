@@ -10,7 +10,7 @@ class FaqsQuestionController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','show','indexView','createView','storeView']]);
+        $this->middleware('JWT', ['except' => ['index','show','indexView','createView','storeView','editView','updateView']]);
     }
 
     /**
@@ -90,10 +90,13 @@ class FaqsQuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+    public function editView($local,$id)
     {
-        //
+        $item = faqs_question::where('id',$id)->first();
+        return view('admin.faqs.faqs_questions.edit')->with(['item'=>$item]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -109,6 +112,23 @@ class FaqsQuestionController extends Controller
             'user_id' => $request->user_id,
         ]);
         return response('Updated', 202);
+    }
+
+    public function updateView(Request $request,$local,$id  )
+    {
+        $faqs_question = faqs_question::find($id);
+        $status =  $faqs_question->update(
+            [
+                'question_value' => $request->question_value
+            ]
+        );
+        if($status){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+        }else
+        {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
+        return back();
     }
 
     /**

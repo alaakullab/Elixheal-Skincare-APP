@@ -77,7 +77,7 @@ Route::group(['prefix' => '{language}'], function () {
         Route::get('faqs_questions/list', [\App\Http\Controllers\FaqsQuestionController::class,'indexView'])->name('faqs_questions.indexView');
         Route::get('faqs_questions/add',[\App\Http\Controllers\FaqsQuestionController::class, 'createView'])->name('faqs_questions.add');
         Route::post('faqs_questions/store',[\App\Http\Controllers\FaqsQuestionController::class, 'storeView'])->name('faqs_questions.store');
-        Route::get('faqs_questions/{id}/edit',[\App\Http\Controllers\FaqsQuestionController::class, 'viewEdit'])->name('faqs_questions.edit');
+        Route::get('faqs_questions/{id}/edit',[\App\Http\Controllers\FaqsQuestionController::class, 'editView'])->name('faqs_questions.edit');
         Route::put('faqs_questions/{id}/update', [\App\Http\Controllers\FaqsQuestionController::class,'updateView'])->name('faqs_questions.updateView');
         Route::any('faqs_questions/{id}/delete', [\App\Http\Controllers\FaqsQuestionController::class,'deleteView'])->name('faqs_questions.deleteView');
 

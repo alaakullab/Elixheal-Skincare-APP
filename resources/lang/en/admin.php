@@ -63,6 +63,7 @@ return array(
     'view_faqs_question' => 'View FAQS Question',
     'faqs_question_list' => 'FAQS Question List',
     'faqs_answer' => 'FAQS Answer',
+    'faqs_answers' => 'FAQS Answers',
     'add_faqs_answer' => 'Add FAQS Answer',
     'edit_faqs_answers' => 'Edit FAQS Answer',
 

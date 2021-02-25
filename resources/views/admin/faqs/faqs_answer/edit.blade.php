@@ -19,7 +19,7 @@
             </div>
 
             <!--begin::Form-->
-            <form method="post" action="{{url(app()->getLocale().'/admin/answer/'. $item->id.'/update')}}"
+            <form method="post" action="{{url(app()->getLocale().'/admin/faqs_answers/'. $item->id.'/update')}}"
                   class="m-form m-form--fit m-form--label-align-right"
                   enctype="multipart/form-data" class="form-horizontal" role="form" id="form_company">
                 {{ csrf_field() }}
@@ -29,26 +29,14 @@
                         <label for="answer_value">{{ucwords(__('admin.answer_value'))}}</label>
 
                         <input type="text" class="form-control m-input" required id="answers_value" name="answers_value"
-                               value="{{old('answer_value',@$item->answer_value)}}"
+                               value="{{old('answer_value',@$item->answers_value)}}"
                                placeholder="{{ucwords(__('admin.answer_value'))}}">
-                    </div>
-                    <div class="form-group m-form__group">
-                        <label for="answer_type">{{ucwords(__('admin.question_next_id'))}}</label>
-
-                        <select class="form-control m-input" required id="question_next_id" name="question_next_id">
-                            <option>{{ucwords(__('admin.choose'))}}</option>
-                            @foreach($faqs_questions as $q)
-                                <option value="{{$q->id}}" {{$q->id == $item->question_next_id ? 'selected' : ''}}>
-                                    {{$q->question_value}}
-                                </option>
-                            @endforeach
-                        </select>
                     </div>
                 </div>
                 <div class="m-portlet__foot m-portlet__foot--fit">
                     <div class="m-form__actions">
                         <button type="submit" class="btn btn-success">{{ucwords(__('admin.save'))}}</button>
-                        <a href="{{url(app()->getLocale().'/admin/answer/'.$faqs_question->id)}}"
+                        <a href="{{url(app()->getLocale().'/admin/faqs_answers/'.$faqs_question->id)}}"
                            class="btn btn-secondary  mr-2">{{ucwords(__('admin.cancel'))}}</a>
                     </div>
                 </div>

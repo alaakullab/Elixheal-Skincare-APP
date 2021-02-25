@@ -13,7 +13,7 @@ class FaqsAnswerController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index','indexView','createView','storeView','editView','show']]);
+        $this->middleware('JWT', ['except' => ['index','indexView','createView','storeView','editView','updateView','show']]);
     }
 
     /**
@@ -107,6 +107,20 @@ class FaqsAnswerController extends Controller
     {
         $faqs_answer->update($request->all());
         return response('updated', 202);
+    }
+
+    public function updateView(Request $request, $local, $id)
+    {
+        $faqs_answer = faqs_answer::find($id);
+        $data = $request->all();
+        $status = $faqs_answer->update($data);
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else{
+            toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
+
+        return back();
     }
 
     /**
