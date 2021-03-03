@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from codelayers.net/templates/printer/index-beauty.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Mar 2021 12:19:09 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Printer - Responsive MultiPurpose HTML5 Template</title>
+    <title>Functional Clinical Aesthetics</title>
     <meta name="keywords" content="" />
     <meta name="description" content="">
     <meta name="author" content="">
@@ -43,13 +41,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Style Customizer's stylesheets -->
-    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/style-customizer/css/spectrum.css">
-    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/style-customizer/css/style-customizer.css">
-    <link rel="stylesheet/less" type="text/css" href="{{url('front')}}/assets/less/skin.html">
-    <!-- Style Customizer's stylesheets END -->
-
     <!-- Skin stylesheet -->
+    <link rel="stylesheet" href="{{url('front')}}/assets/css/skin.css">
 
 </head>
 <body>
@@ -62,97 +55,6 @@
     </div>
 </div>
 <!--end loading-->
-
-<!-- Style Customizer -->
-<section id="style-customizer">
-    <div class="style-customizer-wrap form-horizontal">
-        <h4 class="sc-header">Style Customizer</h4>
-        <h5>Layout Style</h5>
-        <div class="sc-variable-row form-group">
-            <div class="radio-group col-xs-12">
-                <input type="radio" name="sc-layout-type" id="sc-layout-type-boxed" class="sc-variable" data-key="layoutType" value="boxed" checked>
-                <input type="radio" name="sc-layout-type" id="sc-layout-type-wide" class="sc-variable" data-key="layoutType" value="wide">
-                <label for="sc-layout-type-wide" class="style-fweight-normal">Wide</label>
-                <label for="sc-layout-type-boxed" class="style-fweight-normal">Boxed</label>
-            </div>
-        </div>
-        <fieldset id="outer-bg-section">
-            <h5 class="customizer-style-tytle-padd">Outer Background Styles</h5>
-            <div class="sc-variable-row form-group">
-                <div class="col-xs-12">
-                    <select name="sc-bg-outer-type" id="sc-bg-outer-type" data-key="outerBgType" class="sc-variable col-xs-8">
-                        <option value="color" selected>Solid color</option>
-                        <option value="pattern">Pattern</option>
-                        <option value="image">Image</option>
-                    </select>
-                    <div class="col-xs-4">
-                        <div id="sc-bg-outer-color-wrap">
-                            <input type="color" name="sc-bg-outer-color" id="sc-bg-outer-color" class="sc-variable" data-key="outerBgColor">
-                        </div>
-                        <div id="sc-bg-outer-image-wrap">
-                            <input type="file" accept="image/*" name="sc-bg-outer-image" id="sc-bg-outer-image" class="sc-variable sr-only" data-key="outerBgImage">
-                            <label for="sc-bg-outer-image" class="sc-btn" title="Upload image"><i class="fa fa-upload"></i> </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </fieldset>
-        <h5 class="customizer-style-tytle-padd">Color Options</h5>
-        <div class="sc-variable-row form-group style-form-group">
-            <label for="sc-color-prim" class="col-xs-8 control-label color-text">Primary Color</label>
-            <div class="col-xs-4">
-                <input type="color" id="sc-color-prim" class="sc-variable" data-key="colorPrimary">
-            </div>
-        </div>
-        <div class="style-divider-line"></div>
-        <div class="sc-variable-row form-group style-form-group style-tpadd">
-            <label for="sc-color-second" class="col-xs-8 control-label color-text">Secondary Color</label>
-            <div class="col-xs-4">
-                <input type="color" id="sc-color-second" class="sc-variable" data-key="colorSecondary">
-            </div>
-        </div>
-        <div class="style-divider-line"></div>
-        <div class="sc-variable-row form-group style-form-group style-tpadd">
-            <label for="sc-color-third" class="col-xs-8 control-label color-text">Tertiary Color</label>
-            <div class="col-xs-4">
-                <input type="color" id="sc-color-third" class="sc-variable" data-key="colorTertiary">
-            </div>
-        </div>
-        <br/>
-        <div class="form-group">
-            <div class="col-xs-12">
-                <button class="sc-btn" id="sc-download-css"><i class="fa fa-download"></i> Get CSS file</button>
-            </div>
-        </div>
-        <br/>
-        <br/>
-        <div> <a class="sty-demo-btn" href="{{url('front')}}/assets/demo/demo.html" target="_blank">Demos</a> </div>
-    </div>
-    <button id="sc-toggle" title="Styles Customizer"><i class="fa fa-wrench"></i> </button>
-</section>
-<div class="modal fade" tabindex="-1" role="dialog" id="afterSaveCSSFileModal" aria-labelledby="afterSaveCSSFileModalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="afterSaveCSSFileModalLabel">File saved</h4>
-            </div>
-            <div class="modal-body"> In order to apply the generated custom styles to your template, please follow these steps:
-                <ol>
-                    <li class="sc-after-save-todo-point-file">Upload the "skin.css" file to "css" directory in your template</li>
-                    <li class="sc-after-save-todo-point-image">Upload the image file to "img" directory in your template. Keep the image file name unchanged.</li>
-                    <li class="sc-after-save-todo-point-stylesheet-code"> Copy this code and paste it into "index.html" file in your template, after the line marked as <code>&lt;!-- Skin stylesheet --&gt;</code>
-                        <pre><code>&lt;link rel="stylesheet" href="css/skin.css"&gt;</code></pre>
-                    </li>
-                    <li class="sc-after-save-todo-point-preloader"> Copy this code and paste it into "index.html" file in your template, after the line marked as <code>&lt;!-- Preloader icon --&gt;</code>
-                        <pre><code class="sc-preloader-html"></code></pre>
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Style customizer END -->
 
 <div class="wrapper-boxed">
     <div class="site-wrapper">
@@ -1416,5 +1318,4 @@
 
 </body>
 
-<!-- Mirrored from codelayers.net/templates/printer/index-beauty.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Mar 2021 12:21:10 GMT -->
 </html>

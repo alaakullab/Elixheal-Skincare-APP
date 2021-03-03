@@ -11,7 +11,7 @@
     <title>Elixheal - Request a quote for every type of companies</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{url('front')}}/quiz/assets/img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" type="image/x-icon" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-57x57-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-114x114-precomposed.png">
@@ -39,22 +39,7 @@
 		<div data-loader="circle-side-2"></div>
 	</div><!-- /Loader_form -->
 
-    <header>
-        <a id="menu-button-mobile" class="cmn-toggle-switch cmn-toggle-switch__htx" href="{{url('front')}}/quiz/assets/javascript:void(0);"><span>Menu mobile</span></a>
-        <nav class="main_nav">
-            <ul class="nav nav-tabs">
-                <li><a href="#tab_1" data-toggle="tab" class="active show">Request a quote</a></li>
-                <li><a href="#tab_2" data-toggle="tab">About</a></li>
-                <li><a href="#tab_3" data-toggle="tab">Contact</a></li>
-            </ul>
-        </nav>
-    </header><!-- /header -->
-
     <div id="main_container" class="visible">
-
-        <div id="header_in">
-            <div id="logo_in"><img src="{{url('front')}}/quiz/assets/img/logo_black.png" width="160" height="48" data-retina="true" alt="Quote"></div>
-        </div>
 
         <div class="wrapper_in">
             <div class="container-fluid">

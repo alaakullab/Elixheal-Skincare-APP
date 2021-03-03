@@ -134,7 +134,7 @@
 }
 /* line 127, ../sass/screen.scss */
 .loader-item.style4 .cube1, .loader-item.style4 .cube2 {
-  background-color: #ecae3d;
+  background-color: #e218df;
   width: 15px;
   height: 15px;
   position: absolute;
@@ -157,7 +157,7 @@
 .loader-item.style5 > div {
   width: 18px;
   height: 18px;
-  background-color: #ecae3d;
+  background-color: #e218df;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -182,7 +182,7 @@
 .loader-item.style6 .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: #ecae3d;
+  background-color: #e218df;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
   animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
@@ -239,7 +239,7 @@
 }
 /* line 223, ../sass/screen.scss */
 .loader-item.style7 > div {
-  background-color: #ecae3d;
+  background-color: #e218df;
   border-radius: 100%;
   height: 15px;
   left: 30px;
@@ -271,7 +271,7 @@
   -moz-border-top-colors: none;
   animation: 0.75s linear 0s normal none infinite running rotate;
   background: transparent none repeat scroll 0 0 !important;
-  border-color: #ecae3d #ecae3d transparent;
+  border-color: #ecae3d #e218df transparent;
   border-image: none;
   border-radius: 100%;
   border-style: solid;
@@ -290,11 +290,11 @@
 /* line 271, ../sass/screen.scss */
 .loader-item.style9 > div {
   animation-fill-mode: both;
-  border: 1px solid #ecae3d;
+  border: 1px solid #e218df;
   border-radius: 100%;
   height: 10px;
   position: absolute;
-  background: #ecae3d;
+  background: #e218df;
   width: 10px;
 }
 /* line 279, ../sass/screen.scss */
@@ -333,7 +333,7 @@
 }
 /* line 311, ../sass/screen.scss */
 .loader-item.style10 > div {
-  background-color: #ecae3d;
+  background-color: #e218df;
   border-radius: 100%;
   display: inline-block;
   margin: 2px;
