@@ -104,9 +104,13 @@ Route::group(['prefix' => '{language}'], function () {
 
 
     });
-        Route::get('', function(){
+        Route::get('/quiz', function(){
             return view('front.quiz.index');
         });
+
+          Route::get('/', function(){
+             return view('front.index');
+         });
 
 });
 // Route::get('/greeting/{locale}', function ($locale) {
