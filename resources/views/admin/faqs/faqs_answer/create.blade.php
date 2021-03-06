@@ -30,18 +30,6 @@
                                value="{{old('answers_value',@$item->answers_value)}}"
                                placeholder="{{ucwords(__('admin.answer_value'))}}">
                     </div>
-                    <div class="form-group m-form__group">
-                        <label for="faqs_question_id">{{ucwords(__('admin.question_next_id'))}}</label>
-
-                        <select class="form-control m-input" required id="faqs_question_id" name="faqs_question_id">
-                            <option>{{ucwords(__('admin.choose'))}}</option>
-                            @foreach($faqs_questions as $q)
-                                <option value="{{$q->id}}">
-                                    {{$q->question_value}}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
                 </div>
                 <div class="m-portlet__foot m-portlet__foot--fit">
                     <div class="m-form__actions">

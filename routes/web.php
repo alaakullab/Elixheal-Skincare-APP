@@ -20,11 +20,14 @@ Route::group(['prefix' => '{language}'], function () {
     // if (! in_array($locale, ['en', 'es', 'fr'])) {
     //     abort(404);
     // }
+    Route::redirect('admin', 'quiz', 301);
 
     Route::prefix('admin')->name('admin.')->group(function () {
 
         Auth::routes();
-    Route::middleware('auth:web')->group(function () {
+//        Route::redirect('/', '/en/admin/login', 301);
+
+        Route::middleware('auth:web')->group(function () {
 
         Route::get('home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::get('dashboard',[\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');

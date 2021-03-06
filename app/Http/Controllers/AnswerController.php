@@ -17,12 +17,19 @@ class AnswerController extends Controller
 
     public function indexView(Request $request, $lang, $id)
     {
-        $question =Question::find($id);
+        $question =Question::where('id', $id)->where('language_id', getLangId())->first();
+        if (isset($question))
+        {
         $items = $question->answer()->paginate(10);
         if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items;
         return view('admin.quiz.answer.home')->with(['items' => $items, 'question' => $question]);
+        }else
+        {
+            toastr()->warning(__('admin.change_lang_warning_error_answers_page_msg'), __('admin.warning'));
+            return redirect()->route('admin.question.indexView', app()->getLocale());
+        }
     }
 
     public function editView($local, $id)

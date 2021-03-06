@@ -202,7 +202,7 @@
                             <li class="m-nav__item m-topbar__languages m-dropdown m-dropdown--small m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-right m-dropdown--mobile-full-width" m-dropdown-toggle="click">
                                 <a href="#" class="m-nav__link m-dropdown__toggle">
                                             <span class="m-nav__link-text">
-                                                <img class="m-topbar__language-selected-img" src="{{url('admin_panel')}}/assets/app/media/img/flags/@if(app()->getLocale() == 'en')020-flag.svg @elseif(app()->getLocale() == 'es')016-spain.svg @elseif(app()->getLocale() == 'es')016-spain.svg @endif">
+                                                <img class="m-topbar__language-selected-img" src="{{url('admin_panel')}}/assets/app/media/img/flags/@if(app()->getLocale() == 'en')020-flag.svg @elseif(app()->getLocale() == 'es')016-spain.svg @elseif(app()->getLocale() == 'fr')019-france.svg @elseif(app()->getLocale() == 'it')021_Flag_of_Italy.svg @endif">
                                             </span>
                                 </a>
                                 <div class="m-dropdown__wrapper">

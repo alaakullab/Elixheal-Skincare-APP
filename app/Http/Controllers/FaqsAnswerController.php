@@ -28,12 +28,21 @@ class FaqsAnswerController extends Controller
 
     public function indexView(Request $request, $lang, $id)
     {
-        $faqs_question =faqs_question::find($id);
+        $faqs_question =faqs_question::where('id', $id)->where('language_id', getLangId())->first();
+
+        if (isset($faqs_question))
+        {
         $items = $faqs_question->faqs_answer()->paginate(10);
         if ($request->filled('search'))
             $items->where('name', 'like', "$request->search");
         $items = $items;
         return view('admin.faqs.faqs_answer.home')->with(['items' => $items, 'faqs_question' => $faqs_question]);
+        }else
+        {
+            toastr()->warning(__('admin.change_lang_warning_error_answers_page_msg'), __('admin.warning'));
+            return redirect()->route('admin.faqs_questions.indexView', app()->getLocale());
+        }
+
     }
 
     public function createView($lang, $id)
