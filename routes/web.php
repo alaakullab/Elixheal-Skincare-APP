@@ -20,8 +20,10 @@ Route::group(['prefix' => '{language}'], function () {
     // if (! in_array($locale, ['en', 'es', 'fr'])) {
     //     abort(404);
     // }
+
     Route::redirect('admin', 'quiz', 301);
 
+    // admin panel
     Route::prefix('admin')->name('admin.')->group(function () {
 
         Auth::routes();
@@ -107,9 +109,9 @@ Route::group(['prefix' => '{language}'], function () {
 
 
     });
-        Route::get('/quiz', function(){
-            return view('front.quiz.index');
-        });
+
+    // front
+    Route::get('/quiz',[\App\Http\Controllers\front\QuizController::class, 'indexView']);
 
           Route::get('/', function(){
              return view('front.index');

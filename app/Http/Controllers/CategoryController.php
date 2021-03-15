@@ -28,8 +28,16 @@ class CategoryController extends Controller
     }
     public function editView($local,$id )
     {
-        $item = Category::where('id',$id)->first();
+        $item = Category::where('id', $id)->where('language_id', getLangId())->first();;
+
+        if (isset($item))
+        {
         return view('admin.category.edit')->with(['item'=>$item]);
+        }else
+        {
+            toastr()->warning(__('admin.change_lang_warning_error_edit_page_msg'), __('admin.warning'));
+            return redirect()->route('admin.category.indexView', app()->getLocale());
+        }
     }
     public function createView()
     {
