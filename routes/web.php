@@ -113,9 +113,7 @@ Route::group(['prefix' => '{language}'], function () {
     // front
     Route::get('/quiz',[\App\Http\Controllers\front\QuizController::class, 'indexView']);
 
-          Route::get('/', function(){
-             return view('front.index');
-         });
+    Route::get('/',[\App\Http\Controllers\front\FrontController::class, 'indexView']);
 
 });
 // Route::get('/greeting/{locale}', function ($locale) {
