@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ $site_name }}</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="">
+    <title>{{ $settings->site_name }}</title>
+    <meta name="keywords" content="{{ $settings->meta_keyword }}" />
+    <meta name="description" content="{{ $settings->site_desc }}">
     <meta name="author" content="">
 
     <!-- Mobile view -->
@@ -62,8 +62,8 @@
             <div class="container">
                 <div class="topbar-left-items">
                     <ul class="toplist toppadding pull-left paddtop1">
-                        <li class="rightl">Customer Care</li>
-                        <li>(888) 123-4567</li>
+                        <li class="rightl">{{ __('customer_care') }}</li>
+                        <li>{{ $settings->phone }}</li>
                     </ul>
                 </div>
                 <!--end left-->
@@ -72,10 +72,10 @@
                     <ul class="toplist toppadding">
                         <li class="lineright"><a href="#">Login</a></li>
                         <li class="lineright"><a href="#">Register</a></li>
-                        <li><a target="_blank" href="https://www.facebook.com/alaa_e_kullab"><i class="fa fa-facebook"></i></a></li>
-                        <li><a target="_blank" href="https://twitter.com/alaa2kullab"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li class="last"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a target="_blank" href="{{ $settings->facebook }}"><i class="fa fa-facebook"></i></a></li>
+                        <li><a target="_blank" href="{{ $settings->twitter }}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{ $settings->instagram }}"><i class="fa fa-instagram"></i></a></li>
+                        <li class="last"><a href="{{ $settings->whatsapp }}"><i class="fa fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -1162,10 +1162,8 @@
                             <div class="clearfix"></div>
                             <br/>
                             <br/>
-                            <h4 class="text-white uppercase">Address</h4>
-                            <h6 class="text-light uppercase">1234 new lorem Rd.<br/>
-                                ipsum city, cA 012345<br/>
-                                (0123) 123-456-789</h6>
+                            <h4 class="text-white uppercase">{{ __('front.address') }}</h4>
+                            <h6 class="text-light uppercase">{{ $settings->address }}</h6>
                             <div class="clearfix"></div>
                             <ul class="footer-quick-links">
                                 <li><a href="#">Home</a></li>
@@ -1184,7 +1182,7 @@
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                             </ul>
                             <div class="col-md-12">
-                                <p class="text-gray">Copyright © 2021 <br/></p>
+                                <p class="text-gray">{{ $settings->copyright }} © {{ date('Y') }} <br/></p>
                             </div>
                         </div>
                     </div>

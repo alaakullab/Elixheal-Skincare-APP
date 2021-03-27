@@ -13,6 +13,7 @@ return array(
     'view_setting' => 'View Setting',
     'category' => 'Category',
     'add faqs question' => 'Add faqs question',
+    'address' => 'Address',
 
     //form and inputs name - label
     'choose' => 'Choose',

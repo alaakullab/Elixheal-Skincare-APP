@@ -6,6 +6,8 @@ return array(
     'contact_us' => 'Contact US',
     'about_us' => 'About US',
     'start_skin_quiz' => 'START SKIN QUIZ',
+    'customer_care' => 'Customer Care',
+    'address' => 'Address',
 
     //quiz
     'quiz_title_formulate_your_custom_skincare' => "Formulate your custom skincare",

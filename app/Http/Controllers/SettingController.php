@@ -74,14 +74,14 @@ class SettingController extends Controller
     public function update(Request $request, Setting $setting)
     {
 
-        $request->validate([
-            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-            $logo = $request->file('logo');
-            $icon = $request->file('icon');
-            $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
-            $logo->move(public_path("images"), $newLogoName);
+//        $request->validate([
+//            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//            'icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//        ]);
+//            $logo = $request->file('logo');
+//            $icon = $request->file('icon');
+//            $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
+//            $logo->move(public_path("images"), $newLogoName);
 //            print_r($newLogoName);die();
         $data =  [
             'site_name' => $request->site_name,
@@ -99,6 +99,7 @@ class SettingController extends Controller
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,
             'whatsapp' => $request->whatsapp,
+            'address' => $request->address,
             'user_id' => $request->user_id,
         ];
            $result = $setting->where('language_id', getLangId())->update($data);
