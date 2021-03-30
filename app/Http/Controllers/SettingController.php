@@ -89,7 +89,7 @@ class SettingController extends Controller
                     if (file_exists(public_path()."/images/logo/".$oldData->logo) == 1 && $oldData->icon != null){
                         unlink(public_path().'/images/logo/'.$oldData->logo);
                     }
-                    $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
+                    $newLogoName = rand().'_'.$logo->getClientOriginalName();
                   $logo->move(public_path()."/images/logo/",$newLogoName);
             }else{
                 $newLogoName = null;
@@ -99,7 +99,7 @@ class SettingController extends Controller
                 if (file_exists(public_path()."/images/icon/".$oldData->icon) == 1 && $oldData->icon != null){
                     unlink(public_path().'/images/icon/'.$oldData->icon);
                 }
-                $newIconName = rand().'.'.$icon->getClientOriginalExtension();
+                $newIconName = rand().'_'.$icon->getClientOriginalName();
                 $icon->move(public_path("/images/icon/"), $newIconName);
             }else{
                 $newIconName = null;
