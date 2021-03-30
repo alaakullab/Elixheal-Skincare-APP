@@ -75,7 +75,7 @@
                         <li><a target="_blank" href="{{ $settings->facebook }}"><i class="fa fa-facebook"></i></a></li>
                         <li><a target="_blank" href="{{ $settings->twitter }}"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="{{ $settings->instagram }}"><i class="fa fa-instagram"></i></a></li>
-                        <li class="last"><a href="{{ $settings->whatsapp }}"><i class="fa fa-whatsapp"></i></a></li>
+                        <li class="last"><a href="https://wa.me/{{ $settings->whatsapp }}" target="_blank" ><i class="fa fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
             </div>

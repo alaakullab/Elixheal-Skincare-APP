@@ -6,6 +6,8 @@ use App\Http\Resources\SettingResource;
 use App\Models\const_languages;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+
 
 class SettingController extends Controller
 {
@@ -74,20 +76,40 @@ class SettingController extends Controller
     public function update(Request $request, Setting $setting)
     {
 
-//        $request->validate([
-//            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//            'icon' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//        ]);
-//            $logo = $request->file('logo');
-//            $icon = $request->file('icon');
-//            $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
-//            $logo->move(public_path("images"), $newLogoName);
-//            print_r($newLogoName);die();
+            $validator = $request->validate([
+                'logo' => 'image|mimes:jpeg,png,jpg|max:2048',
+                'icon' => 'image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+             $oldData = Setting::where('language_id', getLangId())->first();
+             $logo = $request->file('logo');
+             $icon = $request->file('icon');
+
+            if ($logo)
+                {
+                    if (file_exists(public_path()."/images/logo/".$oldData->logo) == 1){
+                        unlink(public_path().'/images/logo/'.$oldData->logo);
+                    }
+                    $newLogoName = rand().'.'.$logo->getClientOriginalExtension();
+                  $logo->move(public_path()."/images/logo/",$newLogoName);
+            }else{
+                $newLogoName = null;
+            }
+            if ($icon)
+            {
+                if (file_exists(public_path()."/images/icon/".$oldData->icon) == 1){
+                    unlink(public_path()."/images/icon/".$oldData->icon);
+                }
+                $newIconName = rand().'.'.$icon->getClientOriginalExtension();
+                $icon->move(public_path("/images/icon/"), $newIconName);
+            }else{
+                $newIconName = null;
+            }
+
         $data =  [
             'site_name' => $request->site_name,
             'site_desc' => $request->site_desc,
-            'logo' => $request->logo,
-            'icon' => $request->icon,
+            'logo' => $newLogoName,
+            'icon' => $newIconName,
             'copyright' => $request->copyright,
             'email' => $request->email,
             'meta_keyword' => $request->meta_keyword,
@@ -110,9 +132,14 @@ class SettingController extends Controller
     public function viewUpdate(Request $request, Setting $setting){
 
         $result = $this->update($request , $setting);
-        return redirect()->route('admin.setting.edit', app()->getLocale());
 
-        // return view('admin.setting.index', ['result' => $result, ]);
+        if($result->original == "Updated"){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+        }else
+        {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
+        return back();
     }
 
 }

@@ -1,6 +1,6 @@
 @extends('admin.layouts.index')
 
-@section('title', 'View Setting')
+@section('title', 'Slider list')
 
 @section('sidebar')
     @parent
@@ -40,7 +40,6 @@
                 <div class="form-group m-form__group">
                     <label for="logo">{{ __('admin.logo') }}</label>
                     <input type="file" class="form-control m-input" id="logo" name="logo" value="{{ $data->logo ?? $data->logo }}" placeholder="{{ __('admin.logo') }}">
-                    <img width="225px" height="225px" src="{{ url('images/logo/').$data->logo ?? $data->logo }}" alt="logo">
                 </div>
                 <div class="form-group m-form__group">
                     <label for="icon">{{ __('admin.icon') }}</label>
