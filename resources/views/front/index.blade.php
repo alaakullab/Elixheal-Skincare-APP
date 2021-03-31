@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="{{url('images/icon')}}/{{$settings->icon}}">
     <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/bootstrap/bootstrap.min.css">
 
     <!-- Google fonts  -->
@@ -88,7 +88,7 @@
                 <div class="container">
                     <div class="mod-menu">
                         <div class="row">
-                            <div class="col-sm-2"> <a href="index.html" title="" class="logo mar-4"> <img src="{{url('front')}}/assets/images/logo/logo.png" alt=""> </a> </div>
+                            <div class="col-sm-2"> <a href="index.html" title="" class="logo mar-4"> <img src="{{url('images/logo')}}/{{$settings->logo}}" alt="{{ __('front.logo') }}"> </a> </div>
                             <div class="col-sm-10">
                                 <div class="main-nav">
                                     <ul class="nav navbar-nav top-nav">

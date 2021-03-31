@@ -6,16 +6,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="description" content="QUOTE - Request a quote for every type of companies">
-    <meta name="author" content="Ansonika">
-    <title>Elixheal - Request a quote for every type of companies</title>
+    <meta name="keywords" content="{{ $settings->meta_keyword }}" />
+    <meta name="description" content="{{ $settings->site_desc }}">
+    <meta name="author" content="{{ $settings->site_name }}">
+    <title>{{ $settings->site_name }}</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="{{url('front')}}/quiz/assets/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{url('front')}}/quiz/assets/img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="shortcut icon" href="{{url('images/icon')}}/{{$settings->icon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="{{url('images/icon')}}/{{$settings->icon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="{{url('images/icon')}}/{{$settings->icon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="{{url('images/icon')}}/{{$settings->icon}}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="{{url('images/icon')}}/{{$settings->icon}}">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&amp;display=swap" rel="stylesheet">
