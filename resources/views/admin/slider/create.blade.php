@@ -3,6 +3,7 @@
     {{__('admin.slider')}}
 @endsection
 @section('css')
+    <link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 
@@ -15,7 +16,7 @@
                         <i class="la la-gear"></i>
                     </span>
                         <h3 class="m-portlet__head-text">
-                            {{ __('admin.add_slider') }}
+                            {{ ucwords(__('admin.add_slider')) }}
                         </h3>
                     </div>
                 </div>
@@ -36,7 +37,11 @@
                     </div>
                     <div class="form-group m-form__group">
                         <label for="desc">{{ __('admin.desc') }}</label>
-                        <input type="text" class="form-control m-input"  id="desc" name="desc" value="{{old('desc')}}" placeholder="{{ __('admin.desc') }}">
+                        <div class="col-lg-9 col-md-9 col-sm-12">
+{{--                            <div class="summernote" id="summernote"></div>--}}
+                        </div>
+{{--                        <textarea class="summernote" id="m_summernote_1" name="desc" >{{old('desc')}}</textarea>--}}
+{{--                        <input type="text" class="form-control m-input"  id="desc" name="desc" value="{{old('desc')}}" placeholder="{{ __('admin.desc') }}">--}}
                     </div>
                     <div class="form-group m-form__group">
                         <label for="name">{{ __('admin.hyperlink') }}</label>
@@ -56,12 +61,15 @@
         </div>
     </div>
 
-
-
-
-
-
 @endsection
 
+@section('script')
+    <script src="{{url('admin_panel')}}/assets/summernote/dist/summernote.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('#summernote').summernote({
+            height: 400
+        });
+    </script>
+@endsection
 
 

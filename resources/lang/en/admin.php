@@ -86,10 +86,14 @@ return array(
     'edit_category' => 'Edit Category',
 
     //slider
-    'Slider' => 'Sliders',
+    'slider' => 'Slider',
+    'sliders' => 'Sliders',
+    'add_slider' => 'Add Slider',
+    'view' => 'View',
     'image' => 'Image',
     'title' => 'Title',
     'desc' => 'Description',
+    'image_area' => 'Image Area',
     'hyperlink' => 'Hyperlink',
 
     //Product
