@@ -85,6 +85,13 @@ return array(
     //category
     'edit_category' => 'Edit Category',
 
+    //slider
+    'Slider' => 'Sliders',
+    'image' => 'Image',
+    'title' => 'Title',
+    'desc' => 'Description',
+    'hyperlink' => 'Hyperlink',
+
     //Product
     'product' => 'Product',
     'product_title' => 'Product title',

@@ -86,13 +86,21 @@ Route::group(['prefix' => '{language}'], function () {
         Route::put('faqs_questions/{id}/update', [\App\Http\Controllers\FaqsQuestionController::class,'updateView'])->name('faqs_questions.updateView');
         Route::any('faqs_questions/{id}/delete', [\App\Http\Controllers\FaqsQuestionController::class,'deleteView'])->name('faqs_questions.deleteView');
 
-        Route::get('faqs_answers/{id}', [\App\Http\Controllers\FaqsAnswerController::class,'indexView'])->name('answer.indexView');
+        Route::get('faqs_answers/{id}', [\App\Http\Controllers\FaqsAnswerController::class,'indexView'])->name('faqs_answers.indexView');
         Route::get('faqs_answers/{id}/add',[\App\Http\Controllers\FaqsAnswerController::class, 'createView'])->name('faqs_answers.add');
         Route::post('faqs_answers/{id}/store',[\App\Http\Controllers\FaqsAnswerController::class, 'storeView'])->name('faqs_answers.store');
         Route::get('faqs_answers/{id}/edit',[\App\Http\Controllers\FaqsAnswerController::class, 'editView'])->name('faqs_answers.edit');
         Route::put('faqs_answers/{id}/update', [\App\Http\Controllers\FaqsAnswerController::class,'updateView'])->name('faqs_answers.updateView');
 
-        Route::get('quiz/results', [\App\Http\Controllers\ResultQuestionsController::class,'indexView'])->name('quiz.results.indexView');
+        Route::get('slider', [\App\Http\Controllers\SliderController::class,'indexView'])->name('slider.indexView');
+        Route::get('slider/add', [\App\Http\Controllers\SliderController::class,'createView'])->name('slider.createView');
+        Route::post('slider/store', [\App\Http\Controllers\SliderController::class,'storeView'])->name('slider.storeView');
+        Route::get('slider/{id}/edit', [\App\Http\Controllers\SliderController::class,'editView'])->name('slider.editView');
+        Route::put('slider/{id}/update', [\App\Http\Controllers\SliderController::class,'updateView'])->name('slider.updateView');
+        Route::any('slider/{id}/delete', [\App\Http\Controllers\SliderController::class,'deleteView'])->name('slider.deleteView');
+
+
+            Route::get('quiz/results', [\App\Http\Controllers\ResultQuestionsController::class,'indexView'])->name('quiz.results.indexView');
 
 
 

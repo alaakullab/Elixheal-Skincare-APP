@@ -39,10 +39,13 @@ class CategoryController extends Controller
             return redirect()->route('admin.category.indexView', app()->getLocale());
         }
     }
+
     public function createView()
     {
         return view('admin.category.create');
-    } public function storeView(Request $request)
+    }
+
+    public function storeView(Request $request)
     {
         $category = new Category;
         $category->name = $request->name;
