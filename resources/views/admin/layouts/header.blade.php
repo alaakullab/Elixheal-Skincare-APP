@@ -43,7 +43,6 @@
 		<link href="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
 		<link href="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
 		<link href="{{url('admin_panel')}}/assets/vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
 		<link href="{{url('admin_panel')}}/assets/vendors/animate.css/animate.css" rel="stylesheet" type="text/css" />
 		<link href="{{url('admin_panel')}}/assets/vendors/toastr/build/toastr.css" rel="stylesheet" type="text/css" />

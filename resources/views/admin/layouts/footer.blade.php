@@ -563,7 +563,6 @@
 		<script src="{{url('admin_panel')}}/assets/vendors/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
 		<script src="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
 		<script src="{{url('admin_panel')}}/assets/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
 		<script src="{{url('admin_panel')}}/assets/vendors/markdown/lib/markdown.js" type="text/javascript"></script>
 		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
 		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-markdown.init.js" type="text/javascript"></script>
@@ -595,6 +594,13 @@
         {{-- @jquery --}}
         @toastr_js
         @toastr_render
+        <script type="text/javascript">
+            @if(count($errors) > 0)
+            @foreach($errors->all() as $error)
+            toastr.error("{{ $error }}");
+            @endforeach
+            @endif
+        </script>
         @yield('script')
 
 	</body>

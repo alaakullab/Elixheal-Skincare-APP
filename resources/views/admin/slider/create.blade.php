@@ -23,7 +23,7 @@
             </div>
 
             <!--begin::Form-->
-            <form  method="POST" action="{{ route('admin.slider.storeView',app()->getLocale()) }}" class="m-form m-form--fit m-form--label-align-right"  >
+            <form  method="POST" action="{{ route('admin.slider.storeView',app()->getLocale()) }}"  enctype="multipart/form-data" class="m-form m-form--fit m-form--label-align-right"  >
                 @csrf
                 <div class="m-portlet__body">
                     <div class="form-group m-form__group">
@@ -38,7 +38,7 @@
                     <div class="form-group m-form__group">
                         <label for="desc">{{ __('admin.desc') }}</label>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-{{--                            <div class="summernote" id="summernote"></div>--}}
+                            <textarea  class="summernote" name="desc" >{{old('desc')}}</textarea>
                         </div>
 {{--                        <textarea class="summernote" id="m_summernote_1" name="desc" >{{old('desc')}}</textarea>--}}
 {{--                        <input type="text" class="form-control m-input"  id="desc" name="desc" value="{{old('desc')}}" placeholder="{{ __('admin.desc') }}">--}}
@@ -64,10 +64,17 @@
 @endsection
 
 @section('script')
-    <script src="{{url('admin_panel')}}/assets/summernote/dist/summernote.js" type="text/javascript"></script>
+    <script src="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
     <script type="text/javascript">
-        $('#summernote').summernote({
-            height: 400
+        $('.summernote').summernote({
+            height: 150,
+            focus: true,
+            toolbar: [
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
         });
     </script>
 @endsection
