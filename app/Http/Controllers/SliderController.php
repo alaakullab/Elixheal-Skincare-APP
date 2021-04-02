@@ -66,24 +66,27 @@ class SliderController extends Controller
 
         if ($image_path)
         {
-            $folderPath = "/images/slider/";
             $newImagePathName = rand().'_'.$image_path->getClientOriginalName();
-            $image_path->move($folderPath,$newImagePathName);
-            $folderPath = url($folderPath);
-            $newImagePath_V = $folderPath.'/'.$newImagePathName;
+            $image_path->move(public_path()."/images/slider/",$newImagePathName);
         }else{
-            $newImagePath_V = null;
+            $newImagePathName = null;
         }
 
         $slider = new Slider();
-        $slider->image_path = $newImagePath_V;
+        $slider->image_path = $newImagePathName;
         $slider->title = $request->title;
         $slider->desc = $request->desc;
         $slider->hyperlink = $request->hyperlink;
         $slider->image_area = "HomePage";
         $slider->language_id =  getLangId();
         $slider->user_id = auth()->id();
-        $slider->save();
+        $status = $slider->save();
+        if($status){
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
+        }else
+        {
+            toastr()->error(__('admin.save_error_msg'), __('admin.error'));
+        }
         return back();
 
     }

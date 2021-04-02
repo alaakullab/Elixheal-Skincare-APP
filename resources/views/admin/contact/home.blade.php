@@ -125,9 +125,9 @@
                         @forelse($items as $item)
                             <tr>
                                 <td>{{ $count++ }}</td>
-                                <td> {{@$item->full_name?? 'محذوف'}}</td>
-                                <td> {{@$item->email_contacts?? 'محذوف'}}</td>
-                                <td> {{@$item->message?? 'محذوف'}}</td>
+                                <td> {{@$item->full_name?? ''}}</td>
+                                <td> {{@$item->email_contacts?? ''}}</td>
+                                <td> {{@$item->message?? ''}}</td>
                                 <td>
                                     <div class="btn-group btn-action">
                                         <a href="{{url(app()->getLocale().'/admin/contact/'. $item->id.'/edit')}}"

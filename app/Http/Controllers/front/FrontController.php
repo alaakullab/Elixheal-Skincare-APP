@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\front;
 
 use App\Models\Setting;
+use App\Models\Slider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,9 @@ class FrontController extends Controller
      */
     public function indexView(Request $request){
         $settings = Setting::where('language_id', getLangId())->first();
+        $slider = Slider::where('language_id', getLangId())->get();
 
-//        print_r($questions);die();
-        return view('front.index',compact('settings'));
+        return view('front.index',compact('settings','slider'));
     }
 
     public function index()

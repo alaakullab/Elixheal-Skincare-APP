@@ -55,9 +55,13 @@
                         @forelse($items as $item)
                             <tr>
                                 <td>{{ $count++ }}</td>
-                                <td><img src="{{url('front')}}/assets/images/sliders/by2-2.jpg" alt=""  width="75" height="56"></td>
+                                <td>
+                                    <div class="thumbnail">
+                                    <img src="{{url('/images/slider/')}}/{{$item->image_path}}" alt="{{ __('front.slider') }}" class="img-responsive img-fluid"  width="152" height="118">
+                                    </div>
+                                </td>
                                 <td>{{$item->title}}</td>
-                                <td>{{$item->desc}}</td>
+                                <td>{!! $item->desc !!}</td>
                                 <td>
                                     <div class="btn-group btn-action">
                                         <a href="{{url(app()->getLocale().'/admin/slider/'. $item->id.'/edit')}}"

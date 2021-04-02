@@ -148,11 +148,12 @@
             <!-- START REVOLUTION SLIDER 5.0 auto mode -->
             <div id="rev_slider" class="rev_slider"  data-version="5.0">
                 <ul>
+                    @foreach($slider as $slider)
                     <!-- SLIDE  -->
                     <li data-transition="fade">
 
                         <!-- MAIN IMAGE -->
-                        <img src="{{url('front')}}/assets/images/sliders/by2-1.jpg" alt=""  width="1920" height="1280">
+                        <img src="{{url('/')}}/images/slider/{{$slider->image_path}}" alt=""  width="1920" height="1280">
 
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption by2-text-2 tp-resizeme"
@@ -188,7 +189,7 @@
                              data-splitin="none"
                              data-splitout="none"
                              data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;">Beauty Care </div>
+                             style="z-index: 5; white-space: nowrap;">{{ $slider->title }}</div>
 
                         <!-- LAYER NR. 3 -->
                         <div class="tp-caption br-text-3 tp-resizeme"
@@ -205,8 +206,7 @@
                              data-splitin="none"
                              data-splitout="none"
                              data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <br/>
-                            Suspendisse et justo. Praesent mattis commodo. </div>
+                             style="z-index: 5; white-space: nowrap;">{!! Str::limit(preg_replace('~(\R{2})\R+~', '$1',  $slider->desc),65) !!}</div>
 
                         <!-- LAYER NR. 4 -->
                         <div class="tp-caption sbut2 btn-xradius"
@@ -220,6 +220,7 @@
                              data-captionhidden="off"
                              style="z-index: 6"> <a href="#">Read more</a> </div>
                     </li>
+                    @endforeach
 
                     <!-- SLIDE  -->
                     <li data-transition="fade">
