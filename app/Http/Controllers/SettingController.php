@@ -75,8 +75,11 @@ class SettingController extends Controller
      */
     public function update(Request $request, Setting $setting)
     {
-
             $validator = $request->validate([
+                'site_name' => 'required',
+                'site_desc' => 'required',
+                'email' => 'required|email|sometimes',
+                'maintenance_status' => 'required',
                 'logo' => 'image|mimes:jpeg,png,jpg|max:2048',
                 'icon' => 'image|mimes:jpeg,png,jpg|max:2048',
             ]);

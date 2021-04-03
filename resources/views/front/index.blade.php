@@ -60,12 +60,14 @@
     <div class="site-wrapper">
         <div class="topbar light topbar-padding">
             <div class="container">
+                @if($settings->phone)
                 <div class="topbar-left-items">
                     <ul class="toplist toppadding pull-left paddtop1">
                         <li class="rightl">{{ __('customer_care') }}</li>
                         <li>{{ $settings->phone }}</li>
                     </ul>
                 </div>
+            @endif
                 <!--end left-->
 
                 <div class="topbar-right-items pull-right">
@@ -752,7 +754,7 @@
                                 @if($settings->whatsapp)<li><a target="_blank" href="https://wa.me/{{ $settings->whatsapp }}"><i class="fa fa-whatsapp"></i></a></li>@endif
                             </ul>
                             <div class="col-md-12">
-                                <p class="text-gray">{{ $settings->copyright ?? $settings->copyright }} © {{ date('Y') }} <br/></p>
+                                <p class="text-gray">{{ $settings->copyright ?? __('front.copyright') }} © {{ date('Y') }} <br/></p>
                             </div>
                         </div>
                     </div>
