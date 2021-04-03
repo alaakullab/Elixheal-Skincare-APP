@@ -131,7 +131,7 @@ class SettingController extends Controller
 
     public function viewUpdate(Request $request, Setting $setting){
 
-        $result = $this->update($request , $setting);
+        $result = $this->update($request, $setting);
 
         if($result->original == "Updated"){
             toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
