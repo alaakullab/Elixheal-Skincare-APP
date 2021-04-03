@@ -206,7 +206,7 @@
                              data-splitin="none"
                              data-splitout="none"
                              data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;">{!! Str::limit(preg_replace('~(\R{2})\R+~', '$1',  $slider->desc),65) !!}</div>
+                             style="z-index: 5; white-space: nowrap;">{!!  $slider->desc !!} </div>
 
                         <!-- LAYER NR. 4 -->
                         <div class="tp-caption sbut2 btn-xradius"

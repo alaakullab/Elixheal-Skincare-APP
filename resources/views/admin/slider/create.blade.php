@@ -37,11 +37,9 @@
                     </div>
                     <div class="form-group m-form__group">
                         <label for="desc">{{ __('admin.desc') }}</label>
-                        <div class="col-lg-9 col-md-9 col-sm-12">
-                            <textarea  class="summernote" name="desc" >{{old('desc')}}</textarea>
+                        <div class="col-lg-6 col-md-6 col-sm-9">
+                            <textarea  class="summernote" rows="3" name="desc" >{{old('desc')}}</textarea>
                         </div>
-{{--                        <textarea class="summernote" id="m_summernote_1" name="desc" >{{old('desc')}}</textarea>--}}
-{{--                        <input type="text" class="form-control m-input"  id="desc" name="desc" value="{{old('desc')}}" placeholder="{{ __('admin.desc') }}">--}}
                     </div>
                     <div class="form-group m-form__group">
                         <label for="name">{{ __('admin.hyperlink') }}</label>
@@ -67,14 +65,15 @@
     <script src="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
     <script type="text/javascript">
         $('.summernote').summernote({
-            height: 150,
+            height: 120,
             focus: true,
-            toolbar: [
-                ['font', ['bold', 'underline', 'clear']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['view', ['fullscreen', 'codeview', 'help']]
-            ]
+            toolbar: false
+            //     [
+            //     ['font', ['bold', 'underline', 'clear']],
+            //     ['color', ['color']],
+            //     ['para', ['ul', 'ol', 'paragraph']],
+            //     ['view', ['fullscreen', 'codeview', 'help']]
+            // ]
         });
     </script>
 @endsection

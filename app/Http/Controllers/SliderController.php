@@ -15,7 +15,7 @@ class SliderController extends Controller
 
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index', 'indexView', 'createView','storeView', 'viewEdit', 'viewUpdate', 'show']]);
+        $this->middleware('JWT', ['except' => ['index', 'indexView', 'createView','storeView', 'editView', 'updateView', 'show']]);
     }
 
     public function index()
@@ -111,6 +111,20 @@ class SliderController extends Controller
     public function edit($id)
     {
         //
+    }
+
+    public function editView($local,$id )
+    {
+        $item = Slider::where('id', $id)->where('language_id', getLangId())->first();;
+
+        if (isset($item))
+        {
+            return view('admin.slider.edit')->with(['item'=>$item]);
+        }else
+        {
+            toastr()->warning(__('admin.change_lang_warning_error_edit_page_msg'), __('admin.warning'));
+            return redirect()->route('admin.slider.indexView', app()->getLocale());
+        }
     }
 
     /**

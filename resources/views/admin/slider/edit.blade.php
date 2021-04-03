@@ -1,7 +1,9 @@
 @extends('admin.layouts.index')
 @section('title') {{ucwords(__('admin.category'))}}
 @endsection
-
+@section('css')
+    <link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+@endsection
 @section('content')
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">
@@ -36,8 +38,6 @@
                         <div class="col-lg-9 col-md-9 col-sm-12">
                             <textarea  class="summernote" name="desc" >{{old('desc', $item->desc)}}</textarea>
                         </div>
-                        {{--                        <textarea class="summernote" id="m_summernote_1" name="desc" >{{old('desc')}}</textarea>--}}
-                        {{--                        <input type="text" class="form-control m-input"  id="desc" name="desc" value="{{old('desc')}}" placeholder="{{ __('admin.desc') }}">--}}
                     </div>
                     <div class="form-group m-form__group">
                         <label for="name">{{ __('admin.hyperlink') }}</label>
@@ -57,6 +57,16 @@
         </div>
     </div>
 
+@endsection
+@section('script')
+    <script src="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('.summernote').summernote({
+            height: 120,
+            focus: true,
+            toolbar: false
+        });
+    </script>
 @endsection
 
 
