@@ -63,17 +63,14 @@ class SliderController extends Controller
         ]);
 
         $image_path = $request->file('image_path');
-
+        $slider = new Slider();
         if ($image_path)
         {
             $newImagePathName = rand().'_'.$image_path->getClientOriginalName();
             $image_path->move(public_path()."/images/slider/",$newImagePathName);
-        }else{
-            $newImagePathName = null;
+            $slider->image_path = $newImagePathName;
         }
 
-        $slider = new Slider();
-        $slider->image_path = $newImagePathName;
         $slider->title = $request->title;
         $slider->desc = $request->desc;
         $slider->hyperlink = $request->hyperlink;
@@ -90,6 +87,7 @@ class SliderController extends Controller
         return back();
 
     }
+
 
     /**
      * Display the specified resource.
@@ -134,9 +132,53 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id, Slider $slider)
     {
-        //
+        $request->validate([
+            'image_path' => 'image|mimes:jpeg,png,jpg|max:10240',
+            'title' => 'max:255',
+            'desc' => 'max:800',
+        ]);
+
+        $oldData = $slider->where('language_id', getLangId())->first();
+        $image_path = $request->file('image_path');
+
+        $data =  [
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'hyperlink' => $request->hyperlink,
+            'image_area' => "HomePage",
+            'language_id' => getLangId(),
+            'user_id' => auth()->id()
+        ];
+
+        if ($image_path)
+        {
+            if (file_exists(public_path()."/images/slider/".$oldData->image_path) == 1 && $oldData->image_path != null){
+                unlink(public_path().'/images/slider/'.$oldData->image_path);
+            }
+            $newImagePathName = rand().'_'.$image_path->getClientOriginalName();
+            $image_path->move(public_path()."/images/slider/",$newImagePathName);
+            $data['image_path'] = $newImagePathName;
+        }
+
+        $result = $slider->where('language_id', getLangId())->update($data);
+
+        return response('Updated', 202);
+    }
+
+    public function updateView(Request $request,$id, Slider $slider)
+    {
+        $result = $this->update($request,$id, $slider);
+
+        if($result->original == "Updated"){
+            toastr()->success(__('admin.update_successful_msg'), __('admin.success'));
+        }else
+        {
+            toastr()->error(__('admin.update_error_msg'), __('admin.error'));
+        }
+        return back();
+
     }
 
     /**

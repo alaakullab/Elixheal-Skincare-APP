@@ -23,7 +23,7 @@
 
             <!--begin::Form-->
             <form  method="POST" action="{{ route('admin.product.storeView',app()->getLocale()) }}" class="m-form m-form--fit m-form--label-align-right"  enctype="multipart/form-data" >
-                @csrf
+                {{ csrf_field() }}
                 <div class="m-portlet__body">
                     <div class="form-group m-form__group">
                         <label for="product_title">{{ __('admin.product_title') }}</label>

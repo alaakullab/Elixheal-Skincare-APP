@@ -37,28 +37,48 @@ class ContactController extends Controller
         return view('admin.contact.create');
     }
     public function storeView(Request $request)
-{
-    $contact = new contact;
-    $contact->full_name = $request->full_name;
-    $contact->email_contacts = $request->email_contacts;
-    $contact->message = $request->message;
-    $contact->language_id = getLangId();
-    $status = $contact->save();
-    if($status){
-        toastr()->success(__('admin.store_successful_msg'), __('admin.success'));
-    }else
     {
-    toastr()->error(__('admin.store_error_msg'), __('admin.error'));
+        $request->validate([
+            'full_name' => 'required',
+            'email_contacts' => 'required|email',
+            'phone' => 'number',
+            'subject' => 'required|max:80',
+            'message' => 'required|min:80|max:300',
+        ]);
+
+        $contact = new contact;
+        $contact->full_name = $request->full_name;
+        $contact->email_contacts = $request->email_contacts;
+        $contact->phone = $request->phone;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->language_id = getLangId();
+        $status = $contact->save();
+        if($status){
+            toastr()->success(__('admin.store_successful_msg'), __('admin.success'));
+        }else
+        {
+        toastr()->error(__('admin.store_error_msg'), __('admin.error'));
+        }
+        return back();
     }
-    return back();
-}
     public function updateView(Request $request,$local,$id  )
     {
+        $request->validate([
+            'full_name' => 'required',
+            'email_contacts' => 'required|email',
+            'phone' => 'number',
+            'subject' => 'required|max:80',
+            'message' => 'required|min:80|max:300',
+        ]);
+
         $contact = contact::find($id);
         $status = $contact->update(
             [
                 'full_name' => $request->full_name,
                 'email_contacts' => $request->email_contacts,
+                'phone' => $request->phone,
+                'subject' => $request->subject,
                 'message' => $request->message,
             ]
         );

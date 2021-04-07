@@ -1,6 +1,6 @@
-@include('admin.layouts.header')
-@include('admin.layouts.menu')
-@include('admin.layouts.navbar')
-{{-- @include('admin.layouts.messages') --}}
+@include('front.layouts.header')
+@include('front.layouts.menu')
+{{--@include('front.layouts.navbar')--}}
+{{-- @include('front.layouts.messages') --}}
 @yield('content')
-@include('admin.layouts.footer')
+@include('front.layouts.footer')

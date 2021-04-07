@@ -26,6 +26,7 @@ class ContactFactory extends Factory
         return [
             'full_name' => $name,
             'email_contacts' =>  $this->faker->unique()->safeEmail,
+            'phone' =>  $this->faker->phoneNumber,
             'message' =>  $text,
             'language_id' => function () {
                 return \App\Models\const_languages::all()->random();

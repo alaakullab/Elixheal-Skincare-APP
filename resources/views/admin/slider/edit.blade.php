@@ -22,7 +22,8 @@
 
             <!--begin::Form-->
             <form  method="POST" action="{{ url(app()->getLocale().'/admin/slider/'. $item->id.'/update') }}"  enctype="multipart/form-data" class="m-form m-form--fit m-form--label-align-right"  >
-                @csrf
+                {{ csrf_field() }}
+                {{ method_field('put')}}
                 <div class="m-portlet__body">
                     <div class="form-group m-form__group">
                         <label for="image_path">{{ __('admin.image') }}</label>

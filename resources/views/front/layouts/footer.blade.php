@@ -1,603 +1,172 @@
-          </div>
+
+<section class="parallax-5">
+    <div class="container-fluid nopadding">
+        <div class="parallax-overlay bg-opacity-8">
+            <div class="container sec-tpadding-3 sec-bpadding-3">
+                <div class="row">
+                    <div class=" col-md-12 col-centered text-center"> <img src="{{url('front')}}/assets/images/logo/fn2-logo.html" alt=""/>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <br/>
+                        <h4 class="text-white uppercase">{{ __('front.address') }}</h4>
+                        <h6 class="text-light uppercase">{{ $settings->address }}</h6>
+                        <div class="clearfix"></div>
+                        <ul class="footer-quick-links">
+                            <li><a href="#">{{ __('front.home')  }}</a></li>
+                            <li><a href="#">{{ __('front.about_us')  }}</a></li>
+                            <li><a href="#">{{ __('front.contact_us')  }}</a></li>
+                            <li><a href="#">{{ __('front.FAQS')  }}</a></li>
+                            <li><a href="{{ url('/'.app()->getLocale().'/quiz') }}">{{ __('front.start_skin_quiz')  }}</a></li>
+                        </ul>
+                        <div class="divider-line solid light opacity-1"></div>
+                        <ul class="footer-social-icons round">
+                            @if($settings->twitter)<li><a target="_blank" class="twitter" href="{{ $settings->twitter }}"><i class="fa fa-twitter"></i></a></li>@endif
+                            @if($settings->facebook)<li><a target="_blank" href="{{ $settings->facebook }}"><i class="fa fa-facebook"></i></a></li>@endif
+                            @if($settings->instagram)<li><a target="_blank" href="{{$settings->instagram}}"><i class="fa fa-instagram"></i></a></li>@endif
+                            @if($settings->whatsapp)<li><a target="_blank" href="https://wa.me/{{ $settings->whatsapp }}"><i class="fa fa-whatsapp"></i></a></li>@endif
+                        </ul>
+                        <div class="col-md-12">
+                            <p class="text-gray">{{ $settings->copyright ?? __('front.copyright') }} © {{ date('Y') }} <br/></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--end section-->
+
+<a href="#" class="scrollup"></a><!-- end scroll to top of the page-->
+
 </div>
+<!--end site wrapper-->
+</div>
+<!--end wrapper boxed-->
 
-<!-- end:: Body -->
+<!-- Scripts -->
+<script src="{{url('front')}}/assets/js/jquery/jquery.js"></script>
+<script src="{{url('front')}}/assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="{{url('front')}}/assets/js/style-customizer/js/spectrum.js"></script>
+<script src="{{url('front')}}/assets/js/less/less.min.js" data-env="development"></script>
+<script src="{{url('front')}}/assets/js/style-customizer/js/style-customizer.js"></script>
+<!-- Scripts END -->
 
+<!-- Template scripts -->
+<script src="{{url('front')}}/assets/js/megamenu/js/main.js"></script>
+<script src="{{url('front')}}/assets/js/owl-carousel/owl.carousel.js"></script>
+<script src="{{url('front')}}/assets/js/owl-carousel/custom.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/cubeportfolio/jquery.cubeportfolio.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/cubeportfolio/main3.js"></script>
+<script src="{{url('front')}}/assets/js/parallax/jquery.parallax-1.1.3.js"></script>
 
-			<!-- begin::Footer -->
-			<footer class="m-grid__item		m-footer ">
-				<div class="m-container m-container--fluid m-container--full-height m-page__container">
-					<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
-						<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
-							<span class="m-footer__copyright">
-								2021 &copy; Elixheal.
-							</span>
-						</div>
-						<div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
-							<ul class="m-footer__nav m-nav m-nav--inline m--pull-right">
-								<li class="m-nav__item">
-									<a href="#" class="m-nav__link">
-										<span class="m-nav__link-text">About</span>
-									</a>
-								</li>
-								<li class="m-nav__item">
-									<a href="#" class="m-nav__link">
-										<span class="m-nav__link-text">Privacy</span>
-									</a>
-								</li>
-								<li class="m-nav__item">
-									<a href="#" class="m-nav__link">
-										<span class="m-nav__link-text">T&C</span>
-									</a>
-								</li>
-								<li class="m-nav__item">
-									<a href="#" class="m-nav__link">
-										<span class="m-nav__link-text">Purchase</span>
-									</a>
-								</li>
-								<li class="m-nav__item m-nav__item">
-									<a href="#" class="m-nav__link" data-toggle="m-tooltip" title="Support Center" data-placement="left">
-										<i class="m-nav__link-icon flaticon-info m--icon-font-size-lg3"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
+<!-- REVOLUTION JS FILES -->
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
 
-			<!-- end::Footer -->
-		</div>
-
-		<!-- end:: Page -->
-
-		<!-- begin::Quick Sidebar -->
-		<div id="m_quick_sidebar" class="m-quick-sidebar m-quick-sidebar--tabbed m-quick-sidebar--skin-light">
-			<div class="m-quick-sidebar__content m--hide">
-				<span id="m_quick_sidebar_close" class="m-quick-sidebar__close"><i class="la la-close"></i></span>
-				<ul id="m_quick_sidebar_tabs" class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
-					<li class="nav-item m-tabs__item">
-						<a class="nav-link m-tabs__link active" data-toggle="tab" href="#m_quick_sidebar_tabs_messenger" role="tab">Messages</a>
-					</li>
-					<li class="nav-item m-tabs__item">
-						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_quick_sidebar_tabs_settings" role="tab">Settings</a>
-					</li>
-					<li class="nav-item m-tabs__item">
-						<a class="nav-link m-tabs__link" data-toggle="tab" href="#m_quick_sidebar_tabs_logs" role="tab">Logs</a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="m_quick_sidebar_tabs_messenger" role="tabpanel">
-						<div class="m-messenger m-messenger--message-arrow m-messenger--skin-light">
-							<div class="m-messenger__messages m-scrollable">
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-pic">
-											<img src="{{url('admin_panel')}}/assets/app/media/img//users/user3.jpg" alt="" />
-										</div>
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-username">
-													Megan wrote
-												</div>
-												<div class="m-messenger__message-text">
-													Hi Bob. What time will be the meeting ?
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-text">
-													Hi Megan. It's at 2.30PM
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-pic">
-											<img src="{{url('admin_panel')}}/assets/app/media/img//users/user3.jpg" alt="" />
-										</div>
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-username">
-													Megan wrote
-												</div>
-												<div class="m-messenger__message-text">
-													Will the development team be joining ?
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-text">
-													Yes sure. I invited them as well
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__datetime">2:30PM</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-pic">
-											<img src="{{url('admin_panel')}}/assets/app/media/img//users/user3.jpg" alt="" />
-										</div>
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-username">
-													Megan wrote
-												</div>
-												<div class="m-messenger__message-text">
-													Noted. For the Coca-Cola Mobile App project as well ?
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-text">
-													Yes, sure.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-text">
-													Please also prepare the quotation for the Loop CRM project as well.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__datetime">3:15PM</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-no-pic m--bg-fill-danger">
-											<span>M</span>
-										</div>
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-username">
-													Megan wrote
-												</div>
-												<div class="m-messenger__message-text">
-													Noted. I will prepare it.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--out">
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-text">
-													Thanks Megan. I will see you later.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="m-messenger__wrapper">
-									<div class="m-messenger__message m-messenger__message--in">
-										<div class="m-messenger__message-pic">
-											<img src="{{url('admin_panel')}}/assets/app/media/img//users/user3.jpg" alt="" />
-										</div>
-										<div class="m-messenger__message-body">
-											<div class="m-messenger__message-arrow"></div>
-											<div class="m-messenger__message-content">
-												<div class="m-messenger__message-username">
-													Megan wrote
-												</div>
-												<div class="m-messenger__message-text">
-													Sure. See you in the meeting soon.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="m-messenger__seperator"></div>
-							<div class="m-messenger__form">
-								<div class="m-messenger__form-controls">
-									<input type="text" name="" placeholder="Type here..." class="m-messenger__form-input">
-								</div>
-								<div class="m-messenger__form-tools">
-									<a href="" class="m-messenger__form-attachment">
-										<i class="la la-paperclip"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane" id="m_quick_sidebar_tabs_settings" role="tabpanel">
-						<div class="m-list-settings m-scrollable">
-							<div class="m-list-settings__group">
-								<div class="m-list-settings__heading">General Settings</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Email Notifications</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" checked="checked" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Site Tracking</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">SMS Alerts</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Backup Storage</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Audit Logs</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" checked="checked" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-							</div>
-							<div class="m-list-settings__group">
-								<div class="m-list-settings__heading">System Settings</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">System Logs</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Error Reporting</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Applications Logs</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Backup Servers</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" checked="checked" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-								<div class="m-list-settings__item">
-									<span class="m-list-settings__item-label">Audit Logs</span>
-									<span class="m-list-settings__item-control">
-										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
-											<label>
-												<input type="checkbox" name="">
-												<span></span>
-											</label>
-										</span>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tab-pane" id="m_quick_sidebar_tabs_logs" role="tabpanel">
-						<div class="m-list-timeline m-scrollable">
-							<div class="m-list-timeline__group">
-								<div class="m-list-timeline__heading">
-									System Logs
-								</div>
-								<div class="m-list-timeline__items">
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">12 new users registered <span class="m-badge m-badge--warning m-badge--wide">important</span></a>
-										<span class="m-list-timeline__time">Just now</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">System shutdown</a>
-										<span class="m-list-timeline__time">11 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">New invoice received</a>
-										<span class="m-list-timeline__time">20 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">Database overloaded 89% <span class="m-badge m-badge--success m-badge--wide">resolved</span></a>
-										<span class="m-list-timeline__time">1 hr</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">System error</a>
-										<span class="m-list-timeline__time">2 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">Production server down <span class="m-badge m-badge--danger m-badge--wide">pending</span></a>
-										<span class="m-list-timeline__time">3 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">Production server up</a>
-										<span class="m-list-timeline__time">5 hrs</span>
-									</div>
-								</div>
-							</div>
-							<div class="m-list-timeline__group">
-								<div class="m-list-timeline__heading">
-									Applications Logs
-								</div>
-								<div class="m-list-timeline__items">
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">New order received <span class="m-badge m-badge--info m-badge--wide">urgent</span></a>
-										<span class="m-list-timeline__time">7 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">12 new users registered</a>
-										<span class="m-list-timeline__time">Just now</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">System shutdown</a>
-										<span class="m-list-timeline__time">11 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">New invoices received</a>
-										<span class="m-list-timeline__time">20 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">Database overloaded 89%</a>
-										<span class="m-list-timeline__time">1 hr</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">System error <span class="m-badge m-badge--info m-badge--wide">pending</span></a>
-										<span class="m-list-timeline__time">2 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">Production server down</a>
-										<span class="m-list-timeline__time">3 hrs</span>
-									</div>
-								</div>
-							</div>
-							<div class="m-list-timeline__group">
-								<div class="m-list-timeline__heading">
-									Server Logs
-								</div>
-								<div class="m-list-timeline__items">
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">Production server up</a>
-										<span class="m-list-timeline__time">5 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">New order received</a>
-										<span class="m-list-timeline__time">7 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">12 new users registered</a>
-										<span class="m-list-timeline__time">Just now</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">System shutdown</a>
-										<span class="m-list-timeline__time">11 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">New invoice received</a>
-										<span class="m-list-timeline__time">20 mins</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">Database overloaded 89%</a>
-										<span class="m-list-timeline__time">1 hr</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">System error</a>
-										<span class="m-list-timeline__time">2 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">Production server down</a>
-										<span class="m-list-timeline__time">3 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">Production server up</a>
-										<span class="m-list-timeline__time">5 hrs</span>
-									</div>
-									<div class="m-list-timeline__item">
-										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">New order received</a>
-										<span class="m-list-timeline__time">1117 hrs</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- end::Quick Sidebar -->
-
-		<!-- begin::Scroll Top -->
-		<div id="m_scroll_top" class="m-scroll-top">
-			<i class="la la-arrow-up"></i>
-		</div>
-
-		<!-- end::Scroll Top -->
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
 
 
-		<!-- begin::Quick Nav -->
+<script type="text/javascript">
+    var tpj=jQuery;
+    var revapi4;
+    tpj(document).ready(function() {
+        if(tpj("#rev_slider").revolution == undefined){
+            revslider_showDoubleJqueryError("#rev_slider");
+        }else{
+            revapi4 = tpj("#rev_slider").show().revolution({
+                sliderType:"standard",
+                jsFileLocation:"js/revolution-slider/js/",
+                sliderLayout:"auto",
+                dottedOverlay:"none",
+                delay:9000,
+                navigation: {
+                    keyboardNavigation:"off",
+                    keyboard_direction: "horizontal",
+                    mouseScrollNavigation:"off",
+                    onHoverStop:"off",
+                    arrows:{
+                        enable:true,
+                        style:"erinyen"
 
-		<!--begin:: Global Mandatory Vendors -->
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery/dist/jquery.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/moment/min/moment.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/wnumb/wNumb.js" type="text/javascript"></script>
+                    },
+                    touch:{
+                        touchenabled:"on",
+                        swipe_threshold: 75,
+                        swipe_min_touches: 1,
+                        swipe_direction: "horizontal",
+                        drag_block_vertical: false
+                    }
+                    ,
 
-		<!--end:: Global Mandatory Vendors -->
 
-		<!--begin:: Global Optional Vendors -->
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery.repeater/src/lib.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery.repeater/src/repeater.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/block-ui/jquery.blockUI.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-datepicker.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-timepicker.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-daterangepicker.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-switch/dist/js/bootstrap-switch.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-switch.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/select2/dist/js/select2.full.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/handlebars/dist/handlebars.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/inputmask/dist/inputmask/inputmask.date.extensions.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/inputmask/dist/inputmask/inputmask.numeric.extensions.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/inputmask/dist/inputmask/inputmask.phone.extensions.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/nouislider/distribute/nouislider.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/autosize/dist/autosize.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/dropzone/dist/dropzone.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/markdown/lib/markdown.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/bootstrap-markdown.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jquery-validation/dist/additional-methods.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/forms/jquery-validation.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/bootstrap-notify/bootstrap-notify.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/base/bootstrap-notify.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/toastr/build/toastr.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/jstree/dist/jstree.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/raphael/raphael.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/morris.js/morris.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/chartist/dist/chartist.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/chart.js/dist/Chart.bundle.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/charts/chart.init.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/vendors/jquery-idletimer/idle-timer.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/counterup/jquery.counterup.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
-		<script src="{{url('admin_panel')}}/assets/vendors/js/framework/components/plugins/base/sweetalert2.init.js" type="text/javascript"></script>
 
-		<!--end:: Global Optional Vendors -->
+                },
+                viewPort: {
+                    enable:true,
+                    outof:"pause",
+                    visible_area:"80%"
+                },
+                responsiveLevels:[1240,1024,778,480],
+                gridwidth:[1240,1024,778,480],
+                gridheight:[640,640,640,500],
+                lazyType:"smart",
+                parallax: {
+                    type:"mouse",
+                    origo:"slidercenter",
+                    speed:2000,
+                    levels:[2,3,4,5,6,7,12,16,10,50],
+                },
+                shadow:0,
+                spinner:"off",
+                stopLoop:"off",
+                stopAfterLoops:-1,
+                stopAtSlide:-1,
+                shuffle:"off",
+                autoHeight:"off",
+                hideThumbsOnMobile:"off",
+                hideSliderAtLimit:0,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                disableProgressBar:"on",
+                debugMode:false,
+                fallbacks: {
+                    simplifyAll:"off",
+                    nextSlideOnWindowFocus:"off",
+                    disableFocusListener:false,
+                }
+            });
+        }
+    });	/*ready*/
+</script>
 
-		<!--begin::Global Theme Bundle -->
-		<script src="{{url('admin_panel')}}/assets/demo/base/scripts.bundle.js" type="text/javascript"></script>
-		<!--end::Global Theme Bundle -->
-        {{-- @jquery --}}
-        @toastr_js
-        @toastr_render
-        @yield('script')
+<script>
+    $(window).load(function(){
+        setTimeout(function(){
 
-	</body>
+            $('.loader-live').fadeOut();
+        },1000);
+    })
 
-	<!-- end::Body -->
+</script>
+<script src="{{url('front')}}/assets/js/functions/functions.js"></script>
+<script>
+    $(window).load(function(){
+        setTimeout(function(){
+
+            $('.loader-live').fadeOut();
+        },1000);
+    })
+
+</script>
+<script src="{{url('front')}}/assets/js/functions/functions.js"></script>
+</body>
+
 </html>

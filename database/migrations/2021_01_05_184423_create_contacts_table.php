@@ -18,6 +18,8 @@ class CreateContactsTable extends Migration
             $table->integer('language_id')->unsigned()->nullable()->comment('Language Number To Choose a display language from table const_languages');
             $table->string('full_name')->comment('constant value');
             $table->string('email_contacts')->comment('constant value');
+            $table->integer('phone')->nullable();
+            $table->string('subject')->comment('subject');
             $table->text('message')->comment('constant value');
 			$table->softDeletes()->comment('Soft Delete this same (IS Delete) status to check the data is deleted or not');
             $table->timestamps();

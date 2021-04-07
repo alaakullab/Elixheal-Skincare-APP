@@ -15,15 +15,14 @@ class FrontController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function indexView(Request $request){
-        $settings = Setting::where('language_id', getLangId())->first();
         $slider = Slider::where('language_id', getLangId())->get();
 
-        return view('front.index',compact('settings','slider'));
+        return view('front.index',compact('slider'));
     }
 
-    public function index()
+    public function contactCreateView()
     {
-        //
+        return view('front.pages.contact');
     }
 
     /**

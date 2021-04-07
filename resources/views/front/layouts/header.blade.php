@@ -1,82 +1,59 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ $settings->site_name }}</title>
+    <meta name="keywords" content="{{ $settings->meta_keyword }}" />
+    <meta name="description" content="{{ $settings->site_desc }}">
+    <meta name="author" content="">
 
-<html lang="en">
+    <!-- Mobile view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- begin::Head -->
-	<head>
-		<meta charset="utf-8" />
-		<title>@yield('title')</title>
-		<meta name="description" content="Latest updates and statistic charts">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{url('images/icon')}}/{{$settings->icon}}">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/bootstrap/bootstrap.min.css">
 
-		<!--begin::Web font -->
-		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
-		<script>
-			WebFont.load({
-            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
-            active: function() {
-                sessionStorage.fonts = true;
-            }
-          });
-        </script>
+    <!-- Google fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
 
-		<!--end::Web font -->
+    <!-- Template's stylesheets -->
+    <link rel="stylesheet" href="{{url('front')}}/assets/js/megamenu/stylesheets/screen.css">
+    <link rel="stylesheet" href="{{url('front')}}/assets/css/theme-default.css" type="text/css">
+    <link rel="stylesheet" href="{{url('front')}}/assets/js/loaders/stylesheets/screen.css">
+    <link rel="stylesheet" href="{{url('front')}}/assets/css/beauty.css" type="text/css">
+    <link rel="stylesheet" href="{{url('front')}}/assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/fonts/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
+    <link rel="stylesheet" href="{{url('front')}}/assets/fonts/et-line-font/et-line-font.css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/revolution-slider/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/revolution-slider/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/revolution-slider/css/navigation.css">
+    <link href="{{url('front')}}/assets/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="{{url('front')}}/assets/js/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/cubeportfolio/cubeportfolio.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/smart-forms/smart-forms.css">
+    <!-- Template's stylesheets END -->
 
-		<!--begin:: Global Mandatory Vendors -->
-		<link href="{{url('admin_panel')}}/assets/vendors/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-		<!--end:: Global Mandatory Vendors -->
+    <!-- Skin stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/style-customizer/css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/style-customizer/css/style-customizer.css">
+    <link rel="stylesheet" href="{{url('front')}}/assets/css/skin.css">
 
-		<!--begin:: Global Optional Vendors -->
-		<link href="{{url('admin_panel')}}/assets/vendors/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-datetime-picker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/animate.css/animate.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/jstree/dist/themes/default/style.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/morris.js/morris.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/chartist/dist/chartist.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/vendors/flaticon/css/flaticon.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/vendors/metronic/css/styles.css" rel="stylesheet" type="text/css" />
-		<link href="{{url('admin_panel')}}/assets/vendors/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
-
-		<!--end:: Global Optional Vendors -->
-
-		<!--begin::Global Theme Styles -->
-		<link href="{{url('admin_panel')}}/assets/demo/base/style.bundle.css" rel="stylesheet" type="text/css" />
-
-		<!--RTL version:<link href="{{url('admin_panel')}}/assets/demo/base/style.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
-
-		<!--end::Global Theme Styles -->
-		<!--begin::Page Vendors Styles -->
-        @yield('css')
-        @toastr_css
-		<!--RTL version:<link href="{{url('admin_panel')}}/assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
-		<!--end::Page Vendors Styles -->
-		<link rel="shortcut icon" href="{{url('admin_panel')}}/assets/demo/media/img/logo/favicon.ico" />
-	</head>
-
-	<!-- end::Head -->
-
-	<!-- begin::Body -->
-	<body class="m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
-
-		<!-- begin:: Page -->
-		<div class="m-grid m-grid--hor m-grid--root m-page">
+</head>
+<body>
+<div class="over-loader loader-live">
+    <div class="loader">
+        <div class="loader-item style4">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+</div>
+<!--end loading-->
