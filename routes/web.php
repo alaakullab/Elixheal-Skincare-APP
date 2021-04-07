@@ -122,6 +122,7 @@ Route::group(['prefix' => '{language}'], function () {
     Route::get('/quiz',[\App\Http\Controllers\front\QuizController::class, 'indexView']);
     Route::get('/contact',[\App\Http\Controllers\front\FrontController::class, 'contactCreateView'])->name('pages.contact.CreateView');
     Route::post('/contact/store', [\App\Http\Controllers\ContactController::class,'storeView'])->name('pages.Contact.StoreView');
+    Route::get('/faqs',[\App\Http\Controllers\front\FrontController::class, 'faqsView'])->name('pages.faqs.View');
 
     Route::get('/',[\App\Http\Controllers\front\FrontController::class, 'indexView']);
 

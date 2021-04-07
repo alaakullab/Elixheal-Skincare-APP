@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\front;
 
-use App\Models\Setting;
+use App\Models\faqs_question;
 use App\Models\Slider;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,6 +23,20 @@ class FrontController extends Controller
     public function contactCreateView()
     {
         return view('front.pages.contact');
+    }
+
+    public function faqsView(Request $request)
+    {
+        $faqs_question = faqs_question::latest();
+        $faqs_question->where('language_id', getLangId());
+        $search = trim($request->search);
+        if ($request->filled('search'))
+        {
+            $faqs_question->where('question_value', 'like', "%$search%");
+        }
+
+        $faqs_question = $faqs_question->get();
+        return view('front.pages.faqs',compact('faqs_question'));
     }
 
     /**

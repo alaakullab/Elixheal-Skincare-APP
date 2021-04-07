@@ -13,9 +13,9 @@
                         <div class="clearfix"></div>
                         <ul class="footer-quick-links">
                             <li><a href="#">{{ __('front.home')  }}</a></li>
-                            <li><a href="#">{{ __('front.about_us')  }}</a></li>
-                            <li><a href="#">{{ __('front.contact_us')  }}</a></li>
-                            <li><a href="#">{{ __('front.FAQS')  }}</a></li>
+                            <li><a href="{{ url('/'.app()->getLocale()) }}">{{ __('front.about_us')  }}</a></li>
+                            <li><a href="{{ url('/'.app()->getLocale().'/contact') }}">{{ __('front.contact_us')  }}</a></li>
+                            <li><a href="{{ url('/'.app()->getLocale().'/faqs') }}">{{ __('front.FAQS')  }}</a></li>
                             <li><a href="{{ url('/'.app()->getLocale().'/quiz') }}">{{ __('front.start_skin_quiz')  }}</a></li>
                         </ul>
                         <div class="divider-line solid light opacity-1"></div>
@@ -179,7 +179,7 @@
     @endif
 </script>
 <script src="{{url('front')}}/assets/js/functions/functions.js"></script>
-
+@yield('script')
 </body>
 
 </html>

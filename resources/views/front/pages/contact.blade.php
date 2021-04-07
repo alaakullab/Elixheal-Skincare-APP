@@ -9,9 +9,8 @@
                 <div class="col-md-8">
 
                     <h3 class="uppercase">{{ __('front.Contact Form') }}</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis
-                        commodo augue. Aliquam ornare hendrerit consectetuer adipiscing elit. Suspendisse et justo.
-                        augue.</p>
+                    <p>{{__('front.Questions? Comments? CHECK OUT OUR')}} <a href="{{ url('/'.app()->getLocale().'/faqs') }}" class="btn-link">{{__('front.FAQS')}}</a>
+                    </p>
                     <br/>
                     <br/>
 
@@ -100,25 +99,25 @@
     <div class="clearfix"></div>
     <!-- end section -->
 
-    <div class="divider-line solid light"></div>
-    <section class="moreless-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="ce4-clients noborder grid-cols-6 hover-2">
-                        <li><a href="#"><img src="images/shortcodes/1.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/shortcodes/2.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/shortcodes/3.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/shortcodes/4.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/shortcodes/5.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/shortcodes/6.png" alt=""></a></li>
-                    </ul>
-                </div>
-                <!--end item-->
+{{--    <div class="divider-line solid light"></div>--}}
+{{--    <section class="moreless-padding">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <ul class="ce4-clients noborder grid-cols-6 hover-2">--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/1.png" alt=""></a></li>--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/2.png" alt=""></a></li>--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/3.png" alt=""></a></li>--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/4.png" alt=""></a></li>--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/5.png" alt=""></a></li>--}}
+{{--                        <li><a href="#"><img src="images/shortcodes/6.png" alt=""></a></li>--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--                <!--end item-->--}}
 
-            </div>
-        </div>
-    </section>
-    <div class="clearfix"></div>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <div class="clearfix"></div>--}}
     <!-- end section -->
 @endsection

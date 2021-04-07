@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/cubeportfolio/cubeportfolio.min.css">
     <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/smart-forms/smart-forms.css">
     <!-- Template's stylesheets END -->
+    @yield('css')
     @toastr_css
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
