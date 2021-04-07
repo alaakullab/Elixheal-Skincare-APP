@@ -21,7 +21,7 @@
                                 <div class="smart-forms smart-container transparent wrap-full">
                                     <div class="form-body no-padd">
                                         <form method="POST" action="{{ route('pages.Contact.StoreView',app()->getLocale()) }}" id="smart-form">
-
+                                       @csrf
                                             <div class="section">
                                                 <label for="full_name" class="field prepend-icon">
                                                     <input type="text" name="full_name" id="full_name"

@@ -73,7 +73,6 @@
 <script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="{{url('front')}}/assets/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
 
-
 <script type="text/javascript">
     var tpj=jQuery;
     var revapi4;
@@ -166,7 +165,21 @@
     })
 
 </script>
+@toastr_js
+@toastr_render
+<script type="text/javascript">
+    $(window).load(function(){
+        setTimeout(function(){
+    @if(count($errors) > 0)
+    @foreach($errors->all() as $error)
+    toastr.error("{{ $error }}");
+    @endforeach
+        },2000);
+    })
+    @endif
+</script>
 <script src="{{url('front')}}/assets/js/functions/functions.js"></script>
+
 </body>
 
 </html>

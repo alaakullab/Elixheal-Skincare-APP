@@ -41,7 +41,7 @@ class ContactController extends Controller
         $request->validate([
             'full_name' => 'required',
             'email_contacts' => 'required|email',
-            'phone' => 'number',
+            'phone' => 'numeric',
             'subject' => 'required|max:80',
             'message' => 'required|min:80|max:300',
         ]);
@@ -55,10 +55,10 @@ class ContactController extends Controller
         $contact->language_id = getLangId();
         $status = $contact->save();
         if($status){
-            toastr()->success(__('admin.store_successful_msg'), __('admin.success'));
+            toastr()->success(__('admin.save_successful_msg'), __('admin.success'));
         }else
         {
-        toastr()->error(__('admin.store_error_msg'), __('admin.error'));
+        toastr()->error(__('admin.save_error_msg'), __('admin.error'));
         }
         return back();
     }
@@ -67,7 +67,7 @@ class ContactController extends Controller
         $request->validate([
             'full_name' => 'required',
             'email_contacts' => 'required|email',
-            'phone' => 'number',
+            'phone' => 'numeric|max:14',
             'subject' => 'required|max:80',
             'message' => 'required|min:80|max:300',
         ]);
