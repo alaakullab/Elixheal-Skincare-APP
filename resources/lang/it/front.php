@@ -10,12 +10,18 @@ return array(
     'address' => 'Address',
     'copyright' => 'Copyright',
     'FAQS' => 'FAQS',
+    'FAQ' => 'FAQ',
     'Enter name' => 'Enter name',
     'Email address' => 'Email address',
     'Enter message' => 'Enter message',
     'Hint:' => 'Hint:',
     'Cancel' => 'Cancel',
     'Submit' => 'Submit',
+    'It’s all about you' => 'It’s all about you',
+    'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.' => 'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.',
+    'FIND MY FORMULA' => 'FIND MY FORMULA',
+    'Questions? Comments? CHECK OUT OUR' => 'Questions? Comments? CHECK OUT OUR',
+    'FEEL FREE TO CONTACT US' => 'FEEL FREE TO CONTACT US',
 
     //quiz
     'quiz_title_formulate_your_custom_skincare' => "Formulate your custom skincare",
@@ -37,8 +43,11 @@ return array(
     'Enter subjec' => 'Enter subjec',
     'Please enter between 80 - 300 characters.' => 'Please enter between 80 - 300 characters.',
     'Enter Telephone....' => 'Enter Telephone...',
-    'Questions? Comments? CHECK OUT OUR' => 'Questions? Comments? CHECK OUT OUR',
-
+    //about us
+    'about' => 'About',
+    'about-us' => 'About-US',
+    'Your browser does not support HTML video.' => 'Your browser does not support HTML video.',
+    'Click to more' => 'Click to more',
 )
 
 ?>

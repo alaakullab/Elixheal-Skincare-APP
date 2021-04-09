@@ -40,7 +40,7 @@
                                     </ul>
                                     <div id="menu" class="collapse">
                                         <ul class="nav navbar-nav">
-                                            <li class="mega-menu six-col @if(Request::segment(0) != '') active @endif "> <a href="{{ url('/'.app()->getLocale()) }}">{{ __('front.home')  }}</a> <span class="arrow"></span>
+                                            <li class="mega-menu six-col @if(Request::segment(2) == '') active @endif "> <a href="{{ url('/'.app()->getLocale()) }}">{{ __('front.home')  }}</a> <span class="arrow"></span>
                                             </li>
                                             <li class="mega-menu six-col @if(Request::segment(2) == 'about') active @endif "> <a href="{{ url('/'.app()->getLocale().'/about') }}">{{ __('front.about_us')  }}</a> <span class="arrow"></span>
                                             <li class="mega-menu six-col @if(Request::segment(2) == 'contact') active @endif"> <a href="{{ url('/'.app()->getLocale().'/contact') }}">{{ __('front.contact_us')  }}</a> <span class="arrow"></span>

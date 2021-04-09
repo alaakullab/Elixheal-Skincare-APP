@@ -20,6 +20,8 @@ return array(
     'It’s all about you' => 'It’s all about you',
     'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.' => 'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.',
     'FIND MY FORMULA' => 'FIND MY FORMULA',
+    'Questions? Comments? CHECK OUT OUR' => 'Questions? Comments? CHECK OUT OUR',
+    'FEEL FREE TO CONTACT US' => 'FEEL FREE TO CONTACT US',
 
     //quiz
     'quiz_title_formulate_your_custom_skincare' => "Formulate your custom skincare",

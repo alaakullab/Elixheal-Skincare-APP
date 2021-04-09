@@ -15,14 +15,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <br/>
-                            <div class="col-md-6 "><h4>About Style 1</h4></div>
-                            {{--                    <div class="col-md-6">--}}
-                            {{--                        <ol class="breadcrumb">--}}
-                            {{--                            <li><a href="#">Home</a></li>--}}
-                            {{--                            <li><a href="#">Pages</a></li>--}}
-                            {{--                            <li class="current"><a href="#">About Style 1</a></li>--}}
-                            {{--                        </ol>--}}
-                            {{--                    </div>--}}
+                            <div class="col-md-2" style="width: 11.67%;"><h4>{{__('front.about_us')}}</h4></div>
+                            <div class="col-md-10">
+                        <p> -  {{__('front.FEEL FREE TO CONTACT US')}} <a href="{{ url('/'.app()->getLocale().'/contact') }}" class="btn-link">{{__('front.contact_us')}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
