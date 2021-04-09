@@ -223,66 +223,6 @@
         <div class="clearfix"></div>
         <!-- end section -->
 
-        <section class="sec-padding section-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <div class="sec-title-container">
-                            <h2 class=" playfair less-mar-1">Our Services</h2>
-                            <div class="text-center"><img src="{{url('front')}}/assets/images/by2-3.png" alt=""/></div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <!--end title-->
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                        <div class="by2-feature-box-2">
-                            <div class="img-circle overflow-hidden">
-                                <div class="img"><img src="{{url('front')}}/assets/images/by2-5.jpg" alt="" class="img-responsive"/></div>
-                            </div>
-                            <img src="{{url('front')}}/assets/images/4.html" alt=""/>
-                            <div class="clearfix"></div>
-                            <br/>
-                            <h4 class="uppercase">eye treatments</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo.</p>
-                        </div>
-                    </div>
-                    <!--end item-->
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                        <div class="by2-feature-box-2">
-                            <div class="img-circle overflow-hidden">
-                                <div class="img"><img src="{{url('front')}}/assets/images/by2-6.jpg" alt="" class="img-responsive"/></div>
-                            </div>
-                            <img src="{{url('front')}}/assets/images/4.html" alt=""/>
-                            <div class="clearfix"></div>
-                            <br/>
-                            <h4 class="uppercase">makeup</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo.</p>
-                        </div>
-                    </div>
-                    <!--end item-->
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 text-center">
-                        <div class="by2-feature-box-2">
-                            <div class="img-circle overflow-hidden">
-                                <div class="img"><img src="{{url('front')}}/assets/images/by2-7.jpg" alt="" class="img-responsive"/></div>
-                            </div>
-                            <img src="{{url('front')}}/assets/images/4.html" alt=""/>
-                            <div class="clearfix"></div>
-                            <br/>
-                            <h4 class="uppercase">Manicure</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo.</p>
-                        </div>
-                    </div>
-                    <!--end item-->
-
-                </div>
-            </div>
-        </section>
-        <div class="clearfix"></div>
-        <!-- end section -->
-
         <section class="parallax-4">
             <div class="container-fluid nopadding">
                 <div class="parallax-overlay bg-opacity-6">

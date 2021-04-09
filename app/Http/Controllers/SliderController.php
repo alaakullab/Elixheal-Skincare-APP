@@ -15,7 +15,7 @@ class SliderController extends Controller
 
     public function __construct()
     {
-        $this->middleware('JWT', ['except' => ['index', 'indexView', 'createView','storeView', 'editView', 'updateView', 'show']]);
+        $this->middleware('JWT', ['except' => ['index', 'indexView', 'createView','storeView', 'editView', 'updateView', 'show', 'deleteView']]);
     }
 
     public function index()
@@ -111,9 +111,9 @@ class SliderController extends Controller
         //
     }
 
-    public function editView($local,$id )
+    public function editView($lang,$id )
     {
-        $item = Slider::where('id', $id)->where('language_id', getLangId())->first();;
+        $item = Slider::where('id', $id)->where('language_id', getLangId())->first();
 
         if (isset($item))
         {
@@ -140,7 +140,7 @@ class SliderController extends Controller
             'desc' => 'max:800',
         ]);
 
-        $oldData = $slider->where('language_id', getLangId())->first();
+        $oldData = $slider->where('language_id', getLangId())->where('id', $id)->first();
         $image_path = $request->file('image_path');
 
         $data =  [
@@ -187,8 +187,27 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($lang, $id)
     {
-        //
+        $slider = Slider::find($id);
+        if (file_exists(public_path()."/images/slider/".$slider->image_path) == 1 && $slider->image_path != null){
+            unlink(public_path().'/images/slider/'.$slider->image_path);
+        }
+        $slider = Slider::find($id);
+        $status = $slider->delete();
+        return response(null, 204);
     }
+
+    public function deleteView($lang, $id)
+    {
+        $result = $this->destroy($lang, $id);
+        if($result->original == null){
+            toastr()->success(__('admin.delete_successful_msg'), __('admin.success'));
+        }else
+        {
+            toastr()->error(__('admin.delete_error_msg'), __('admin.error'));
+        }
+        return back();
+    }
+
 }
