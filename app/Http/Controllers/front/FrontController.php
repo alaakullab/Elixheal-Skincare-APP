@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\front;
 
+use App\Models\About;
 use App\Models\faqs_question;
 use App\Models\Slider;
 use App\Http\Controllers\Controller;
@@ -37,6 +38,19 @@ class FrontController extends Controller
 
         $faqs_question = $faqs_question->get();
         return view('front.pages.faqs',compact('faqs_question'));
+    }
+
+    public function aboutView(Request $request)
+    {
+        $about = About::latest();
+        $about->where('language_id', getLangId());
+        $search = trim($request->search);
+        if ($request->filled('search'))
+        {
+            $about->where('title', 'like', "%$search%");
+        }
+        $about = $about->get();
+        return view('front.pages.about',compact('about'));
     }
 
     /**

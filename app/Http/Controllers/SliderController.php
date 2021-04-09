@@ -132,7 +132,7 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id, Slider $slider)
+    public function update(Request $request, $lang, $id, Slider $slider)
     {
         $request->validate([
             'image_path' => 'image|mimes:jpeg,png,jpg|max:10240',
@@ -162,14 +162,14 @@ class SliderController extends Controller
             $data['image_path'] = $newImagePathName;
         }
 
-        $result = $slider->where('language_id', getLangId())->update($data);
+        $result = $slider->where('language_id', getLangId())->where('id', $id)->update($data);
 
         return response('Updated', 202);
     }
 
-    public function updateView(Request $request,$id, Slider $slider)
+    public function updateView(Request $request, $lang, $id, Slider $slider)
     {
-        $result = $this->update($request,$id, $slider);
+        $result = $this->update($request, $lang, $id, $slider);
 
         if($result->original == "Updated"){
             toastr()->success(__('admin.update_successful_msg'), __('admin.success'));

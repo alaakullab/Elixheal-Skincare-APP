@@ -7,20 +7,47 @@
     <link rel="stylesheet" type="text/css" href="{{url('front')}}/assets/js/accordion/js/demo.css">
 @endsection
 @section('content')
-    <div class="clearfix"></div>
+{{--    <div class="clearfix"></div>--}}
+{{--    <section class="section-side-image clearfix">--}}
+{{--        <div class="img-holder col-md-12 col-sm-12 col-xs-12">--}}
+{{--            <div class="background-imgholder" style="background:url({{url('images')}}/slider/97653360_by2-1.jpg);"><img class="nodisplay-image" src="{{url('images')}}/slider/97653360_by2-1.jpg" alt=""/> </div>--}}
+{{--        </div>--}}
+{{--        <div class="container-fluid" >--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12 col-sm-12 col-xs-12 clearfix nopadding">--}}
+{{--                    <div class="header-inner less-height">--}}
+{{--                        <div class="overlay">--}}
+{{--                            <div class="text text-center">--}}
+{{--                                <h3 class="uppercase text-white less-mar-1 title">FAQ Style 1</h3>--}}
+{{--                                <h6 class="uppercase text-white sub-title">Get Many More Features</h6>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <div class=" clearfix"></div>--}}
+    <!--end header section -->
+<section class="section section-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <br/>
+                <h3>{{__('front.FAQ')}}</h3>
+                <div class="pages-sidebar-item">
+                    <form>
+                        <h6 class="uppercase pages-sidebar-item-title">{{__('admin.search')}}</h6>
+                        <input type="text" name="search" class="form-control search-field pages-newsletter" value="{{ old('search',@request()->search) }}" maxlength="100"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <section class="sec-padding">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-10">
-                    <h4>FAQ</h4>
-                    <div class="col-md-10">
-                        <div class="pages-sidebar-item">
-                            <form>
-                            <h5 class="uppercase pages-sidebar-item-title">{{__('admin.search')}}</h5>
-                            <input type="text" name="search" class="pages-newsletter" value="{{ old('search',@request()->search) }}" maxlength="100"/>
-                        </div>
-                    </div>
                     <div class="col-md-12 nopadding">
                         @foreach($faqs_question as $faqs_question)
                         <div class="accordion_head"><i class="fa fa-pencil" aria-hidden="true"></i>{{$faqs_question->question_value}}<span class="plusminus">+</span>

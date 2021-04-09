@@ -10,6 +10,7 @@ return array(
     'address' => 'Address',
     'copyright' => 'Copyright',
     'FAQS' => 'FAQS',
+    'FAQ' => 'FAQ',
     'Enter name' => 'Enter name',
     'Email address' => 'Email address',
     'Enter message' => 'Enter message',
@@ -37,7 +38,11 @@ return array(
     'Enter subjec' => 'Enter subjec',
     'Please enter between 80 - 300 characters.' => 'Please enter between 80 - 300 characters.',
     'Enter Telephone....' => 'Enter Telephone...',
-
+    //about us
+    'about' => 'About',
+    'about-us' => 'About-US',
+    'Your browser does not support HTML video.' => 'Your browser does not support HTML video.',
+    'Click to more' => 'Click to more',
 )
 
 ?>

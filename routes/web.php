@@ -100,29 +100,34 @@ Route::group(['prefix' => '{language}'], function () {
         Route::any('slider/{id}/delete', [\App\Http\Controllers\SliderController::class,'deleteView'])->name('slider.deleteView');
 
 
+        Route::get('about', [\App\Http\Controllers\AboutController::class,'indexView'])->name('about.indexView');
+        Route::get('about/add', [\App\Http\Controllers\AboutController::class,'createView'])->name('about.createView');
+        Route::post('about/store', [\App\Http\Controllers\AboutController::class,'storeView'])->name('about.storeView');
+        Route::get('about/{id}/edit', [\App\Http\Controllers\AboutController::class,'editView'])->name('about.editView');
+        Route::put('about/{id}/update', [\App\Http\Controllers\AboutController::class,'updateView'])->name('about.updateView');
+        Route::any('about/{id}/delete', [\App\Http\Controllers\AboutController::class,'deleteView'])->name('about.deleteView');
+
+
             Route::get('quiz/results', [\App\Http\Controllers\ResultQuestionsController::class,'indexView'])->name('quiz.results.indexView');
 
 
-
-        Route::get('welcome', function () {
-            return view('welcome');
-        })->name('welcome');
-
-        Route::get('aa', function () {
-            return view('welcome');
-        })->name('welcome');
-
     });
 
 
 
     });
+
+    Route::get('welcome', function () {
+        return (4+1)&1;
+    })->name('welcome');
+
 
     // front
     Route::get('/quiz',[\App\Http\Controllers\front\QuizController::class, 'indexView']);
     Route::get('/contact',[\App\Http\Controllers\front\FrontController::class, 'contactCreateView'])->name('pages.contact.CreateView');
     Route::post('/contact/store', [\App\Http\Controllers\ContactController::class,'storeView'])->name('pages.Contact.StoreView');
     Route::get('/faqs',[\App\Http\Controllers\front\FrontController::class, 'faqsView'])->name('pages.faqs.View');
+    Route::get('/about',[\App\Http\Controllers\front\FrontController::class, 'aboutView'])->name('pages.about.CreateView');
 
     Route::get('/',[\App\Http\Controllers\front\FrontController::class, 'indexView']);
 

@@ -14,6 +14,8 @@ return array(
     'category' => 'Category',
     'add faqs question' => 'Add faqs question',
     'address' => 'Address',
+    'about' => 'About',
+    'about-us' => 'About-US',
 
     //form and inputs name - label
     'choose' => 'Choose',
@@ -122,7 +124,13 @@ return array(
     'facebook'=> 'Facebook',
     'twitter'=> 'Twitter',
     'instagram'=> 'Instagram',
-    'whatsapp'=> 'Whatsapp'
+    'whatsapp'=> 'Whatsapp',
+    'add_section' => 'Add section',
+    'edit_section' => 'Edit section',
+    'Image or video' => 'Image or Video',
+    'media' => 'Media',
+    'sub_title' => 'Sub Title',
+    'Your browser does not support HTML video.' => 'Your browser does not support HTML video.',
 )
 
 ?>

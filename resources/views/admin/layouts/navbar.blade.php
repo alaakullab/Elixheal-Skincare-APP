@@ -144,10 +144,10 @@
                     <span class="m-menu__link-text">{{ ucwords(__('settings')) }}</span></span>
                         </li>
                         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true"
-                            m-menu-submenu-toggle="hover"><a href="{{ route('admin.setting.edit',app()->getLocale()) }}"
+                            m-menu-submenu-toggle="hover"><a href="{{ route('admin.about.indexView',app()->getLocale()) }}"
                                                              class="m-menu__link m-menu__toggle"><i
-                                    class="m-menu__link-icon flaticon-settings"></i><span
-                                    class="m-menu__link-text">{{ ucwords(__('admin.settings')) }}</span>
+                                    class="m-menu__link-icon flaticon-photo-camera"></i><span
+                                    class="m-menu__link-text">{{ ucwords(__('admin.about-us')) }}</span>
                             </a>
                         </li>
                         <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true"
@@ -155,6 +155,13 @@
                                                              class="m-menu__link m-menu__toggle"><i
                                     class="m-menu__link-icon flaticon-photo-camera"></i><span
                                     class="m-menu__link-text">{{ ucwords(__('admin.sliders')) }}</span>
+                            </a>
+                        </li>
+                        <li class="m-menu__item m-menu__item--expanded" aria-haspopup="true"
+                            m-menu-submenu-toggle="hover"><a href="{{ route('admin.setting.edit',app()->getLocale()) }}"
+                                                             class="m-menu__link m-menu__toggle"><i
+                                    class="m-menu__link-icon flaticon-settings"></i><span
+                                    class="m-menu__link-text">{{ ucwords(__('admin.settings')) }}</span>
                             </a>
                         </li>
                     </ul>
