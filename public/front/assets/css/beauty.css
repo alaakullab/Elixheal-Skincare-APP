@@ -18,7 +18,7 @@ Design and Developed by: Codelayers
 	2.parallax sections
 	3.footer styles
 
-	
+
 ======================================
 [ END CSS TABLE CONTENT ]
 ======================================
@@ -150,10 +150,10 @@ Design and Developed by: Codelayers
 
 /*============ Parallax Sections ============ */
 .parallax-4 {
-    background: rgba(0, 0, 0, 0) url("../images/parallax/by2-parallax1.jpg") no-repeat fixed 50% 0;
+    background: rgba(0, 0, 0, 0) url("/front/assets/images/parallax/fn-1.jpg") no-repeat fixed 50% 0;
 }
 .parallax-5 {
-    background: rgba(0, 0, 0, 0) url("../images/parallax/by2-parallax1.jpg") no-repeat fixed 50% 0;
+    background: rgba(0, 0, 0, 0) url("/front/assets/images/parallax/fn-1.jpg") no-repeat fixed 50% 0;
 }
 
 
@@ -162,24 +162,24 @@ Design and Developed by: Codelayers
 @media screen and (max-width: 1024px) {
 .by2-feature-box-1 .img-box .badge {
     left: 181px;
-}	
+}
 .by2-feature-box-2 .img-circle {
     left: 35px;
 }
 
 
 }
-	
+
 @media only screen and (max-width: 1000px) {
-	
+
 .by2-feature-box-1 .img-box .badge {
     left: 170px;
 }
 
-}	
+}
 
-	
-	
+
+
 /* ---------- MAX 991PX ---------- */
 @media only screen and (max-width: 991px) {
 

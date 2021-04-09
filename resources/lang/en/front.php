@@ -17,6 +17,9 @@ return array(
     'Hint:' => 'Hint:',
     'Cancel' => 'Cancel',
     'Submit' => 'Submit',
+    'It’s all about you' => 'It’s all about you',
+    'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.' => 'Experience the power of personalized skincare, skincare that gives you everything that you need and nothing that you don’t.',
+    'FIND MY FORMULA' => 'FIND MY FORMULA',
 
     //quiz
     'quiz_title_formulate_your_custom_skincare' => "Formulate your custom skincare",
