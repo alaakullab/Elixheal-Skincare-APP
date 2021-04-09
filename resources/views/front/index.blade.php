@@ -182,12 +182,22 @@
                     <div class="col-md-4">
                         <div class="by2-feature-box-1">
                             <div class="img-box">
-                                <div class="badge">
-                                    <p>from<br/>
-                                        as low as<br/>
-                                        <span>$99</span> </p>
-                                </div>
-                                <img src="{{url('front')}}/assets/images/by2-1.jpg" alt="" class="img-responsive"/> </div>
+                                @php($media_type = explode("/",$about[0]->media_type))
+                                @if($media_type[0] == 'image')
+                                    <img
+                                        src="{{ url('/assets/media/about/images/') }}/{{ $about[0]->media_path ?? $about[0]->media_path }}"
+                                        alt="{{$about[0]->title ?? ''}}" class="img-responsive"/>
+                                @else
+                                    <div class="embed-responsive embed-responsive-4by3">
+                                        <video class="embed-responsive-item" controls>
+                                            <source src="{{url('/assets/media/about/videos/')}}/{{$about[0]->media_path}}"
+                                                    type="video/{{$about[0]->media_extension}}">
+                                            {{__('admin.Your browser does not support HTML video.')}}
+                                        </video>
+                                    </div>
+                                @endif
+                            </div>
+
                         </div>
                     </div>
                     <!--end item-->
@@ -195,19 +205,17 @@
                     <div class="col-md-8 padding-left-3">
                         <div class="col-md-12">
                             <div class="sec-title-container less-padding-4">
-                                <h2 class=" playfair less-mar-1">About Us</h2>
+                                <h2 class=" playfair less-mar-1">{{__('front.about-us')}}</h2>
                                 <div class="text-left"><img src="{{url('front')}}/assets/images/by2-2.png" alt=""/></div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                         <!--end title-->
-
-                        <h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo augue Aliquam ornare.</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci </p>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo augue Aliquam ornare hendrerit augue Cras tellus In pulvinar lectus a est Curabitur eget orci Cras laoreet ligula. Etiam sit amet dolor. Vestibulum ante ipsum primis in faucibus orci </p>
+                        <h6>{{$about[0]->title}}</h6>
+                        <strong>{{$about[0]->sub_title}}</strong> {!! Str::limit($about[0]->desc,250) !!}
                         <br/>
                         <br/>
-                        <a class="btn btn-dark-3 btn-xround-2" href="#">Read more</a> </div>
+                       @if($about[0]->hyperlink)<a class="btn btn-dark-3 btn-xround-2" @if($about[0]->hyperlink != '#' && strlen($about[0]->hyperlink) > 1)target="_blank" @endif href="{{$about[0]->hyperlink}}">{{__('front.Click to more')}}</a>@endif </div>
                     <!--end item-->
                 </div>
             </div>
@@ -337,17 +345,18 @@
                             <div class="col-md-6 col-centered text-center">
                                 <div class="col-xs-12 text-center">
                                     <div class="sec-title-container less-padding-6 text-center">
-                                        <h2 class=" pompiere text-gyellow">Know more about</h2>
-                                        <h1 class=" playfair uppercase font-weight-5 less-mar-1 text-white">Special Offers</h1>
+                                        <h2 class=" pompiere text-gyellow">{{$about[1]->title}}</h2>
+                                        <h1 class=" playfair uppercase font-weight-5 less-mar-1 text-white">{{$about[1]->sub_title}}</h1>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
                                 <!--end title-->
 
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo. Praesent mattis commodo augue. Aliquam ornare hendrerit augue.</p>
+                                <div style="color:white !important ;">{!! Str::limit($about[1]->desc,250) !!}</div>
                                 <br/>
-                                <a class="btn btn-gyellow btn-medium uppercase btn-xround-2" href="#">Read more</a> </div>
+                                @if($about[1]->hyperlink)<a class="btn btn-gyellow btn-medium uppercase btn-xround-2"  @if($about[1]->hyperlink != '#' && strlen($about[1]->hyperlink) > 1)target="_blank" @endif href="{{$about[1]->hyperlink}}">{{__('front.Click to more')}}</a>@endif
+                            </div>
                         </div>
                     </div>
                 </div>

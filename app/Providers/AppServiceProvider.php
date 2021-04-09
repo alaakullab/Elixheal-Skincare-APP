@@ -24,9 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View()->composer(['front.layouts.index','front.pages.contact'], function ($view) {
+        View()->composer(['front.layouts.index', 'front.pages.contact'], function ($view) {
             $settings = \App\Models\Setting::where('language_id', getLangId())->first();
             $view->with('settings', $settings);
+        });
+        View()->composer(['front.index'], function ($view) {
+            $about = \App\Models\About::where('language_id', getLangId())->latest()->get();
+            $view->with('about', $about);
         });
 
         Schema::defaultStringLength(191);
