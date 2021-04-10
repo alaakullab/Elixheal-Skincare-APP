@@ -1,13 +1,5 @@
 @extends('admin.layouts.index')
-
-@section('title', 'Slider list')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
+@section('title') - {{ucwords(__('admin.settings'))}}@endsection
 @section('content')
 <div class="col-md-12">
     <div class="m-portlet m-portlet--tab">

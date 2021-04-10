@@ -207,7 +207,7 @@ a.read-more.gyellow-2 {
   color: #e218df;
 }
 .scrollup {
-  background: #e218df url(http://127.0.0.1:8000/front/assets/images/scroll-top-arrow.png) no-repeat 15px 16px;
+  background: #e218df url("/front/assets/images/scroll-top-arrow.png") no-repeat 15px 16px;
 }
 .ce4-feature-box-2:hover .icon-plain-small,
 .ce4-feature-box-2:hover .title,

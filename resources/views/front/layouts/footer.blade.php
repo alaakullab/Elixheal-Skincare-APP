@@ -38,7 +38,7 @@
 <div class="clearfix"></div>
 <!--end section-->
 
-<a href="#" class="scrollup"></a><!-- end scroll to top of the page-->
+<a href="#" class="scrollup"><i class="fa fa-arrow-up"></i></a><!-- end scroll to top of the page-->
 
 </div>
 <!--end site wrapper-->
