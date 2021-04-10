@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') - {{ucwords(__('admin.faqs_question'))}} - {{ucwords(__('admin.view_faqs_question'))}}@endsection
+@section('title') {{ucwords(__('admin.faqs_question'))}} - {{ucwords(__('admin.view_faqs_question'))}}@endsection
 @section('css')
 <link href="{{url('admin_panel')}}/assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
 @endsection

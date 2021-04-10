@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') - {{ucwords(__('admin.about-us'))}}@endsection
+@section('title') {{ucwords(__('admin.about-us'))}}@endsection
 @section('css')
 @endsection
 @section('content')

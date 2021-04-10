@@ -62,7 +62,7 @@
                                     <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
                                     <div class="m-dropdown__inner">
                                         <div class="m-dropdown__header m--align-center" style="background: url(../../assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
-                                            <span class="m-dropdown__header-subtitle">Select your language</span>
+                                            <span class="m-dropdown__header-subtitle">{{__('admin.Select your language')}}</span>
                                         </div>
                                         <div class="m-dropdown__body">
                                             <div class="m-dropdown__content">

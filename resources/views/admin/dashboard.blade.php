@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') - {{ucwords(__('admin.dashboard'))}}@endsection
+@section('title'){{ucwords(__('admin.dashboard'))}}@endsection
 @section('sidebar')
     @parent
     <p>This is appended to the master sidebar.</p>

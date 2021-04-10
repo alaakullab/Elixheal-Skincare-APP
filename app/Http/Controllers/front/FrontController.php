@@ -17,7 +17,6 @@ class FrontController extends Controller
      */
     public function indexView(Request $request){
         $slider = Slider::where('language_id', getLangId())->get();
-
         return view('front.index',compact('slider'));
     }
 

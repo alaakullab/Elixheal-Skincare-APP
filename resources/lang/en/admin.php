@@ -16,6 +16,12 @@ return array(
     'address' => 'Address',
     'about' => 'About',
     'about-us' => 'About-US',
+    // Select your language
+    'Select your language' => 'Select your language',
+    'English' => 'English',
+    'Spanish' => 'Spanish',
+    'French' => 'French',
+    'Italian' => 'Italian',
 
     //form and inputs name - label
     'choose' => 'Choose',

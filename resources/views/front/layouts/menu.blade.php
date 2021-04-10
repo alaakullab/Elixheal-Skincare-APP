@@ -11,9 +11,37 @@
                     </div>
             @endif
             <!--end left-->
-
-                <div class="topbar-right-items pull-right">
+                    <div class="topbar-right-items pull-right">
                     <ul class="toplist toppadding">
+                        <li class="lineright">
+                            <div class="dropdown">
+                                <button class=" btn-link m-btn--link dropdown-toggle" type="button" data-toggle="dropdown">
+                                    @if(app()->getLocale() == 'en'){{__('admin.English')}}@elseif(app()->getLocale() == 'es'){{__('admin.Spanish')}} @elseif(app()->getLocale() == 'fr'){{__('admin.French')}} @elseif(app()->getLocale() == 'it'){{__('admin.Italian')}}@else {{__('admin.Select your language')}} @endif
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu" style="min-width:0px;">
+                                    <li class="m-nav__item @if(app()->getLocale() == 'en') m-nav__item--active @endif">
+                                        <a href="{{  LaravelLocalization::getLocalizedURL('en') }}" class="m-nav__link @if(app()->getLocale() == 'en') m-nav__link--active @endif">
+                                            <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">{{__('admin.English')}}</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item @if(app()->getLocale() == 'es') m-nav__item--active @endif">
+                                        <a href="{{  LaravelLocalization::getLocalizedURL('es') }}" class="m-nav__link @if(app()->getLocale() == 'es') m-nav__link--active @endif">
+                                            <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">{{__('admin.Spanish')}}</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item @if(app()->getLocale() == 'fr') m-nav__item--active @endif">
+                                        <a href="{{  LaravelLocalization::getLocalizedURL('fr') }}" class="m-nav__link @if(app()->getLocale() == 'fr') m-nav__link--active @endif">
+                                            <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">{{__('admin.French')}}</span>
+                                        </a>
+                                    </li>
+                                    <li class="m-nav__item @if(app()->getLocale() == 'it') m-nav__item--active @endif">
+                                        <a href="{{  LaravelLocalization::getLocalizedURL('it') }}" class="m-nav__link @if(app()->getLocale() == 'it') m-nav__link--active @endif">
+                                            <span class="m-nav__link-title m-topbar__language-text m-nav__link-text">{{__('admin.Italian')}}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
 {{--                        <li class="lineright"><a href="#">Login</a></li>--}}
 {{--                        <li class="lineright"><a href="#">Register</a></li>--}}
                         @if($settings->facebook)<li><a target="_blank" href="{{ $settings->facebook }}"><i class="fa fa-facebook"></i></a></li>@endif

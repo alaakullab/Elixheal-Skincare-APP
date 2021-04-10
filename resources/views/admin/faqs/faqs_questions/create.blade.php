@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') - {{ucwords(__('admin.faqs_question'))}} - {{ucwords(__('admin.add_faqs_question'))}}@endsection
+@section('title') {{ucwords(__('admin.faqs_question'))}} - {{ucwords(__('admin.add_faqs_question'))}}@endsection
 @section('content')
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">

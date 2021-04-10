@@ -1,5 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') - {{ucwords(__('admin.slider'))}} - {{ucwords(__('admin.add_slider'))}}@endsection
+@section('title') {{ucwords(__('admin.slider'))}} - {{ucwords(__('admin.add_slider'))}}@endsection
 @section('css')
     <link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 @endsection
