@@ -1,8 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.slider'))}}
-@endsection
-@section('css')
-@endsection
+@section('title') - {{ucwords(__('admin.slider'))}}@endsection
 @section('content')
     <div class="col-md-12">
         <div class="m-portlet m-portlet--mobile">
@@ -84,8 +81,6 @@
                     {{ $items->links("pagination::bootstrap-4") }}
                 </div>
             </div>
-
         </div>
     </div>
-
 @endsection

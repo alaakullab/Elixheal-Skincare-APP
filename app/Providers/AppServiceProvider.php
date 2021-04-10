@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View()->composer(['front.layouts.index', 'front.pages.contact'], function ($view) {
+        View()->composer(['admin.layouts.header','admin.layouts.footer','front.layouts.index', 'front.pages.contact'], function ($view) {
             $settings = \App\Models\Setting::where('language_id', getLangId())->first();
             $view->with('settings', $settings);
         });

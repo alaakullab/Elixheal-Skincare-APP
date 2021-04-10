@@ -1,5 +1,5 @@
 @extends('front.layouts.index')
-
+@section('title') - {{ucwords(__('front.Contact Form'))}}@endsection
 @section('content')
     <div class="clearfix"></div>
     <section class="sec-padding section-light">

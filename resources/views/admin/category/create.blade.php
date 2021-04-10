@@ -1,11 +1,6 @@
 @extends('admin.layouts.index')
-@section('title')
-    {{__('admin.category')}}
-@endsection
-@section('css')
-@endsection
+@section('title') - {{ucwords(__('admin.add_category'))}}@endsection
 @section('content')
-
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">
             <div class="m-portlet__head">
@@ -42,12 +37,6 @@
             <!--end::Form-->
         </div>
     </div>
-
-
-
-
-
-
 @endsection
 
 

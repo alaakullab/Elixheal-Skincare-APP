@@ -5,8 +5,8 @@
 	<!-- begin::Head -->
 	<head>
 		<meta charset="utf-8" />
-		<title>@yield('title')</title>
-		<meta name="description" content="Latest updates and statistic charts">
+		<title>{{$settings->site_name}}@yield('title')</title>
+        <meta name="description" content="{{ $settings->site_desc }}">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 
 		<!--begin::Web font -->
@@ -69,7 +69,7 @@
         @toastr_css
 		<!--RTL version:<link href="{{url('admin_panel')}}/assets/vendors/custom/fullcalendar/fullcalendar.bundle.rtl.css" rel="stylesheet" type="text/css" />-->
 		<!--end::Page Vendors Styles -->
-		<link rel="shortcut icon" href="{{url('admin_panel')}}/assets/demo/media/img/logo/favicon.ico" />
+		<link rel="shortcut icon" href="{{url('images/icon')}}/{{$settings->icon}}" />
 	</head>
 
 	<!-- end::Head -->

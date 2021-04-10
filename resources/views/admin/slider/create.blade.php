@@ -1,12 +1,9 @@
 @extends('admin.layouts.index')
-@section('title')
-    {{__('admin.slider')}}
-@endsection
+@section('title') - {{ucwords(__('admin.slider'))}} - {{ucwords(__('admin.add_slider'))}}@endsection
 @section('css')
     <link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">
             <div class="m-portlet__head">
@@ -68,12 +65,6 @@
             height: 120,
             focus: true,
             toolbar: false
-            //     [
-            //     ['font', ['bold', 'underline', 'clear']],
-            //     ['color', ['color']],
-            //     ['para', ['ul', 'ol', 'paragraph']],
-            //     ['view', ['fullscreen', 'codeview', 'help']]
-            // ]
         });
     </script>
 @endsection

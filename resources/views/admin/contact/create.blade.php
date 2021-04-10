@@ -1,9 +1,5 @@
 @extends('admin.layouts.index')
-@section('title')
-    {{__('admin.contact')}}
-@endsection
-@section('css')
-@endsection
+@section('title') - {{ucwords(__('admin.add_contact'))}}@endsection
 @section('content')
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">
@@ -47,18 +43,8 @@
                     </div>
                 </div>
             </form>
-
             <!--end::Form-->
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 @endsection
 

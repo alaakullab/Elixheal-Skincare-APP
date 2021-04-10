@@ -1,4 +1,5 @@
 @extends('front.layouts.index')
+@section('title') - {{ucwords(__('front.FAQ'))}}@endsection
 @section('css')
     <link rel="stylesheet" href="{{url('front')}}/assets/css/corporate.css" type="text/css">
     <link rel="stylesheet" href="{{url('front')}}/assets/css/shortcodes.css" type="text/css">

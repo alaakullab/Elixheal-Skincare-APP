@@ -1,7 +1,5 @@
 @extends('admin.layouts.index')
-@section('title')
-    {{__('admin.about-us')}}
-@endsection
+@section('title') - {{ucwords(__('admin.about-us'))}} - {{ ucwords(__('admin.add_section')) }}@endsection
 @section('css')
     <link href="{{url('admin_panel')}}/assets/vendors/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 @endsection
@@ -71,12 +69,6 @@
             height: 120,
             focus: true,
             toolbar: false
-            //     [
-            //     ['font', ['bold', 'underline', 'clear']],
-            //     ['color', ['color']],
-            //     ['para', ['ul', 'ol', 'paragraph']],
-            //     ['view', ['fullscreen', 'codeview', 'help']]
-            // ]
         });
     </script>
 @endsection

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ $settings->site_name }}</title>
+    <title>{{ $settings->site_name }}@yield('title')</title>
     <meta name="keywords" content="{{ $settings->meta_keyword }}" />
     <meta name="description" content="{{ $settings->site_desc }}">
     <meta name="author" content="">

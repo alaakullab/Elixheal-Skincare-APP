@@ -1,10 +1,5 @@
 @extends('admin.layouts.index')
-@section('title') {{ucwords(__('admin.question'))}}
-@endsection
-@section('css')
-
-
-@endsection
+@section('title') - {{ucwords(__('admin.questions'))}} - {{ucwords(__('admin.edit_question'))}}@endsection
 @section('content')
     <div class="col-md-12">
         <div class="m-portlet m-portlet--tab">
@@ -20,7 +15,6 @@
                     </div>
                 </div>
             </div>
-
             <!--begin::Form-->
             <form method="post" action="{{url(app()->getLocale().'/admin/question/'. $item->id.'/update')}}"
                   class="m-form m-form--fit m-form--label-align-right"
@@ -48,11 +42,9 @@
                     </div>
                 </div>
             </form>
-
             <!--end::Form-->
         </div>
     </div>
-
 @endsection
 
 
